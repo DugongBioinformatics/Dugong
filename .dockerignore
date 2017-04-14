@@ -1,0 +1,6 @@
+############### Exclude files and directories
+
+.misc
+examples-use
+LICENSE
+README.md
