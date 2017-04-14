@@ -1,4 +1,4 @@
-![Dugongo](https://github.com/fabianomenegidio/dugong/blob/master/.misc/dugong.png)
+![Dugong](https://github.com/fabianomenegidio/dugong/blob/master/.misc/dugongo.png)
 
 # Dugong - Scientific Linux Container
 
