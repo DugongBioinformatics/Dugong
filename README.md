@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/88288867.svg)](https://zenodo.org/badge/latestdoi/88288867)
+
 ![Dugong](https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/.misc/dugongo.png)
 
 # Dugong - Scientific Linux Container
@@ -269,3 +271,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 
 ## Learn More
+
+[![DOI](https://zenodo.org/badge/88288867.svg)](https://zenodo.org/badge/latestdoi/88288867)
