@@ -1,4 +1,4 @@
-![Dugong](https://github.com/fabianomenegidio/dugong/blob/master/.misc/dugongo.png)
+![Dugong](https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/.misc/dugongo.png)
 
 # Dugong - Scientific Linux Container
 
@@ -98,7 +98,7 @@ Sources such as GitHub, for example, can be used to install new tools simply and
 
 The Docker project provides a public cloud called the [Docker Hub](https://hub.docker.com) for sharing the developed containers. This cloud allows access to the application in a centralized and simple way, that is, it is possible to obtain a complete Dugong environment with command lines for its implementation.
 
-To start a container, the user must have Docker installed on his operating system, according to the tutorials available in the project documentation. The Dugong image is available in the [Docker Hub](https://hub.docker.com/r/bigscience/dugong) and its use is the recommended method of installation.
+To start a container, the user must have Docker installed on his operating system, according to the tutorials available in the project documentation. The Dugong image is available in the [Docker Hub](https://github.com/fabianomenegidio/dugong-bioinformatics) and its use is the recommended method of installation.
 
 Two steps are required to start a container containing Dugong. In the first step, the Dugong image is downloaded from the Docker Hub servers to the host, and in the second, a container is created on the host machine with the default Dugong installation. If the host machine is a Linux, the following commands must be performed in the terminal:
 
