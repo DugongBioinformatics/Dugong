@@ -53,7 +53,6 @@ Dugong - Web VNC access (noVNC) and Linuxbrew:
 With a focus on fast access and availability of command line bioinformatics tools, ***DugongCMD*** has an interactive terminal developed in node.js that can be accessed directly by the browser. It also features a set of preinstalled software that allow better use of the operating system, especially:
 
 - [MEGAcmd](https://mega.nz/cmd): tool that allows access through the Mega cloud command line and provides a set of powerful commands for a file manipulation.
-
 - [Showterm](https://showterm.io/): is an open source terminal record and upload application that lets you easy to record how-to in your terminal. It will record all your terminal activity in text-base and upload to showterm.io as a video and then generates a link for you to share with your team-mates or embed it in your website as an iframe.
 
 ## Bioinformatics Software
