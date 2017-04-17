@@ -175,6 +175,13 @@ Docker provides tooling and a platform to manage the lifecycle of your container
 
 ![Docker](https://www.docker.com/sites/default/files/Docker_Supply-chain-V1.5-01.png)
 
+![Docker](https://www.docker.com/sites/default/files/Docker_Survey_DevOps_Alt2-V1.8-01-01.png)
+
+![Docker](https://www.docker.com/sites/default/files/Docker_Survey_%232_v04.0-01.png)
+
+![Docker](https://www.docker.com/sites/default/files/Docker_Survey_%233_V2.3-01.png)
+
+![Docker](https://www.docker.com/sites/default/files/docker-orchestration-survey.png)
 
 ## Docker architecture
 
