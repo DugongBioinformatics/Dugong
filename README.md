@@ -161,11 +161,7 @@ http://<IP or Host>:3000
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
 
-<center>
-<img src ="http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png" />
-</center>
-
-<img style="float: center;" src="http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png">
+![line](http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png) ![line](http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png)
 
 # Learn more about Docker 
 
