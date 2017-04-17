@@ -161,6 +161,8 @@ http://<IP or Host>:3000
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
 
+<div style="text-align:center"><img src ="https://thecliparts.com/wp-content/uploads/2017/02/black-decorative-line-clipart.jpg" /></div>
+
 # Learn more about Docker 
 
 [Docker](https://www.docker.com) is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
