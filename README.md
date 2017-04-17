@@ -161,7 +161,7 @@ http://<IP or Host>:3000
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
 
-![line](http://gallatindemocrats.com/wp-content/uploads/2012/05/divider-line.png)
+![line](http://skstroi.ru/wp-content/uploads/2016/05/foot-line.png)
 
 # Learn more about Docker 
 
