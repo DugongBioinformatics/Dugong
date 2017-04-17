@@ -163,9 +163,9 @@ Dugong can be expanded or adapted to the most diverse needs in a research or tea
 
 <div style="text-align:center"><img src ="http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png" /></div>
 
-[center]
+<center>
 ![line](http://www.pngall.com/wp-content/uploads/2016/04/Decorative-Line-Black.png)
-[/center]
+</center>
 
 # Learn more about Docker 
 
