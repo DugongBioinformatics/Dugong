@@ -5,3 +5,5 @@ title: DUGONG
 description: a Scientific Linux Container
 author: Menegidio, F.B.
 author_email: fabiano.menegidio@biology.bio.br
+
+show_downloads: true
