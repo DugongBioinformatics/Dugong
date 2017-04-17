@@ -4,3 +4,11 @@ title: DUGONG
 description: a Scientific Linux Container
 author: Menegidio, F.B.
 author_email: fabiano.menegidio@biology.bio.br
+
+bs:
+  current_version:  1.0
+  repo:             https://github.com/fabianomenegidio/dugong-bioinformatics
+  download:
+    source:        https://github.com/fabianomenegidio/dugong-bioinformatics/archive/1.0.tar.gz
+    dist:          https://github.com/fabianomenegidio/dugong-bioinformatics/archive/1.0.zip
+    sass:          https://github.com/fabianomenegidio/dugong-bioinformatics/archive/1.0.tar.gz
