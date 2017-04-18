@@ -118,7 +118,7 @@ The default installation version of Dugong is DugongGUI with Xfce4. To change th
 Install DugongGUI Xfce4:
 
 ```
-docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged bigscience/dugong:xfc4
+docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged bigscience/dugong:xfce
 ```
 
 Install DugongGUI iceWM:
