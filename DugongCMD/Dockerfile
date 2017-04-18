@@ -21,7 +21,7 @@ MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 LABEL base.image="ubuntu:latest"
 LABEL version="1.0"
 LABEL name="Dugong"
-LABEL flavour="Xfce4"
+LABEL flavour="CMD"
 LABEL description="Scientific Linux Container"
 LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
 LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
