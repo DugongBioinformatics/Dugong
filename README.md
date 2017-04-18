@@ -280,4 +280,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 ## Learn More
 
+![QRCode](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/QRCode%20-%20Dugong.jpg)
+
 [![DOI](https://zenodo.org/badge/88288867.svg)](https://zenodo.org/badge/latestdoi/88288867)
