@@ -17,6 +17,17 @@
 FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
+############### Metadata
+LABEL base.image="ubuntu:latest"
+LABEL version="1.0"
+LABEL name="Dugong"
+LABEL flavour="iceWM"
+LABEL description="Scientific Linux Container"
+LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
+LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
+LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
+LABEL tags="Bioinformatics"
+
 ###############  Connection ports for controlling the UI:
 # VNC port:5901
 # noVNC webport, connect via http://IP:6901/?password=vncpassword
