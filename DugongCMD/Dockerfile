@@ -17,6 +17,17 @@
 FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
+############### Metadata
+LABEL base.image="ubuntu:latest"
+LABEL version="1.0"
+LABEL name="Dugong"
+LABEL flavour="Xfce4"
+LABEL description="Scientific Linux Container"
+LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
+LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
+LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
+LABEL tags="Bioinformatics"
+
 ############### Add linux-mint dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "3EE67F3D0FF405B2"
 RUN echo "deb http://packages.linuxmint.com/ rafaela main upstream import" >> /etc/apt/sources.list.d/mint.list && \
