@@ -43,6 +43,10 @@ A BAM file is opened in the Assembly Browser:
 
 ![UGENE](http://ugene.net/wp-content/themes/Ugene/gallery/images/ass_br_diff_mode.png)
 
+## Site UGENE
+
+http://ugene.net/
+
 ## Cite UGENE
 
 Okonechnikov K, Golosova O, Fursov M, the UGENE team. Unipro UGENE: a unified bioinformatics toolkit. Bioinformatics 2012 28: 1166-1167. doi:10.1093/bioinformatics/bts091
