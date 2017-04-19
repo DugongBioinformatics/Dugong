@@ -19,7 +19,7 @@ MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
 LABEL base.image="ubuntu:latest"
-LABEL version="1.0"
+LABEL version="2017040"
 LABEL name="Dugong"
 LABEL flavour="CMD"
 LABEL description="Scientific Linux Container"
@@ -28,10 +28,28 @@ LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
 LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
 LABEL tags="Bioinformatics"
 
-############### Add linux-mint dependencies and update packages
+############### Add Linux Mint dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "3EE67F3D0FF405B2"
 RUN echo "deb http://packages.linuxmint.com/ rafaela main upstream import" >> /etc/apt/sources.list.d/mint.list && \
     echo "deb http://extra.linuxmint.com/ rafaela main " >> /etc/apt/sources.list.d/mint.list
+
+############### Add Xenial dependencies and update packages
+RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted universe multiverse" >> /etc/apt/sources.list.d/xenial.list && \
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-updates main restricted universe multiverse" >> /etc/apt/sources.list.d/xenial.list  && \
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-backports main restricted universe multiverse"  && \
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted universe multiverse" >> /etc/apt/sources.list.d/xenial.list
+
+############### Add BioLinux 8 dependencies and update packages
+RUN echo "deb http://distro.ibiblio.org/bio-linux/packages/ unstable bio-linux" >> /etc/apt/sources.list.d/biolinux.list && \
+    echo "deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main" >> /etc/apt/sources.list.d/biolinux.list
+
+RUN apt-get update -y
+RUN apt-get install -y --no-install-recommends \
+    bio-linux-keyring \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN echo "deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main"
 
 ############### Installation of essential packages and dependencies
 RUN apt-get update -y
