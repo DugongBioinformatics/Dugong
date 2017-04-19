@@ -1,13 +1,9 @@
 
-Container Specifications
-========================
-
-Each container should provide a well-defined metadata header that allows the final users to test, deploy and get support around the container.
-We explain here the containers metadata, their meaning and use in BioContainers:
+Specifications
+==============
 
 
-
-| Field                 | Description                                                                                                                | Example                                                  |
+| Field                 | Description                                                                                                                |                                                   |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
 | base image            | The original image where the software has been built                                                                       | base image: biodckr/biodocker                            |
 | software version      | Every BioContainer should contain the actual version of the software and tool                                              | software version: 2015020                                |
