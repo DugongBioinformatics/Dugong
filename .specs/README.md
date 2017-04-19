@@ -16,7 +16,7 @@
 | image            | Description of the project image                                                                       | bigscience/dugong:xfce                            |
 | base image            | The original image where the software has been built                                                                       | bigscience/dugong:cmd                            |
 | software version      | Actual version of the image                                              | 2017040                                |
-| software              | Software installed                                                                                                    | software: Comet                                          |
+| software              | Software installed                                                                                                    | Basemount, Chrome, Conda2, Conda3, Bioconda, Firefox, Xfce4, Java8, IcedTea8, LinuxBrew, MegaSync, MegaCMD, noVNC, VNC                                          |
 
 
 <br><br>
