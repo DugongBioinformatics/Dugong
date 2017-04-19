@@ -6,8 +6,9 @@
 | base image            | The original image where the software has been built                                                                       | bigscience/dugong:cmd                            |
 | software version      | Actual version of the image                                              | 2017040                                |
 | software              | Software installed                                                                                                    | software: Comet                                          |
-<br><br>
 
+
+<br><br>
 ## DugongGUI Xfce4 Specifications:
 
 | Field                 | Description                                                                                                                | DugongGUI Xfce4                                                  |
@@ -17,6 +18,8 @@
 | software version      | Actual version of the image                                              | 2017040                                |
 | software              | Software installed                                                                                                    | software: Comet                                          |
 
+
+<br><br>
 ## DugongGUI iceWM Specifications:
 
 | Field                 | Description                                                                                                                | DugongGUI iceWM                                                  |
