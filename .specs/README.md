@@ -1,3 +1,6 @@
+DugongCMD Specifications
+========================
+
 | Field                 | Description                                                                                                                | DugongCMD                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
 | base image            | The original image where the software has been built                                                                       | base image: biodckr/biodocker                            |
@@ -8,7 +11,10 @@
 | documentation         | URL(s) containing information about how to use the software.                                                               | doc pages: http://comet-ms.sourceforge.net/              |
 | license               | URL(s) containing Licensing information.                                                                                   | license page: http://comet-ms.sourceforge.net/           |  
 | tags                  | Tags about the software that enable to find and classify the software tool.                                                | tags: proteomics, mass spectrometry, biocontainers       |
+<br><br>
 
+DugongGUI Xfce4 Specifications
+==============================
 
 
 | Field                 | Description                                                                                                                | DugongGUI Xfce4                                                  |
