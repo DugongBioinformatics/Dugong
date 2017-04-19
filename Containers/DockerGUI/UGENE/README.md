@@ -2,6 +2,23 @@
 
 ## UGENE running on Dugong
 
+UGENE running on Dugong installed on a virtual machine on Ubuntu Linux:
+
+UGENE running on Dugong installed on a virtual machine on Ubuntu Server:
+
+UGENE running on Dugong installed on a virtual machine on CentOS Linux:
+
+UGENE running on Dugong installed on a virtual machine on Fedora Linux:
+
+UGENE running on Dugong installed on a virtual machine on Arch Linux:
+
+UGENE running on Dugong installed on a virtual machine on OpenSuse Linux:
+
+UGENE running on Dugong installed on a virtual machine on FreeBSD:
+
+UGENE running on Dugong installed on a virtual machine on MacOS:
+
+UGENE running on Dugong installed on a virtual machine on Windows:
 
 
 ## Features of UGENE
