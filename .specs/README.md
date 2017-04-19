@@ -17,9 +17,7 @@ IcedTea8, LinuxBrew, MegaCMD, tty.js, SSH                                       
 | image            | Description of the project image                                                                       | bigscience/dugong:xfce                            |
 | base image            | The original image where the software has been built                                                                       | ubuntu:latest                            |
 | software version      | Actual version of the image                                              | 2017040                                |
-| software              | Software installed                                                                                                    | Basemount, Chrome, Conda2, Conda3, Bioconda, Firefox, 
-Xfce4, Java8, IcedTea8, LinuxBrew, MegaSync, 
-MegaCMD, noVNC, VNC                                          |
+| software              | Software installed                                                                                                    | Basemount, Chrome, Conda2, Conda3, Bioconda, Firefox, Xfce4, Java8, IcedTea8, LinuxBrew, MegaSync, MegaCMD, noVNC, VNC |
 
 
 <br><br>
