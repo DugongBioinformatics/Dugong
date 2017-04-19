@@ -10,6 +10,8 @@
 <br><br>
 ## DugongGUI Xfce4 Specifications:
 
+Dugong with the Xfce4 graphical interface pre-installed and functional.
+
 | Field                 | Description                                                                                                                | DugongGUI Xfce4                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
 | image            | Description of the project image                                                                       | bigscience/dugong:xfce                            |
@@ -19,6 +21,8 @@
 
 <br><br>
 ## DugongGUI iceWM Specifications:
+
+Dugong with the iceWM graphical interface pre-installed and functional.
 
 | Field                 | Description                                                                                                                | DugongGUI iceWM                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
