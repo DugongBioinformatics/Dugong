@@ -14,7 +14,7 @@
 #
 ###########################################################################
 
-FROM dugong/dugong
+FROM dugong/dugong:xfce
 MAINTAINER Fabiano Menegidio
 
 ################### Add repository UGENE
