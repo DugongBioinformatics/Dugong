@@ -14,7 +14,7 @@
 #
 ###########################################################################
 
-FROM bigscience/dugong
+FROM dugong/dugong
 MAINTAINER Fabiano Menegidio
 
 ################### Add repository UGENE
