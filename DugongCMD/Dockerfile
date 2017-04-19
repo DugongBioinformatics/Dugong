@@ -44,7 +44,7 @@ RUN echo "deb http://distro.ibiblio.org/bio-linux/packages/ unstable bio-linux" 
     echo "deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main" >> /etc/apt/sources.list.d/biolinux.list
 
 RUN apt-get update -y
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y --allow-unauthenticated --no-install-recommends \
     bio-linux-keyring \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
