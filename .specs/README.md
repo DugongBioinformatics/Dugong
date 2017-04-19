@@ -10,7 +10,7 @@
 <br><br>
 ## DugongGUI Xfce4 Specifications:
 
-Dugong with the Xfce4 graphical interface pre-installed and functional.
+Dugong with the Xfce4 graphical interface pre-installed and functional. Based on Ubuntu 16.04.
 
 | Field                 | Description                                                                                                                | DugongGUI Xfce4                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
@@ -22,7 +22,7 @@ Dugong with the Xfce4 graphical interface pre-installed and functional.
 <br><br>
 ## DugongGUI iceWM Specifications:
 
-Dugong with the iceWM graphical interface pre-installed and functional.
+Dugong with the iceWM graphical interface pre-installed and functional. Based on Ubuntu 16.04.
 
 | Field                 | Description                                                                                                                | DugongGUI iceWM                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
