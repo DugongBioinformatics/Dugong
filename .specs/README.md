@@ -1,6 +1,6 @@
 ## DugongCMD Specifications:
 
-Dugong image that works exclusively in the command line environment, without a graphical interface. Based on Ubuntu 16.04.
+Dugong image that works exclusively in the command line environment. Based on Ubuntu 16.04.
 
 | Field                 | Description                                                                                                                | DugongCMD                                                  |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
