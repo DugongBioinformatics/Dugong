@@ -54,8 +54,12 @@ RUN echo "deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main"
 ############### Installation of essential packages and dependencies
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends \
-    vim bash git openssh-server build-essential \
-    make sudo wget locales curl ca-certificates bzip2 \
+        autotools-dev automake cmake curl make grep sed sudo \
+        dpkg fuse git wget zip openjdk-8-jre build-essential \
+        pkg-config python python-dev python-pip bzip2 git \
+        libglib2.0-0 libxext6 libsm6 libxrender1 mercurial \
+        zlib1g-dev openssh-server locales ca-certificates \
+	subversion vim \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
   
