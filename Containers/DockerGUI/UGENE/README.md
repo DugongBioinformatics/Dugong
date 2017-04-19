@@ -1,5 +1,11 @@
 ***UGENE*** is free open-source cross-platform bioinformatics software.
 
+## UGENE running on Dugong
+
+
+
+## Features of UGENE
+
 UGENE 3D Protein Structure Viewer:
 
 ![UGENE](http://ugene.net/wp-content/themes/Ugene/gallery/images/3dstruct.png)
@@ -20,7 +26,7 @@ A BAM file is opened in the Assembly Browser:
 
 ![UGENE](http://ugene.net/wp-content/themes/Ugene/gallery/images/ass_br_diff_mode.png)
 
-## Cite us
+## Cite UGENE
 
 Okonechnikov K, Golosova O, Fursov M, the UGENE team. Unipro UGENE: a unified bioinformatics toolkit. Bioinformatics 2012 28: 1166-1167. doi:10.1093/bioinformatics/bts091
 
