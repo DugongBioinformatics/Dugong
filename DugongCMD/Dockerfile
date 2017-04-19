@@ -40,16 +40,15 @@ RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted uni
     echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted universe multiverse" >> /etc/apt/sources.list.d/xenial.list
 
 ############### Add BioLinux 8 dependencies and update packages
-RUN echo "deb http://distro.ibiblio.org/bio-linux/packages/ unstable bio-linux" >> /etc/apt/sources.list.d/biolinux.list && \
-    echo "deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main" >> /etc/apt/sources.list.d/biolinux.list
+RUN echo 'deb http://nebc.nerc.ac.uk/bio-linux/ unstable bio-linux' >> /etc/apt/sources.list.d/biolinux.list ;\
+    echo 'deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list ;\
+    echo 'deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list ;\
+    echo 'deb http://cran.r-project.org/bin/linux/ubuntu precise/' >> /etc/apt/sources.list.d/biolinux.list ;\
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 ;\
+    apt-get update ;\
+    apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring ;\
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN apt-get update -y
-RUN apt-get install -y --allow-unauthenticated --no-install-recommends \
-    bio-linux-keyring \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-RUN echo "deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main"
 
 ############### Installation of essential packages and dependencies
 RUN apt-get update -y
