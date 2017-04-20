@@ -22,4 +22,3 @@ RUN conda install bedtools=2.24.0
 WORKDIR /data/
 
 CMD ["bedtools"]
-Contact GitHub 
