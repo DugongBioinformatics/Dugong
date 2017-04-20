@@ -113,13 +113,11 @@ RUN $INST_SCRIPTS/xfce_ui.sh
 ADD .config/GUI/xfce/ $HOME/
 
 ############### Configure startup Dugong
-RUN $INST_SCRIPTS/libnss_wrapper.sh
+# RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 VOLUME ["/data", "/config"]
-RUN chown $USER:$USER /data \
-    && chown $USER:$USER /config
 
 USER $USER
 
