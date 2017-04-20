@@ -1,31 +1,22 @@
-# Base Image
-FROM biocontainers/biocontainers:latest
+###########################################################################
+# Dugong - Scientific Linux Containers for Bioinformatic
+# ======================================================
+#
+# Current development is led by Fabiano Menegidio.
+#
+# Bioinformatician/Bioinformaticist at the Laboratory of Functional 
+# and Structural Genomics of the Integrated Nucleus of Biotechnology 
+# at the University of Mogi das Cruzes, Brazil.
+# 
+# Contact: fabiano.menegidio@biology.bio.br
+# GitHub: https://github.com/fabianomenegidio
+#
+#
+###########################################################################
 
-# Metadata
-LABEL base.image="biocontainers:latest"
-LABEL version="3"
-LABEL software="Percolator"
-LABEL software.version="3.0"
-LABEL description="Semi-supervised learning for peptide identification from shotgun proteomics datasets"
-LABEL website="http://percolator.ms/"
-LABEL documentation="http://percolator.ms/"
-LABEL license="http://percolator.ms/"
-LABEL tags="Proteomics"
+FROM dugong/dugong:cmd
+MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-# Maintainer
-MAINTAINER Felipe da Veiga Leprevost <felipe@leprevost.com.br>
+RUN conda install percolator=2.3.0
 
-USER root
-
-RUN ZIP=ubuntu64_release.tar.gz && \
-    wget https://github.com/percolator/percolator/releases/download/rel-3-00/$ZIP -O /tmp/$ZIP && \
-    tar xvzf /tmp/$ZIP && \
-    chmod -R 755 /tmp/* && \
-    dpkg -i percolator-converters-v3-00-linux-amd64.deb && \
-    dpkg -i percolator-v3-00-linux-amd64.deb && \
-    dpkg -i elude-v3-00-linux-amd64.deb && \
-    rm /tmp/$ZIP
-
-USER biodocker
-
-WORKDIR /data/
+WORKDIR /data
