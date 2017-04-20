@@ -117,8 +117,6 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-RUN mkdir /data /config
-
 USER 1982
 VOLUME ["/data", "/config"]
 
