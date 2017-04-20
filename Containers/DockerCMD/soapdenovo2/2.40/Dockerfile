@@ -17,6 +17,6 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-RUN conda install soapdenovo2=2.40
+RUN conda install soapdenovo2=2.40 soapec=2.03 soapdenovo2-prepare=2.0 soapdenovo2-gapcloser=1.12 soapdenovo2-errorcorrection=2.0
 
 WORKDIR /data
