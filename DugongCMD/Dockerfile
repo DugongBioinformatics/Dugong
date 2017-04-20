@@ -160,8 +160,15 @@ WORKDIR /home/$NB_USER/work
 COPY config/startup.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/startup.sh
 
+RUN mkdir /data /config \
+    && chown dugong:dugong /data \
+    && chown dugong:dugong /config
+
+USER $NB_USER
+VOLUME ["/data", "/config"]
+
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
 CMD ["/usr/local/bin/startup.sh"]
 
-USER $NB_USER
+WORKDIR /data
