@@ -1,19 +1,21 @@
-# Base Image
-FROM biocontainers/biocontainers:latest
+###########################################################################
+# Dugong - Scientific Linux Containers for Bioinformatic
+# ======================================================
+#
+# Current development is led by Fabiano Menegidio.
+#
+# Bioinformatician/Bioinformaticist at the Laboratory of Functional 
+# and Structural Genomics of the Integrated Nucleus of Biotechnology 
+# at the University of Mogi das Cruzes, Brazil.
+# 
+# Contact: fabiano.menegidio@biology.bio.br
+# GitHub: https://github.com/fabianomenegidio
+#
+#
+###########################################################################
 
-# Metadata
-LABEL base.image="biocontainers:latest"
-LABEL version="2"
-LABEL software="Picard"
-LABEL software.version="2.3.0"
-LABEL description="A set of Java command line tools for manipulating high-throughput sequencing (HTS) data and formats."
-LABEL website="https://github.com/picard/picard"
-LABEL documentation="https://github.com/picard/picard"
-LABEL license="https://github.com/picard/picard"
-LABEL tags="Genomics"
-
-# Maintainer
-MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>
+FROM dugong/dugong:cmd
+MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 RUN conda install picard=2.3.0
 
