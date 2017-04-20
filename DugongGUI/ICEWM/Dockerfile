@@ -117,11 +117,11 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-USER dugong
-RUN mkdir /data /config
 VOLUME ["/data", "/config"]
-VOLUME ["/data", "/config"]
+RUN chown dugong:root /data \
+    && chown dugong:root /config
 
+USER 1982
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
