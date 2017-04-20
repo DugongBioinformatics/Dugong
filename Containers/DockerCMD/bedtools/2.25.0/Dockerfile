@@ -1,19 +1,21 @@
-# Base Image
-FROM biocontainers/biocontainers:latest
+###########################################################################
+# Dugong - Scientific Linux Containers for Bioinformatic
+# ======================================================
+#
+# Current development is led by Fabiano Menegidio.
+#
+# Bioinformatician/Bioinformaticist at the Laboratory of Functional 
+# and Structural Genomics of the Integrated Nucleus of Biotechnology 
+# at the University of Mogi das Cruzes, Brazil.
+# 
+# Contact: fabiano.menegidio@biology.bio.br
+# GitHub: https://github.com/fabianomenegidio
+#
+#
+###########################################################################
 
-# Metadata
-LABEL base.image="biocontainers:latest"
-LABEL version="2"
-LABEL software="bedtools"
-LABEL software.version="2.25.0"
-LABEL description="a powerful toolset for genome arithmetic"
-LABEL website="http://bedtools.readthedocs.io/en/latest/"
-LABEL documentation="http://quinlanlab.org/tutorials/bedtools/bedtools.html"
-LABEL license="https://github.com/arq5x/bedtools2/blob/master/LICENSE"
-LABEL tags="Genomics"
-
-# Maintainer
-MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>
+FROM dugong/dugong:cmd
+MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 RUN conda install bedtools=2.25.0
 
