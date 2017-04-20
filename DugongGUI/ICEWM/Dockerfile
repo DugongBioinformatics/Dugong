@@ -117,11 +117,11 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-USER dugong
 RUN mkdir /data /config \
     && chown dugong:dugong /data \
     && chown dugong:dugong /config
-    
+
+USER dugong
 VOLUME ["/data", "/config"]
 
 ENTRYPOINT ["tini", "--"]
