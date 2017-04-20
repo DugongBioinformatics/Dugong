@@ -26,3 +26,7 @@ if [ x"$USER_ID" != x"0" ]; then
     echo "nss_wrapper location: $LD_PRELOAD"
     export LD_PRELOAD
 fi
+
+mkdir /data /config
+chown $USER_ID:$USER_ID /data
+chown $USER_ID:$USER_ID /config
