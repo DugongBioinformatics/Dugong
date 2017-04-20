@@ -117,9 +117,7 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-VOLUME ["/data", "/config"]
-RUN chown default:root /data \
-    && chown default:root /config
+VOLUME ["$HOME/data", "$HOME/config"]
 
 USER 1982
 
