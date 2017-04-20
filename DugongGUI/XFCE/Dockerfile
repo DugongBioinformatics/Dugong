@@ -118,7 +118,14 @@ ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 USER dugong
+RUN mkdir /data /config \
+    && chown dugong:dugong /data \
+    && chown dugong:dugong /config
+    
+VOLUME ["/data", "/config"]
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
+
+WORKDIR /data
