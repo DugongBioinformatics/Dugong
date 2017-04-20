@@ -17,7 +17,6 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-
 RUN conda install abyss
 
 WORKDIR /data/
