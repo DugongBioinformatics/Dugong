@@ -118,8 +118,8 @@ ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 VOLUME ["/data", "/config"]
-RUN chown dugong:root /data \
-    && chown dugong:root /config
+RUN chown default:root /data \
+    && chown default:root /config
 
 USER 1982
 
