@@ -17,6 +17,6 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-RUN conda install velvet=1.2.10
+RUN conda install velvet=1.2.10 velvet-sc=0.7.62
 
 WORKDIR /data/
