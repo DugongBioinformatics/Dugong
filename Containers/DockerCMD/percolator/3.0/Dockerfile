@@ -17,6 +17,6 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-RUN conda install percolator=2.3.0
+RUN conda install percolator=3.0
 
 WORKDIR /data
