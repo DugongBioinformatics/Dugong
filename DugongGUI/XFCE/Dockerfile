@@ -117,8 +117,9 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-USER 1982
 RUN mkdir /data /config
+
+USER 1982
 VOLUME ["/data", "/config"]
 
 ENTRYPOINT ["tini", "--"]
