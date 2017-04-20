@@ -1,6 +1,11 @@
 ############### Exclude files and directories
 
 .misc
-examples-use
 LICENSE
 README.md
+events
+VMs
+DugongGUI
+DugongCMD
+Containers
+.specs
