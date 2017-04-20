@@ -17,7 +17,7 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-RUN conda install bamtools
+RUN conda install bamtools=2.4.0
 
 WORKDIR /data/
 
