@@ -1,19 +1,21 @@
-# Base Image
-FROM biocontainers/biocontainers:latest
+###########################################################################
+# Dugong - Scientific Linux Containers for Bioinformatic
+# ======================================================
+#
+# Current development is led by Fabiano Menegidio.
+#
+# Bioinformatician/Bioinformaticist at the Laboratory of Functional 
+# and Structural Genomics of the Integrated Nucleus of Biotechnology 
+# at the University of Mogi das Cruzes, Brazil.
+# 
+# Contact: fabiano.menegidio@biology.bio.br
+# GitHub: https://github.com/fabianomenegidio
+#
+#
+###########################################################################
 
-# Metadata
-LABEL base.image="biocontainers:latest"
-LABEL version="2"
-LABEL software="bowtie"
-LABEL software.version="1.1.2"
-LABEL description="an ultrafast memory-efficient short read aligner"
-LABEL website="http://bowtie-bio.sourceforge.net/index.shtml"
-LABEL documentation="http://bowtie-bio.sourceforge.net/manual.shtml"
-LABEL license="http://bowtie-bio.sourceforge.net/index.shtml"
-LABEL tags="Genomics"
-
-# Maintainer
-MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>
+FROM dugong/dugong:cmd
+MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 RUN conda install bowtie=1.1.2
 
