@@ -1,19 +1,21 @@
-# Base Image
-FROM biocontainers/biocontainers:latest
+###########################################################################
+# Dugong - Scientific Linux Containers for Bioinformatic
+# ======================================================
+#
+# Current development is led by Fabiano Menegidio.
+#
+# Bioinformatician/Bioinformaticist at the Laboratory of Functional 
+# and Structural Genomics of the Integrated Nucleus of Biotechnology 
+# at the University of Mogi das Cruzes, Brazil.
+# 
+# Contact: fabiano.menegidio@biology.bio.br
+# GitHub: https://github.com/fabianomenegidio
+#
+#
+###########################################################################
 
-# Metadata
-LABEL base.image="biocontainers:latest"
-LABEL version="2"
-LABEL software="Samtools"
-LABEL software.version="1.2"
-LABEL description="Tools for manipulating next-generation sequencing data"
-LABEL website="https://github.com/samtools/samtools"
-LABEL documentation="https://github.com/samtools/samtools"
-LABEL license="https://github.com/samtools/samtools"
-LABEL tags="Genomics"
-
-# Maintainer
-MAINTAINER Saulo Alves Aflitos <sauloal@gmail.com>
+FROM dugong/dugong:cmd
+MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 RUN conda install samtools=1.2
 
