@@ -17,6 +17,6 @@
 FROM dugong/dugong:cmd
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
-RUN conda install tophat=2.1.1
+RUN conda install tophat=2.1.1 tophat-recondition=1.4
 
 WORKDIR /data/
