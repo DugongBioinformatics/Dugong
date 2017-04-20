@@ -117,10 +117,9 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-VOLUME ["$HOME/data", "$HOME/config"]
-
 USER 1982
 
+VOLUME ["$HOME/data", "$HOME/config"]
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
