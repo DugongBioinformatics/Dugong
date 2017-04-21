@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Manjunath Kustagi (Columbia University) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="component-descriptor">
+        <xs:annotation>
+            <xs:documentation>Top-level definition of the component descriptor.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>          
+            	<xs:sequence>
+                	<xs:element name="component" type="componentRule" minOccurs="0" maxOccurs="unbounded"/>
+                	<xs:element name="plugin" type="pluginRule" minOccurs="0" maxOccurs="unbounded"/>
+            	</xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+
+    <xs:complexType name="componentRule">
+        <xs:annotation>
+            <xs:documentation>Describes the component.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+        	<xs:element name="required-component" type="requiredComponentRule" minOccurs="0" maxOccurs="unbounded"/>
+        	<xs:element name="related-component" type="relatedComponentRule" minOccurs="0" maxOccurs="unbounded"/>
+        	<xs:element name="license" type="xs:string" />
+            <xs:element name="menu-item" type="menuItemRule" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="online-help" type="helpRule" minOccurs="0"/>            
+        </xs:sequence>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>Pointer to the .class file for the visual component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Common name of the component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="icon" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Pointer to the image file for the component's icon.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="version" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The version number of this component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="author" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="authorURL" type="xs:anyURI" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="toolURL" type="xs:anyURI" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="tutorialURL" type="xs:anyURI" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="description" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="analysis" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="loadByDefault" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="mustAccept" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="documentation" type="xs:anyURI" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="visualizer" type="xs:string" use="optional">            
+        </xs:attribute>
+        <xs:attribute name="hidden" type="xs:string" use="optional">            
+        </xs:attribute>
+        
+    </xs:complexType>
+    
+    <xs:complexType name="pluginRule">
+        <xs:annotation>
+            <xs:documentation>Describes the plug in.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+        	<xs:element name="gui-area"  type="gui-areaRule" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>id of the plug in.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Common name of the plug in.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>Pointer to the .class file for the visual component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>        
+        <xs:attribute name="source" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Pointer to the root folder of the plug in.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+    </xs:complexType>
+    
+    <xs:complexType name="requiredComponentRule">
+    	<xs:annotation>
+            <xs:documentation>Indicates required components</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+    	</xs:attribute>    
+    </xs:complexType>
+    
+    <xs:complexType name="relatedComponentRule">
+    	<xs:annotation>
+            <xs:documentation>Indicates related components</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+    	</xs:attribute>    
+    </xs:complexType>
+    
+    <xs:complexType name="gui-areaRule">
+    	<xs:annotation>
+            <xs:documentation>Indicates visual area</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="VisualArea" type="xs:string" use="optional">
+    	</xs:attribute>    
+    </xs:complexType>
+
+    <xs:complexType name="menuItemRule">
+        <xs:annotation>
+            <xs:documentation>Indicates a menu bar item</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="path" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Indicates the full menu path for a menu item. E.g.
+"File.Open.Panel Set.Marker"
+Different levels are delineated by a dot (".").</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="icon" type="xs:anyURI" use="optional">
+            <xs:annotation>
+                <xs:documentation>Optional Icon to be associated with nenu item.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="accelerator" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Optional short key combination to be associated with the menu item.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="mode" type="xs:token" use="required">
+            <xs:annotation>
+                <xs:documentation>Enumeration type, indicates when the controller listens to the designated menu item. Options are:
+
+"always"
+"onFocus": this is available only for controllers associated with visual components. Inidicates that the controller wants to be listening to a mwnu item only if the component has the focus.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="var" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Contains a value that is passed as an argument to the method:
+                      MenuListener::getActionListener(String var)
+which is invoked on a plugin and returns an action listener for handling the menu item at hand.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="helpRule">
+        <xs:attribute name="helpSet" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>A URI pointing to the jar containing the actual collection of help files, namely:
+
+* helpSet: meta information designating the actual location of the remaining files in the archive.
+* map File: links help ids to the actaul content URLs (HTML pages, image, etc)
+* table of contents: listing of the topics (content tree) in the  help.
+* index: lists index ids/keyowrds to be shown in the index tab.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="parentId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The id of the component whose helpset file is the parent of this helpset file.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="extensionPointRule">
+        <xs:annotation>
+            <xs:documentation>The named area where a plugin is added</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the extension area where a component is added</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

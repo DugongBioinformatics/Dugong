@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Marker Annotations"
+		class="org.geworkbench.components.annotations.AnnotationsPanel2"
+		version="1.0"
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Marker_Annotations"
+		description="For a selected set of genes, this component
+ retrieves and displays annotation information available in bioDBnet, as well
+ as any available Biocarta Pathway diagrams."
+		category="Visualizer, Remote Access, Microarray"
+		loadByDefault="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+			<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="AnnotationsPanel2" name="Marker Annotations" class="org.geworkbench.components.annotations.AnnotationsPanel2" source="annotations">
+        <gui-area name="VisualArea"/>
+    </plugin>	
+    
+</component-descriptor>

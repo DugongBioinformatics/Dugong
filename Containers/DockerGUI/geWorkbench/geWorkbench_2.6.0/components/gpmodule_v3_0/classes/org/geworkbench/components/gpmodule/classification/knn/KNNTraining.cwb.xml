@@ -1,0 +1,27 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="KNN Analysis 3.0"
+				class="org.geworkbench.components.gpmodule.classification.knn.KNNTraining"
+				version="1.0"
+				author="Broad Institute"
+				authorURL="http://www.broadinstitute.org/cancer/software/genepattern/"
+				toolURL="http://www.broadinstitute.org/cancer/software/genepattern/modules"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Classification"
+				description="Provides an interface to the GenePattern v3 implementation of KNN (K-nearest neighbors),
+a clustering algorithm, running on an external GenePattern v3 server.
+The K-Nearest Neighbor algorithm classifies a sample by assigning it the label most frequently
+represented among the k nearest samples."
+				category="Analysis, Microarray"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="KNNTraining" name="KNN Analysis 3.0" class="org.geworkbench.components.gpmodule.classification.knn.KNNTraining" source="gpmodule_v3_0"/>
+
+</component-descriptor>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+	
+	<component  name="MRA-MARINa Graphical Viewer"
+		class="org.geworkbench.components.masterregulator.MARINaViewer"
+		version="1.0"
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/MARINa"				
+		description="The MRA-MARINa Graphical Viewer displays the results of the MARINa version of Master
+ Regulator analysis in tabular and bar-code form."
+				category="Visualizer, Network, Microarray"				
+	 >
+		<required-component class="org.geworkbench.components.masterregulator.MARINa" />
+		<required-component class="org.geworkbench.components.masterregulator.MasterRegulatorTableViewer" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="MARINaViewer" name="MARINa Viewer" class="org.geworkbench.components.masterregulator.MARINaViewer" source="masterregulator">
+			<gui-area name="VisualArea"/>
+  </plugin>		
+
+</component-descriptor>

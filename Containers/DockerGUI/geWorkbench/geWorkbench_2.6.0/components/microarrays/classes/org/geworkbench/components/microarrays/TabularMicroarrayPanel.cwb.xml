@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Tabular Microarray Viewer"
+				class="org.geworkbench.components.microarrays.TabularMicroarrayPanel"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Viewing_a_Microarray_Dataset"
+				description="Displays microarray gene expression data in a tabular, spreadsheet format."
+				loadByDefault="true"
+				category="Visualizer, Microarray"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="TabularMicroarrayPanel" name="Tabular Microarray Viewer" class="org.geworkbench.components.microarrays.TabularMicroarrayPanel" source="microarrays">
+		<gui-area name="VisualArea"/>
+	</plugin>
+
+	
+</component-descriptor>

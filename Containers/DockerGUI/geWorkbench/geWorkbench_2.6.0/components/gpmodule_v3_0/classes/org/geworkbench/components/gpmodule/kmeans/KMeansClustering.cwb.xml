@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="K-Means Clustering 3.0"
+		class="org.geworkbench.components.gpmodule.kmeans.KMAnalysis" version="1.0"
+		author="Broad Institute"
+		authorURL="http://www.broadinstitute.org/cancer/software/genepattern/"
+		toolURL="http://www.broadinstitute.org/cancer/software/genepattern/modules"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/K-Means_Clustering"
+		description="Provides an interface to run the GenePattern v3
+ implementation of K-Means Clustering on an external GenePattern v3 server."
+		category="Analysis, Microarray">
+		<required-component
+			class="org.geworkbench.components.gpmodule.kmeans.KMeansViewer" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+
+	</component>
+
+	<plugin id="KMeans" name="K-Means Clustering 3.0"
+		class="org.geworkbench.components.gpmodule.kmeans.KMAnalysis" source="gpmodule_v3_0" />
+
+</component-descriptor>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="Arrays/Phenotypes"
+		class="org.geworkbench.components.selectors.PhenotypePanel" version="1.0"
+		author="geWorkbench Development Team" 
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Array_Sets"
+		description="Displays a list of all microarrays in the current
+ dataset.  Arrays can be assigned to phenotype/set labels and these sets
+ can be manipulated."
+		loadByDefault="true">
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+		<menu-item path="Commands.Clear &quot;Selection&quot; Set" mode="onFocus"
+			var="Commands.Clear &quot;Selection&quot; Set" />
+
+	</component>
+
+
+	<plugin id="PhenotypePanel" name="Arrays/Phenotypes"
+		class="org.geworkbench.components.selectors.PhenotypePanel" source="selectors">
+		<gui-area name="SelectionArea" />
+	</plugin>
+
+</component-descriptor>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Position Histogram"
+				class="org.geworkbench.components.poshistogram.PositionHistogramAppComponent"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Pattern_Discovery#Position_Histogram"
+				description="Plots binned pattern discovery hits as a histogram along the sequence."
+				category="Visualizer, Sequence" 
+				loadByDefault="true">
+				<required-component
+					class="org.geworkbench.components.discovery.PatternDiscoveryAnalysis" />
+	
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="PositionHistogramAppComponent" name="Position Histogram" class="org.geworkbench.components.poshistogram.PositionHistogramAppComponent" source="poshistogram">
+		<gui-area name="VisualArea"/>
+	</plugin>
+
+
+</component-descriptor>

@@ -1,0 +1,22 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Consensus Clustering 3.0"
+				class="org.geworkbench.components.gpmodule.consensusclustering.ConsensusClustering"
+				version="1.0"
+				author="Broad Institute"
+				authorURL="http://www.broadinstitute.org/cancer/software/genepattern/"
+				toolURL="http://www.broadinstitute.org/cancer/software/genepattern/modules"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Consensus_Clustering"
+				description="This component provides an interface to run the GenePattern v3 implementation of Consensus Clustering on an external GenePattern v3 server. Consensus Clustering(Monti 2003) is a method to run a chosen clustering method a number of times to develop a consensus result, and to represent the stability of the clusters."
+				category="Analysis, Microarray">
+		<required-component class="org.geworkbench.components.gpmodule.consensusclustering.ConsensusClusteringViewer"/>
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+	</component>
+
+    <plugin id="ConsensusClustering" name="Consensus Clustering 3.0" class="org.geworkbench.components.gpmodule.consensusclustering.ConsensusClustering" source="gpmodule_v3_0"/>
+
+</component-descriptor>

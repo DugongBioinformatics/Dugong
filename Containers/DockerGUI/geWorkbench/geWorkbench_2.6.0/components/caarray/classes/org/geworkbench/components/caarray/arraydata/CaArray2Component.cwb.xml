@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="CaArray2"
+		class="org.geworkbench.components.caarray.arraydata.CaArray2Component"
+		version="1.0" 
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Remote_Data_Sources"
+		description="Allows gene expression data to be searched
+ for and downloaded from instances of caArray (an NCI microarray
+ database product).  Currently only gene-level data downloads are
+ supported (e.g. summarized data derived from Affymetrix CHP files)."
+		category="Visualizer, Remote Access, Microarray"
+		loadByDefault="true">
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+	</component>
+
+	<plugin id="CaArray2Component" name="CaArray2"
+		class="org.geworkbench.components.caarray.arraydata.CaArray2Component"
+		source="caarray" />
+
+</component-descriptor>

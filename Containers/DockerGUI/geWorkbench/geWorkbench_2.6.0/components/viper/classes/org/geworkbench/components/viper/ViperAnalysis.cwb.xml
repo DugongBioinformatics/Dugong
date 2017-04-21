@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Viper Analysis"
+		class="org.geworkbench.components.viper.ViperAnalysis"
+		version="1.0"
+		author="Califano lab (C2B2)"
+		authorURL="http://wiki.c2b2.columbia.edu/califanolab/index.php/Califano_Info"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Viper_Analysis"							
+		description="The VIPER (Virtual Inference of Protein-activity by Enriched Regulon analysis) component in geWorkbench
+transforms the expression profile for each sample (column) into a transcription-factor activity profile,
+representing the relative activity of each TF in each sample. The activity of each transcription factor
+is inferred from that of its targets, where the targets are obtained from a cell-context-specific interaction network (interactome).
+Three cell-context-specific interactomes are supplied, for leukemia, breast cancer, and prostate cancer."
+		mustAccept="true"
+		category="Analysis, Microarray"							
+	 >
+		<license><![CDATA[
+<html>
+
+<head>
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>Sipd Source Code Software Evaluation License Agreement</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	layout-grid-mode:line;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{mso-style-name:"Definition List";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	layout-grid-mode:line;}
+p.H1, li.H1, div.H1
+	{mso-style-name:H1;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.H2, li.H2, div.H2
+	{mso-style-name:H2;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	layout-grid-mode:line;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:24.0pt'>VIPER Software Non-Commercial </span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:24.0pt'>License Agreement</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal><b>PLEASE READ THIS SOFTWARE LICENSE AGREEMENT CAREFULLY
+BEFORE USING THE SOFTWARE.</b></p>
+
+<p class=MsoNormal><b>&nbsp;</b></p>
+
+<p class=MsoNormal><b>BY CLICKING ON THE “I ACCEPT” BUTTON AND USING THE
+SOFTWARE, YOU ARE CONSENTING TO BE BOUND BY THIS AGREEMENT.  IF YOU DO NOT
+AGREE TO <u>ALL</u> OF THE TERMS IN THIS AGREEMENT AND IF YOU DO NOT CLICK ON
+THE “I ACCEPT” BUTTON, YOU WILL NOT BE ABLE TO USE THE VIPER MODULE. </b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This software evaluation license agreement (“License”) is
+between The Trustees of Columbia University in the City of New York,
+(“University”) and You (as defined below). </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>1. <u>Definitions</u></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>a.         Documentation shall mean
+all manuals, user documentation, and other related materials, if any,
+pertaining to the Module which are furnished to You by University in connection
+with the Module. </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>b.         Module shall mean the VIPER
+software computer program module developed in the laboratory of Dr. Andrea Califano and supplied to You pursuant to this Agreement through the geWorkbench
+bioinformatics platform.  </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>c.          “You” (or “Your”) means
+an individual or legal entity exercising rights under, and complying with all
+of the terms of, this License.  If “You” are an individual, You hereby
+represent and warrant to Columbia that You are an employee of a non-profit or a
+not-for-profit entity.  If “You” are a legal entity, You hereby represent and
+warrant to Columbia that You are a non-profit or not-for-profit entity, and
+“You” includes any entity that controls, is controlled by, or is under common
+control with You.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>2. <u>Grant of Rights</u></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>a.         The Module and
+Documentation is owned by the University and University retains all right,
+title, and interest in and to the Module.  You shall not assert any right,
+title or interest in the Module and/or Documentation. </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>b.         University hereby
+grants, and You accept, subject to the terms and conditions of this License, a
+limited nonexclusive, nontransferable and non-assignable license to use the Module
+for non-commercial, academic or educational research purposes only.  </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>c.         You agree that You will
+only use the Module and Documentation for non-commercial internal academic or educational
+research purposes only. You will not (i) reproduce or copy the Module (ii) use,
+or cause or permit the use of, the Module in whole or in part for any purpose
+other than as permitted under this License; (iii) distribute, sell, lease,
+license or otherwise make the Module available to a third party outside Your
+organization; or (iv) reverse engineer, decompile, or disassemble the Module.  </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>d.         You agree that the Module
+and Documentation are University's confidential information and shall treat and
+handle confidential information in accordance with the terms of this Agreement. 
+You further acknowledge that the Module in any form provided by University hereunder
+are the sole property of University. You shall not have any right, title, or
+interest to any such Module or copies thereof except as provided in this
+Agreement.  All rights not specifically granted herein are reserved to
+University.  Except as expressly provided under this Section 2, no right or
+license is granted (expressly or by implication) by University to You under any
+tangible or intellectual property, materials, patent, patent application,
+trademark, copyright, trade secret, know-how, technical information, data or other
+proprietary right.</p>
+
+<p class=MsoNormal style='margin-left:.5in'>            </p>
+
+<p class=MsoNormal style='margin-left:.5in'>e.         The term of this License
+shall commence on the date on which You commence use of the Module until the
+date that You return or cease use of the Module or as specified in Section 6 below. 
+  </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>f.          Prior to any commercial
+use, lease, distribution, transfer, sublicense or sale of any product
+utilizing, derived from, or incorporating, in whole or any part, the Module and/or
+Documentation hereunder, You must obtain a license permitting commercial use of
+the Module and Documentation from University or if applicable, the University’s
+exclusive licensee. Any such use, lease, distribution, transfer, sublicense or
+sale without a written license from University or University’s exclusive
+licensee permitting such commercial use, distribution, sublicense or sale shall
+be VOID AND EXPRESSLY PROHIBITED. </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>To negotiate such license
+agreement, contact:</p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>Science and Technology Ventures</p>
+
+<p class=MsoNormal style='margin-left:.5in'>Columbia University</p>
+
+<p class=MsoNormal style='margin-left:.5in'>80 Claremont Avenue #4F</p>
+
+<p class=MsoNormal style='margin-left:.5in'>New York, NY 10027</p>
+
+<p class=MsoNormal style='margin-left:.5in'>(212) 854-8444</p>
+
+<p class=MsoNormal style='margin-left:.5in'>stvinfo@columbia.edu</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>3. <u>No Obligation to Support</u>.  It is understood and
+agreed that University will provide no maintenance or installation services of
+any kind, error corrections, bug fixes, patches, updates or other modifications
+hereunder. In the event that University, at its sole option, provides updates,
+error corrections, bug fixes, patches or other modifications to the Module to
+You (“Software Updates”), the Software Updates will be considered part of the Module,
+and subject to the terms and conditions of this License.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>4.  <b><u>NO WARRANTY</u>.  YOU ACKNOWLEDGE AND ACCEPT THAT COLUMBIA UNIVERSITY IS PROVIDING THE MODULE ON AN “AS IS” BASIS.  COLUMBIA UNIVERSITY EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES CONCERNING THIS MODULE AND DOCUMENTATION,
+INCLUDING ANY WARRANTIES OF NON-INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OF
+A THIRD PARTY, MERCHANTABILITY AND/OR FITNESS FOR ANY PARTICULAR PURPOSE, AND
+WARRANTIES OF PERFORMANCE, AND ANY WARRANTY THAT MIGHT OTHERWISE ARISE FROM
+COURSE OF DEALING OR USAGE OF TRADE. NO WARRANTY IS EITHER EXPRESS OR IMPLIED
+WITH RESPECT TO THE USE OF THE MODULE OR DOCUMENTATION.  Under no circumstances
+shall Columbia University, any of its trustees, officers, faculty members,
+students, employees or agents be liable for incidental, special, indirect,
+direct or consequential damages or loss of profits, interruption of business,
+or related expenses which may arise from Your use of Module and/or Documentation,
+including but not limited to those resulting from defects in Module and/or Documentation,
+or loss or inaccuracy of data of any kind.</b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>5.  <u>Confidentiality</u> </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>a.         You acknowledge that the
+Module and Documentation are proprietary and confidential to the University. 
+You agree to protect the Module, Documentation and any feedback provided by You,
+if applicable, from unauthorized disclosure, use, or release and to treat the Module
+and feedback with at least the same level of care as You use to protect Your
+own proprietary computer programs and/or confidential information, but in no
+event less than a reasonable standard of care.  </p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in'>b.         The obligations of this
+Section 5 shall not apply to such confidential information that the receiving
+party can demonstrate: (a) was known publicly or was known by the receiving
+party prior to receipt thereof by the disclosing party; (b) was or becomes a
+matter of public information or publicly available through no act or failure to
+act on part of the receiving party; (c) is acquired by the receiving party from
+a third party entitled to disclose it; or (e) the receiving party discovers,
+develops independently without reference to or use of such confidential
+information, as evidenced by written documentation.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>6. <u>Termination</u>.  This License is effective until
+terminated, as provided herein, or until the expiration of the time period
+specified in Section 2 above.  You may terminate this Agreement at any time by ceasing
+use of the Module.  This Agreement, and the rights granted hereunder, will
+terminate automatically, and without any further notice from or action by
+University, if You fail to comply with any obligation set forth herein.  Upon
+termination, You must immediately cease use of the Module.  Sections 2(a),
+2(d), 2(e), 2(f), 4-7 and 9-12 shall survive expiration or termination of this
+Agreement.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>7. <u>Use of Name</u>.  You will not use the name of Columbia
+University or the name of any faculty member, trustee, other employee or
+student of Columbia University for any purpose whatsoever without University's
+prior written consent. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>8. <u>Nonassignability</u>.  You shall not assign or
+transfer this License or its rights hereunder without the prior written consent
+of University.  Any attempt to assign without compliance with this provision
+shall be void.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>9. <u>Governing Law; Jurisdiction and Venue</u>.  The
+validity, interpretation, construction and performance of this Agreement shall
+be governed by the laws of the State of New York, without reference to the
+conflict of law principles of any jurisdiction. The New York state courts of New York County, New York (or, if there is exclusive federal jurisdiction, the United States
+District Court for the Southern District of New York) shall have exclusive
+jurisdiction and venue over any dispute arising out of this Agreement, and You
+hereby consent to the jurisdiction of such courts. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>10. <u>Export Requirements</u>.  The Module, Documentation
+and all related technical information or materials are subject to export
+controls and U.S. Government export regulations. You will comply strictly with
+all legal requirements established under these controls and will not, in
+connection with its limited evaluation rights hereunder, export, re-export,
+divert, transfer or disclose, directly or indirectly the Module, Documentation
+and any related technical information or materials without the prior approval
+of the U.S. Department of Commerce. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>11. <u>Severability</u>.  If any provision of this License shall
+be held by a court of competent jurisdiction to be illegal, invalid or
+unenforceable, the remaining provisions shall remain in full force and effect. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>12. <u>Miscellaneous</u>.  This License and its exhibits
+contain the entire understanding and agreement between the parties respecting
+the subject matter hereof. This License may not be supplemented, modified,
+amended, released or discharged except by an instrument in writing signed by
+each party's duly authorized representative. All captions and headings in this License
+are for purposes of convenience only and shall not affect the construction or
+interpretation of any of its provisions. Any waiver by either party of any
+default or breach hereunder shall not constitute a waiver of any provision of
+this License or of any subsequent default or breach of the same or a different
+kind.  This License may be executed in counterparts and signatures sent by
+facsimile transmission shall be binding as evidence of acceptance of the terms
+of this License by such signatory party. </p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman","serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="ViperAnalysis" name="Viper Analysis" class="org.geworkbench.components.viper.ViperAnalysis" source="viper"/>
+
+</component-descriptor>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="SAM Analysis"
+		class="org.geworkbench.components.sam.SAMAnalysis"
+		version="1.0"
+		author="Califano lab (C2B2)"
+		authorURL="http://wiki.c2b2.columbia.edu/califanolab/index.php/Califano_Info"
+		toolURL="http://psb.stanford.edu/psb-online/proceedings/psb09/lim.pdf"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/SAM_Analysis"							
+		description="Significance Analysis of Microarrays(SAM) (Tusher et al., 2001) is used to test for significantly differentially expressed genes between two groups."
+		category="Analysis, Microarray"							
+	 >
+		<required-component class="org.geworkbench.components.sam.SAMViewer" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="SAMAnalysis" name="SAM Analysis" class="org.geworkbench.components.sam.SAMAnalysis" source="sam"/>
+
+</component-descriptor>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+	
+	<component  name="SOM Analysis"
+				class="org.geworkbench.components.somclustering.SOMAnalysis"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/SOM"
+				description="SOM Analysis clusters gene expression profiles into a preset number of groups by similarity."
+				category="Analysis, Microarray"
+				loadByDefault="true"
+	 >
+		<required-component class="org.geworkbench.components.somclustering.SOMDisplay" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+			<body>----</body>
+			</html>
+		]]></license>
+
+	 </component>
+	 
+	<plugin id="somAnalysis" name="SOM Analysis" class="org.geworkbench.components.somclustering.SOMAnalysis" source="somclustering"/>
+	
+</component-descriptor>

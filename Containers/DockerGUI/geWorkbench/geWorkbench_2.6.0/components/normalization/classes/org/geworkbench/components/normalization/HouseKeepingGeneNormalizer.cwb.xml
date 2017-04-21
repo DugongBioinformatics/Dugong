@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="HouseKeeping Genes Normalizer"
+				class="org.geworkbench.components.normalization.HouseKeepingGeneNormalizer"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Normalization"
+				category="normalizer"
+				loadByDefault="true"
+				description="Uses a set of genes not expected to vary significantly in
+ expression as a fixed reference against which to normalize each array."
+	 	 >	
+ 	 	<required-component class="org.geworkbench.components.normalization.NormalizationPanel" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+			
+
+	</component>
+
+	<plugin id="HouseKeepingGeneNormalizer" name="HouseKeeping Genes Normalizer" class="org.geworkbench.components.normalization.HouseKeepingGeneNormalizer" source="normalization"/>
+	
+</component-descriptor>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Volcano Plot"
+				class="org.geworkbench.components.plots.VolcanoPlot"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Differential_Expression"
+				description="Used to display results of t-test analysis.
+ Plots p-value against fold-expression change."
+				category="Visualizer, Microarray"
+				loadByDefault="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="VolcanoPlot" name="Volcano Plot" class="org.geworkbench.components.plots.VolcanoPlot" source="plots">
+		<gui-area name="VisualArea"/>
+	</plugin>
+
+
+</component-descriptor>

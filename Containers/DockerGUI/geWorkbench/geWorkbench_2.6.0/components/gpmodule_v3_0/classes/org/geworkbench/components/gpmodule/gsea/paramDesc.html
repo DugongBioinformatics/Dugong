@@ -1,0 +1,113 @@
+<html>
+<head> </head>
+<body>
+	<font size="4"> <b> <center> Required Parameters </center> </b> </font>
+
+<table border="1" width="100%">
+    <tr>
+      <th>Name </th>
+      <th> Description </th>
+    </tr>
+    <tr>
+      <td> select gene set database </td>
+      <td> Gene sets database from GSEA website. </td>
+    </tr>
+    <tr>
+      <td> upload gene set database </td>
+      <td> Gene sets database - .gmt, .gmx, .grp.
+              <br> Upload a gene set if your gene set is not listed as a choice
+                       for the gene sets database parameter.
+      </td>
+    </tr>
+    <tr>
+      <td> collapse probe sets </td>
+      <td> Select yes to have GSEA collapse each probe set in the expression dataset into a single vector for the gene, which gets
+	identified by its gene symbol. 
+      </td>
+    </tr>
+    <tr>
+      <td> select chip platform </td>
+      <td> Chip file from GSEA website. </td>
+    </tr>
+    <tr>
+      <td> upload chip platform </td>
+      <td>Upload a chip file if your chip is not listed as a choice for the chip platform parameter.</td>
+    </tr>
+    <tr>
+      <td> permutation type </td>
+      <td> Type of permutation to perform. 
+      </td>
+    </tr>
+    <tr>
+      <td> number of permuatation </td>
+      <td> Number of permutations to perform. 
+      </td>
+    </tr>
+</table>
+
+<p><p>
+<font size="4"><b> <center>  Basic Parameters </center></b></font>
+<table border="1" width="100%">
+    <tr>
+      <th> Name </th>
+      <th> Description </th>
+    </tr>
+    <tr>
+      <td> scoring scheme </td>
+	<td> The statistic used to score hits (gene set members) and misses (non-members) 
+ </td>
+    </tr>
+    <tr>
+      <td> metric for ranking genes </td>
+	<td> Class separation metric - gene markers are 
+ranked using this metric to produce the gene 
+list
+ </td>
+    </tr>
+<tr>
+      <td> min gene set size </td>
+	<td> Gene sets smaller than this are excluded 
+from the analysis 
+ </td>
+</tr>
+<tr>
+      <td> max gene set size</td>
+	<td> Gene sets larger than this are excluded from 
+the analysis 
+</tr>
+
+<tr>
+    <td> gene list ordering mode </td>
+	<td>   Direction in which the gene list should be 
+ordered </td>
+ 
+</tr>
+</table>
+
+<p><p>
+<font size="4"><b> <center>  Advanced Parameters </center></b></font>
+<table border="1" width="100%">
+    <tr>
+      <th> Name </th>
+      <th> Description </th>
+    </tr>
+    <tr>
+      <td> collapse mode </td>
+	<td>  collapsing mode for probe sets with more than one match </td>
+    </tr>
+    <tr>
+      <td> normalization mode </td>
+	<td>  normalization to apply </td>
+    </tr>
+    <tr>
+      <td> randomization mode </td>
+	<td>  Type of phenotype randomization (does not apply to gene set permutations) </td>
+    </tr>
+    <tr>
+      <td> omit features with no symbol match </td>
+	<td> If there is no known gene symbol match for a probe set, omit it from the collapsed dataset  </td>
+    </tr>
+</table>
+
+</body>
+</html>

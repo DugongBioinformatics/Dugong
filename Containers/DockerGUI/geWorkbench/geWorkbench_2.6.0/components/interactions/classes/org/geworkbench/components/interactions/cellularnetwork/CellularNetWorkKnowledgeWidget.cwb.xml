@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="Cellular Network Knowledge Base"
+		class="org.geworkbench.components.interactions.cellularnetwork.CellularNetworkKnowledgeWidget"
+		version="1.0" 
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Cellular_Networks_KnowledgeBase"
+		description="The Cellular Network component provides a query and display
+ interface to a database (CNKB) of protein-protein and protein-DNA
+ interactions maintained by the Califano lab at Columbia. For a
+ given query set of genes, details are displayed in tabular
+ form and interactions can be visualized as a network graph in Cytoscape."
+		category="Visualizer, Network, Microarray, Remote Access">
+		<related-component
+			class="org.geworkbench.components.cytoscape.CytoscapeWidget" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="CellularNetworkKnowledgeWidget" name="Cellular Network Knowledge Base"
+		class="org.geworkbench.components.interactions.cellularnetwork.CellularNetworkKnowledgeWidget"
+		source="interactions">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Manjunath Kustagi (Columbia University) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="geaw-config">
+        <xs:annotation>
+            <xs:documentation>Top-level element.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="gui-window" type="guiWindowRule"/>
+                <xs:element name="plugin" type="pluginRule" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="pluginRule">
+        <xs:annotation>
+            <xs:documentation>A visual component</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="extension-point" type="extensionPointRule" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="gui-area" type="guiAreaRule" minOccurs="0"/>
+            <xs:element name="use-module" type="moduleRule" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="subscription" type="subscriptionRule" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required">
+            <xs:annotation>
+                <xs:documentation>Inique identifier for the component</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Display name for the component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="source" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Package source for the component.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>Pointer to the .class file for the visual compoent at hand.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="subscriptionRule">
+        <xs:annotation>
+            <xs:documentation>Description of a component subscription. Note that this is optional, missing subscription descriptors will be activated by default.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="type" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>The URI pointing to the subscription type (its .class file) to which the plugin subscribes.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="enabled" type="yesNo" use="required">
+            <xs:annotation>
+                <xs:documentation>If set to 'yes', then the subscription is enabled, otherwise the subscription is disabled.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="extensionPointRule">
+        <xs:annotation>
+            <xs:documentation>The named area where a plugin is added</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the extension area where a component is added</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="moduleRule">
+        <xs:annotation>
+            <xs:documentation>The named area where a module is added</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the module (corresponding to the @Module method in the component).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="id" type="xs:IDREF" use="required">
+            <xs:annotation>
+                <xs:documentation>The id of the plugin or this module.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="guiWindowRule">
+        <xs:annotation>
+            <xs:documentation>The top level application GUI window</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The display name for the top level GUI window.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="class" type="xs:anyURI" use="required">
+            <xs:annotation>
+                <xs:documentation>Pointer to the class file for the implementation of the top level GUI window.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="guiAreaRule">
+        <xs:annotation>
+            <xs:documentation>Designates where a visual plugin is placed in the top level GUI</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of a named visual area within a top lelel GUI window.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="yesNo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Yes"/>
+            <xs:enumeration value="No"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

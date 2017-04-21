@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Multiple Probeset Filter"
+				class="org.geworkbench.components.filtering.MultipleProbesetFilter"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Filtering"
+				category="filter"
+				description="In Affymetrix3’ gene expression chips, some genes may be represented by more than one probeset.
+This filter allows removal of all but a single probeset for each gene, using one of three different methods.
+Background - Different probesets may have different levels of specificity or may favor alternate splice variants of a gene.
+Not all splice variants of a gene may be expressed in any given cellular system.
+In addition, different variants of the same gene may have quite different expression patterns in a given system,
+e.g. one might be up-regulated, while another is down-regulated."
+				 loadByDefault="true"
+	 >
+		<required-component class="org.geworkbench.components.filtering.FilteringPanel" />
+
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="multipleprobesetfilter" name="Multiple Probeset Filter" class="org.geworkbench.components.filtering.MultipleProbesetFilter" source="filtering"/>
+	
+</component-descriptor>

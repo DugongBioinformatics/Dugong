@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Jmol Molecular Structure 3D Viewer"
+				class="org.geworkbench.components.jmol.JmolComponent"
+				version="1.0"
+				author="Jmol Developer Community"
+				authorURL="http://sourceforge.net/projects/jmol/"
+				toolURL="http://jmol.sourceforge.net/"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Jmol"
+				description="Jmol: an open-source Java viewer for chemical structures in 3D. http://www.jmol.org/.
+ In geWorkbench Jmol can be used to visualize protein
+ and DNA structures in PDB format"
+				category="Visualizer, Structure"
+				loadByDefault="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+		
+	</component>
+
+	<plugin id="JmolComponent" name="Jmol Molecular Structure 3D Viewer" class="org.geworkbench.components.jmol.JmolComponent" source="jmol">
+		<gui-area name="VisualArea"/>
+	</plugin>
+
+</component-descriptor>

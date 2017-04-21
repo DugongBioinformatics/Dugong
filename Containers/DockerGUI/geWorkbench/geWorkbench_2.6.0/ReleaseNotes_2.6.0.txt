@@ -1,0 +1,2043 @@
+                                Release Notes
+    
+                            geWorkbench v2.6.0.3
+               
+                              December 20, 2016
+   
+
+             Department of Systems Biology, Columbia University
+                              New York, NY  10032
+
+                         http://www.geworkbench.org
+
+===============================================================================
+    Contents
+===============================================================================
+    
+    1.0 geWorkbench Installation Notes
+    2.0 geWorkbench Introduction and History
+    3.0 Release History: New Features and Updates
+    4.0 Known Issues/Defects
+    5.0 Bug Reports and Support
+    6.0 Documentation and Files
+    7.0 geWorkbench Web Pages 
+
+===============================================================================
+    1.0 geWorkbench Installation Notes
+===============================================================================
+
+    System Requirements:
+        Java:    
+            The Java 7 JRE is required.  geWorkbench is distributed both with
+            installers that include Java 7, as well as versions without.  Java
+            can be downloaded from java.oracle.com. 
+
+            Please note that Java 7 is also referred to as
+            Java 1.7.  32-bit and 64-bit versions of Java can be used on
+            appropriate platforms.
+                 
+            See http://www.oracle.com/technetwork/java/javase/downloads.
+            
+            geWorkbench will run using Java 8, but has not been tested
+            extensively in that environment.  There are currently no known issues
+            with using Java 8.
+            
+        Memory:  
+             At least 4 GB of RAM is recommended when running with the 64-bit
+             JRE7, which by default requests up to 2 GB of Java heap memory.
+             With the 32-bit JRE7, the default maximum Java heap memory is 1 GB.
+        
+        Operating System:
+            Windows XP/Vista/7/8/10 (32 or 64-bit): no special requirements.
+                 
+            MacOSX:  Intel-based Mac running Mac OS X version 10.7.3 (Lion) or
+            higher is required to install the Java 7 JRE.
+                
+            Linux: no special requirements known.
+
+        Display Driver (affects PCA component 3D graph viewer only):
+            When using a 64-bit JVM, the Java 3D library requires OpenGL
+            version 1.2 or higher to be supported by your display driver.
+      
+    The Windows and Linux versions of geWorkbench provide an installation wizard
+    (generated using InstallAnywhere).  The Mac OSX and generic versions are
+    distributed as a simple zip file.  The generic release should run on any
+    machine that supports Java 7.
+
+    Additional installation details are provided below, and at
+    www.geworkbench.org.  All user documentation is maintained 
+    in online form at www.geworkbench.org.
+    
+    geWorkbench, unless otherwise noted for particular components, can be
+    run on both 32 and 64-bit operating systems and JREs.  While the 64-bit
+	version is preferred, the 32-bit versions can be used If physical memory
+    is very limited.
+
+    A few features of geWorkbench work only on 32-bit JREs, however, most have
+    alternate presentations on 64-bit systems.  This affects primarily embedded
+    display of web pages.  
+
+
+    Platform-specific release details:
+
+    1. Windows (XP/Vista/7/8/10)
+    
+        New with release 2.6.0, geWorkbench will now by default install to
+        "C:\Program Files" system directory, e.g. to 
+        C:\Program Files\geWorkbench_2.6.0.     
+
+        File: geWorkbench_v2.6.0_Windows_JRE7_x64.exe  (recommended for
+              64-bit versions of Windows)
+              Includes the 64-bit Oracle Java 7 JRE update 71.
+
+        File: geWorkbench_v2.6.0_Windows_JRE7_x86.exe (required for older
+              32-bit OSs (e.g. Windows XP)).
+              Includes the 32-bit Oracle Java 7 JRE update 71.
+
+        File: geWorkbench_v2.6.0_Windows_noJRE.exe
+              No JRE is included, you must make sure that an appropriate Java 7+
+              JRE is installed on your system before installing geWorkbench.
+              You may need to add Java to your path or set JAVA_HOME.
+
+        Download and double-click the installer file to begin installation.
+
+
+    2. MacOSX
+
+        File: geWorkbench_v2.6.0_MacOSX_JRE7.zip.  (Requires Mac OSX 10.7.3 or
+              higher).
+
+        The MacOSX version of geWorkbench 2.6.0 is distributed as a simple zip
+        file and includes the Java 7 update 71 JRE.  No installer is available
+        for this release, instead, please follow the below steps.  
+
+        Please carefully read and follow all of these instructions:
+
+        1. Double-click on the downloaded file 
+           "geWorkbench_v2.6.0_MacOSX_JRE7.zip" to expand it.
+
+        2. Drag the extracted "geWorkbench_2.6.0" folder to a convenient 
+           location, preferably the Applications folder.    
+
+        3. The geWorkbench_2.6.0 folder contains launcher command files (e.g. 
+           "launch_geworkbench_macosx_2G.command") which can be used to start
+           geWorkbench with varying amounts of Java heap memory (2 GB in this
+           example).  Launcher command files are available to start geWorkbench
+           with 1, 2, 4, 8, or 16 GB of maximum Java heap memory.  Choice of
+           the Java heap memory size is discussed elsewhere in this document.
+           2 GB is the recommended default value for geWorkbench 2.6.0 on
+           64-bit systems such as Mac OSX.
+
+           Right-click on the desired command file and select "Make Alias".
+
+        4. Drag the new alias file e.g. to your Desktop for easy access.
+
+        5. IMPORTANT (Gatekeeper function, MacOSX 10.7.3 and higher):
+           The first time you attempt to start geWorkbench from one of
+           the command files or an alias file, right-click on the
+           file and select "Open".  You will be prompted as to whether you want to
+           open this file from an unidentified developer; answer yes.  After this
+           first time, on subsequent invocations you can start geWorkbench
+           just by double-clicking on the alias or command file.
+
+
+    3. Linux
+       
+        File: geWorkbench_v2.6.0_Linux_JRE7_x64.bin.
+              Includes the 64-bit Oracle Java 7 JRE update 60.
+
+        File: geWorkbench_v2.6.0_Linux_noJRE.bin
+              No JRE is included, you must make sure that an appropriate Java 7+
+              JRE is installed on your system before installing geWorkbench.
+              You may need to configure the JRE. See the "Java_Environment
+              Configuration" section of the geWorkbench Download and Installation
+              page of www.geworkench.org.
+   
+   
+        The Linux version of geWorkbench relies on X-Windows being installed
+        and running. If you are running Linux on a server and e.g. Windows
+        on your desktop, you will also need to run an X-windows server on
+        your desktop machine. Further information can be found on the
+        Download and Installation page of www.geworkench.org.
+
+        After downloading, cd (if needed) to the directory to which you
+        downloaded the installer.
+
+        The following uses the example of the installer file with the JRE7.
+
+        To begin the installation, type the command: 
+
+              sh geWorkbench_v2.6.0_Linux_JRE7_x64.bin
+
+        This will extract geWorkbench into a new directory called
+        geWorkbench_2.6.0. 
+  
+        If you requested that a desktop link be created, it will be called
+        geWorkbench_2.6.0 or rungeWorkbench_2.6.0 (if you create the shortcut
+        in the same directory as the in which you extracted geWorkbench).
+
+        To run geWorkbench, and assuming you are using the Linux bash shell,
+        and that you created a shortcut link during installation,
+        issue one of the following commands from your home directory
+        (check the actual link name that was generated):  
+
+              sh geWorkbench_2.6.0
+                or
+              sh rungeWorkbench_2.6.0.
+
+         Alternatively, in the directory in which geWorkbench was installed,
+         you can start geWorkbench with the command:
+          
+              sh geWorkbench
+
+
+    4. Generic -   A non-installer-based version of
+        geWorkbench is supplied in a Zip file which should work on
+        any platform.
+
+        File: geWorkbench_v2.6.0_Generic.zip
+
+        Installation: 
+    
+             Unzip the file.  It will create a directory
+                geWorkbench_2.6.0.
+          
+
+        Running geWorkbench (generic):
+
+            You must have the Java 7+ JRE installed and the
+               JRE must be in the path for geWorkbench.
+
+            Windows: 
+                Double click on the file
+                "launch_geWorkbench.bat" to launch geWorkbench with
+                its default Java heap memory setting, or double-click
+                on one of the batch (.bat) files for specific sizes of
+                Java heap memory.  The files can also be run from the
+                command window.
+
+            Mac OS X: 
+                Double-click on one of the command (.command)
+                files for specific sizes of Java heap memory.  The files
+                can also be run from the command window.
+            
+            Linux/Unix:   
+                Execute the script "launch_geworkbench.sh".
+                          
+            Any: Alternatively, if you have Apache Ant installed,
+                 you can type "ant run" in the geWorkbench directory.
+
+
+===============================================================================
+    2.0 - geWorkbench Introduction and History
+===============================================================================
+
+    geWorkBench, an open source bioinformatics platform 
+    written in Java, makes sophisticated  tools for data management, 
+    analysis and visualization available to the community in a 
+    convenient fashion.
+ 
+    geWorkbench evolved from a project, caWorkbench, which was originally
+    sponsored by the National Cancer Institute Center for Bioinformatics
+    (NCICB). Some of the most fully developed capabilities of the platform
+    include microarray data analysis, regulatory network inference,
+    sequence analysis, transcription factor binding site analysis,
+    and pattern discovery. 
+
+===============================================================================
+    3.0 Release History: New Features and Updates
+=============================================================================== 
+
+    geWorkbench 2.6.0.3 (December 20, 2016)
+    ====================================
+    BLAST
+     - 4703 - Update BLAST API URLs to use HTTPS as required by NCBI.
+
+     Sequence Retriever
+     - 3987 - Handle missing genome description strings in remote online source
+              database.  This problem prevented Sequence Retriever from running.
+              Update mysql-connector library to
+              mysql-connector-java-5.1.39-bin.jar.
+
+    GenomeSpace
+            - Turn GenomeSpace component off by default.
+
+    Updates to library/data files
+            - obo-basic.obo - Update to latest version (12/20/2016)
+            - mysql-connector-java-5.1.39-bin.jar in Sequence Retriever.
+     
+    geWorkbench 2.6.0.2 (February 20, 2015)
+    ====================================
+    BLAST
+     - 3799 - Fix tool email in BLAST job submission
+     - 3975 - Change frequency of result polling
+
+    geWorkbench 2.6.0.1 (January 28, 2015)
+    ====================================
+    GenomeSpace
+     - 3958 - fix exception on upload
+
+
+    geWorkbench 2.6.0 (January 21, 2015)
+    ====================================
+    --- Summary ---
+    geWorkbench 2.6.0 is a major release, including more than 70 bug
+    fixes and other improvements to usability.  All users should immediately
+    upgrade to 2.6.0.  Previous versions are no longer supported.
+
+    -- Java 7 - With release 2.6.0, geWorkbench requires the Java 7 Runtime
+    Environment (JRE).  Although no Java 7-specific code has yet been included,
+    all testing is now done on 64-bit Java 7 and the code is compiled to Java 7
+    bytecode. Windows and Linux versions of geWorkbench including the 64-bit
+    JRE7 will be available; previously only 32-bit JREs were included. Use of
+    the 64-bit JRE allows larger datasets to be loaded (through setting larger
+    Java max heap sizes, described further below).
+
+    Some legacy code was not compatible with Java 7 and those fixes are indicated
+    below as "(Java 7)".
+
+    -- Installation Directory - geWorkbench, while running, no longer writes any
+    files to its own installation directory; all files are now written to temp
+    areas in the user's directory space.  This allows geWorkbench to be
+    installed in normal System directories, e.g. "Program Files" on Windows.
+
+    -- Larger Java Heap Memory for larger datasets - geWorkbench is now
+    available with 64-bit JREs for all platforms, with a default size of 2 GB
+    for maximum Java heap memory.  Using the 64-bit JRE and larger Java heap
+    sizes allows geWorkbench to work with much larger datasets.  Previous
+    releases of geWorkbench used a default size of 1 GB for the maximum value
+    of Java heap memory.  
+
+    On machines with larger amounts of RAM, users can now easily start
+    geWorkbench with even higher amounts of Java Heap memory simply by clicking
+    on specific command files available in the geWorkbench installation
+    root directory (currently for Windows and MacOSX only).  These files allow
+    geWorkbench to be started with 1, 2, 4, 8 or 16 GB specified as the maximum
+    size of the Java heap memory.  The user should
+    take care not to request more heap memory than there is physical RAM memory
+    available, and also to allow at least 1-2 GB for the operating system.
+    All heap sizes larger than 1 GB require use of a 64-bit JRE.
+
+    The Windows launcher files end in .bat, while those for MacOSX end in
+    .command, e.g. "launch_geworkbench_winpc_4G.bat" and 
+    "launch_geworkbench_macosx_4G.command".  On either platform, the user can
+    create shortcuts to the launcher files and place the shortcuts e.g. on the
+    Desktop.
+
+    -- BLAST - Among the more important fixes is a change to the BLAST component
+    to comply with a new specification from NCBI (Mantis #3799) for BLAST job
+    submissions.  After 12/1/2014 BLAST submissions may not work in previous
+    releases of geWorkbench.
+
+    -- R - Several problems are fixed in how R is used from geWorkbench.  Previous
+    workarounds are no longer needed.  See details in bug reports below, especially
+    with respect to SAM.  The user library setting for R packages in the geWorkbench
+    Preferences component is now fully implemented and overrides any setting of
+    the environment variable R_LIBS_USER.  This allows geWorkbench to use separate
+    versions of a package (e.g. geWorkbench downloads a special version of Viper).
+
+    -- GenomeSpace - integration with GenomeSpace is greatly improved.  GenomeSpace
+    allows geWorkbench to exchange data with a number of other tools.  See fixes below.
+
+    -- CART - The GenePattern 3.0 CART component is added.
+   
+    --- Enhancements and bug fixes ---
+    Analysis
+      - 3077 - Document special behaviour of components that ignore marker or array set activation
+      - 3955 - Fix synchronization problem
+
+    ARACNe
+      - 3590 - Add true Bonferroni correction
+      - 3622 - Make using DPI the default
+      - 3869 - Move preprocessing files from system to temp folder
+      - 3914 - only one array seen if array set activated (Java 7)	  
+
+    BLAST (Alignment results )
+      - 3799 - Add client name and email contact to all BLAST queries (new NCBI req't).
+      - 3198 - Update BLAST DB names to match changes at NCBI
+      - 3760 - Clarify BLAST result sequence buttons and code
+      - 3915 - No hit found if sequence is in an activated set (Java 7)	  
+  
+    CaArray
+      - 3874 - Filtering on "PI" produces casting error (Java 7)
+
+    ceRNA
+      - 3901 - Change button label in Export dialog from "Open" to "Save"
+
+    CNKB
+      - 3588 - Change "export to project" to "export to workspace"
+      - 3953 - Allow server-side control of which interactomes can be exported.
+
+    Color mosaic
+      - 3626 - Update "sort" button hover text
+
+    Component Configuration Manager
+      - 3614 - Updates to CCM entries
+      - 3770 - Update all Broad Institute author URLS in CCM
+
+    Cupid
+      - 3902 - Change button label in Export dialog from "Open" to "Save"
+
+    Cytoscape
+      - 3763 - Networks did not draw if displayed on second video screen under Java 7
+
+    DeMAND
+      - 3718 - DeMAND web service shows local R install message
+      - 3632 - Change labels to use "DeMAND"
+
+    Expression profiles
+      - 3896 - If component loaded after data, failure to plot
+      - 3767 - Require a marker set to be activated to draw plot (safety feature)
+
+    Expression Value Distribution
+      - 3546 - EVD range incorrect when an array set is activated (Java 7)
+      - 3947 - Fix synchronization problem that was causing exceptions.
+
+    GenomeSpace
+      - 3703 - Allow user to see shared and public GenomeSpace folders
+      - 3651 - Local file conversion in GenomeSpace is destructive
+      - 3698 - Change right-click option to "Download to geWorkbench"
+      - 3699 - Correct GenomeSpace spelling in CCM
+      - 3700 - Increase size of GenomeSpace login window
+      - 3652 - Change "Project Folders" to "Workspace", update description
+
+    GenSpace
+      - 3818 - genSpace-related exception on LINCS query (Java 8)
+      - 3654 - Exception when run GSEA without array sets
+
+    Help files
+      - 3909 - Remove unused help files
+
+    Installation / Release Files
+      - 3903 - Add clickable command files for various Java heap memory sizes
+      - 3904 - Changes to build.xml and build_runDirect.xml for #3903
+
+    LINCS
+      - 3802 - Sort score from highest to lowest value
+      - 3766 - Do not show FMOA network nodes which have no differential expression data
+      - 3690 - Add concentration units to the titration curves
+      - 3863 - "Add to Set" in Cytoscape throws exception for LINCS data
+
+    Marker sets/arrays phenotypes
+      - 3490 - Only first gene name on marker set read in from file is matched to annotation list
+
+    MarkUs
+      - 3721 - fix MarkUs local service URL and update tutorial for stricter Java applet req'ts.
+
+    MARINa (Master Regulator Analysis)
+      - 3719 - One-sample analysis leads to exception on bar-code graphing
+      - 3610 - Restore paired-sample analysis mode
+  
+    MRA-FET (Master Regulator Analysis)
+      - 2793, 3077 - Prevent MRA-FET from running if any marker sets are activated.
+
+    MatrixReduce
+      - 3910 - Move file writes out of install directory
+      - 3661 - Exception on running MatrixReduce (EDT)
+
+    Menu items
+      - 3601 - Add "How to Cite"
+
+    MINDy
+      - 3882 - Cannot load marker files if data loaded before component
+
+    Other
+      - 3748 - Remove all file writes to installation directory
+      - 3907 - Remove unused lib files
+      - 3908 - Update to lib/jfreechart-1.0.19.jar and lib/jcommon-1.0.23.jar files
+      - 3918 - Update lib/xalan.jar, lib/xml-apis.jar, add lib/serializer.jar (all from xalan 2.7.2).
+
+    Pattern Discovery
+      - 3918 - No patterns uploaded if a marker set (sequences) is activated (Java 7)
+      - 3930 - Did not display result if searched on activated marker (sequence) set.
+      - 3952 - Correct tooltip sequence position numbers on pattern viewer display.
+
+    Position histogram
+      - 2344 - Correct binning of values
+
+    Preferences
+      - 3894 - Removing trailing slash from R package path
+      - 3589 - Spelling correction
+
+    Project Folders
+      - 3866 - Do not include file names in dataset name after merge
+
+    Pudge
+      - 3796 - Pudge does not run, error with getParameters()
+
+    SAM
+      - 3593 - SAM (R) does not run on Java 6 update 45 and above: Runtime.exec command string decoding error
+      - 3388 - Table sorting compares digits, not numbers
+      - 3875 - Update SAM analysis to use geWorkbench Preference "R package directory"
+
+    Scatter plot
+      - 3762, 3870, 3931 - Fix problems with how component responds to activated Array and Marker sets.
+      - 3923, 3944 - Fix feature allowing reassignment of x-axis marker/array. 
+
+    Sequence Panel
+      - 3919 - no sequences displayed if marker set activated (Java 7)
+
+    SkyBase
+      - 3664 - Rename ATP button to ATW (due to previous dropping old "Project Folders" in Workspace)
+
+    T-test
+      - 3544 - Sorting removed the whole heat map
+
+    Viper
+      - 3723 - VIPER notifies that it needs an R installation even for the remote web version
+      - 3547 - Update web service
+      - 3603 - Remove warning label
+
+    --- Versions of external files/components included in release 2.6.0 ---
+      - caArray client external v1.0 (caArray 2.5.0 client, no change).
+      - caGrid - caGrid version 1.4 (no change)
+      - Cytoscape 2.8.2 (no change).
+      - go-basic.obo downloaded 2014-11-19 from geneontology.org.
+      - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on
+            server 2009-10. (no change).
+      - JMOL 13.0.18 (no change). 
+      - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+
+    geWorkbench 2.5.1 (2013-10-31)
+    ====================================
+    --- Summary ---
+    geWorkbench 2.5.1 is a maintenance release.  However, it includes several
+    important bug fixes and all users should update to this release.
+
+    --- Changes in release 2.5.1 ---
+    ARACNe
+      - 3587 - Exception on cancel fixed.
+    DeMAND and VIPER components
+      - 3584 - Add licenses for DeMAND and VIPER (in the Component
+               Configuration Manager).
+    geWorkbench license file 
+      - Add link to new version of caArray license file.
+    Menu Bar
+      - 3578, 3579 - Remove unneeded items from menus (Project, Knowledge
+               Center).
+    Scatter Plot
+      - 3493 - Array and Marker lists not populated when no sets activated.
+    Workspace
+      - 3577 - Merging expression datasets in the Workspace did not work.
+
+    geWorkbench 2.5.0 (2013-10-10)
+    ====================================
+    --- Summary ---
+    geWorkbench 2.5.0 is a major release.  It includes a simplification of the
+    Workspace, removing the "Project" level of data organization.  The Marker
+    Annotations component was completely reimplemented to use the bioDBNet data
+    service rather than the discontinued caBIO service.  New parsing and
+    display code was written so that all NCBI BLAST sequence alignments are now
+    generated in geWorkbench from the BLAST results XML output file. This
+    removes the dependency on specifics of the BLAST server HTML output.
+
+    Several new components are added:  Consensus Clustering (GenePattern),
+    LINCS_Query, VIPER, DeMAND and ceRNA.  Consensus Clustering uses multiple
+    clustering runs to find consensus clusters and assess their stability.
+    The LINCS Query component provides for query and display of computational
+    and experimental results from the Columbia LINCS Center, which performs
+    high-throughput drug candidate prediction and screening.  VIPER summarizes
+    drug activity on gene expression profiles at the level of the transcription
+    factors.  DeMAND is used to compute drug mechanism of action.  The ceRNA
+    component provides query access to a database of precomputed competitive
+    endogenous RNA (miRNA-mRNA) interactions for four different cancer types.
+
+    The MARINa component has been separated from the MRA-FET version of Master
+    Regulator Analysis. The "bar-code" graph first implemented in the MRA-FET
+    Results Viewer component has now been adapted and added to the MARINa
+    Results Viewer.  
+
+    The Gene Ontology file (go-basic.obo) is now downloaded from the
+    geneontology.org site using the new permanent URL and filename.
+
+    The "Online Help" feature has been removed.  This material was identical
+    to the geWorkbench tutorials, which are available at the geWorkbench.org
+    website.
+    
+
+    --- New features and important changes in release 2.5.0 ---  
+    Analysis
+      - 3146 - Removal of “All Markers / All Arrays” checkboxes from analysis
+               controls.
+    BLAST 
+      - 3404, 3505, 3508, 3526, 3527, 3529 - Full parsing and display of
+               results from XML
+    ARACNe
+      - 3098 - Write out adjacency matrix using hub-targets convention per line
+      - 3392 - Change name of multiple testing correction.
+    ceRNA/Hermes
+      - 3503 - Implement data query browser for HERMES/ceRNA data
+    Consensus Clustering
+      - 3502 - Implement interface to GenePattern 3.0 Consensus Clustering
+    Gene Ontology
+      - 3540 - new PURL and file name for gene ontology file download
+    LINCS Query
+      - 3382, 3389, 3480, 3495 - Implement LINCS Query and Display component
+    MARINa/MRA
+      - 3086, 3511 - separate MRA and MARINa components, add bar code display
+               for MARINa
+      - 3020, 3212 - implement save image of bar code graph
+    Online Help
+      - 3498 - Remove from geWorkbench
+    Skybase
+      - 2619 - Implement saving of image of histogram, and export of results to
+               CSV file.
+    Workspace
+      - 3310, 3379 - Remove “Project” level from Workspace data hierarchy
+ 
+
+    --- Enhancements and selected bug fixes ---
+    Analysis
+      - 2062 - cyclic events in parameter saving mechanism
+    BLAST 
+      - 3180 - when no result returned, previous result displayed
+    ARACNe
+      - 3037 - Preprocessing repeated if complete mode chosen with boostrapping
+      - 3040 - resampling during bootstrapping not allowing "with replacement".
+      - 3265 - Change DPI default value to zero
+      - 3535 - ARACNe hub markers pulldown not populated (CCM loading order)
+      - 3566 - bootstrap count is not printed to Dataset History
+      - 3568 - unique names for grid result nodes
+    CNKB
+      - 3499 - improper handling of affy “///” separator
+    Color Mosaic
+      - 3200 - Changes to activated sets changing displayed heatmap.
+    CCM
+      - 3545 - remove state dependence from CCM links
+    Cytoscape
+      - 3184 - disable Cytoscape control panel floating windows (incompatible
+               with geWorkbench)
+    File Parsers
+      - 3006 - problem in parsing Affymetrix 1.0 ST files.
+      - 3203 - exception can occur when reloading workspace file
+      - 3288 - update parser menu label to reflect Gene 2.0 ST also supported
+      - 3364 - "exp" format reader skips empty cells
+      - 3492 - Simplify annotation type selection to avoid exception
+    Filtering 
+      - 1847 - improve labels for filtering criteria
+      - 3484 - filtering introduces discrepancy in data views involving
+               Cytoscape (looking up marker names from gene names).
+    Gene Ontology Analysis
+      - 3563 - fixed problem with saving parameters involving "changed gene"
+               marker set.
+    GenomeSpace
+      - 3273 - Implement large file data upload from geWorkbench for
+               GenomeSpace
+    genSpace
+      - 2999 - Registration issue
+    Jmol
+      - 3284 - update to Jmol 13.0.18
+    Marker Sets/Array sets
+      - 3185 - exception on unselecting all sets (is this related to 3146?)
+      - 3486 - clarify labelling of set context pulldown lists
+    MARINa/MRA
+      - 3291, 3157 - remove unsupported computational options, make consistent
+               response to set activation (MARINa)
+      - 3159 - parameter validation (MARINa).
+      - 3292 - Change default setting (min number of samples)
+      - 3501, 3536 - network file pulldown not populated (CCM loading order)
+      - 3512 - Add absNES column to main MARINa results table
+      - 3517 - MARINa Viewer - remember the array sets that were activated, and
+               the case/control status for each run
+    MINDy
+      - 3287 - dataset history falsely indicates only activated marker set used
+    Normalization
+      - 3214 - Change "Cancel" action on warning to return to panel
+      - 3483 - cyclic event on parameter saving
+    Promoter
+      - 3474 - 13K sequence set not downloading; added to source
+    SAM
+      - 3383 - Incorrect path handling on Mac
+    Skybase
+      - 3564 - correctly handle unexpected (null/invalid) data
+    SVM
+      - 3163 - fixed problem with saving workspace with SVM results; Test tab
+               should reflect any changes in workspace
+      - 3164 - exception if no “Test” array selected
+      - 3523 - improve consistency of threshold filter action
+      - 3562 - save info on markers/arrays used to dataset history.
+      - 3570 Exception based on order of component loading (CCM).
+    WV
+      - 877 - fix range checking on inputs
+      - 1061 - add dataset history  
+
+  
+    --- Versions of external files/components included in release 2.5.0 ---
+      - caArray client external v1.0 (caArray 2.5.0 client, no change).
+      - caBIO client 4.3 (removed).
+      - caGrid - caGrid version 1.4 (no change)
+      - Cytoscape 2.8.2 (no change).
+      - go-basic.obo downloaded 2013-09-13 from geneontology.org.
+      - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on
+            server 2009-10. (no change).
+      - JMOL 13.0.18 (UPDATED). 
+      - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+
+    geWorkbench 2.4.1 (2012-10-26)
+    ====================================
+    --- Summary ---
+    geWorkbench v2.4.1 is a small but important bug-fix release, dealing with
+    the BLAST and ANOVA components. Due to a change in the
+    HTML output of the NCBI BLAST server, the BLAST component in  previous
+    versions of geWorkbench no longer can parse and import BLAST results.
+    In geWorkbench 2.4.1, a new parser using the BLAST XML result format has
+    been implemented.  This greatly reduces, but does not eliminate, the
+    dependence on the BLAST HTML format result page.  However, future changes
+    to the HTML page format should no longer affect the basic retrieval of
+    results.  In addition, a problem was identified in the ANOVA component which
+    caused incorrect markers to be used if a marker set was activated.
+    
+    These are the only changes in this release.
+    
+    
+    --- Bug fixes ---
+    Alignment results (BLAST)
+      - 3186 - Implement XML parser due to NCBI HTML format changes.
+    ANOVA
+      - 3156 - Incorrect markers used if marker set activated.
+    Installation
+      - 3244 - Install on Macintosh will default to user home directory.
+             
+    
+    
+    geWorkbench 2.4.0 (2012-07-23)
+    ====================================
+    --- Summary ---
+    geWorkbench v2.4.0 is a major release.  It adds one new component,
+    "Significance Analysis of Microarrays(SAM)" and includes significant
+    improvements to a second, Master Regulator Analyis.  It also adds the
+    ability to accept annotation files for Affymetrix chips of types 
+    "Human Gene 1.0 ST whole-transcript" and "Human Exon 1.0 ST".
+    
+    geWorkbench 2.4.0 can query the newly released 2.5.0 version of caArray.
+    However, due to changes in the caArray client code, earlier versions of
+    caArray can no longer be queried.
+    
+    The SkyBase component has been upgraded to allow access to a second and
+    much larger database of homology models (PDB60), which currently has
+    12,264 structures and 9,544,535 models.
+    
+    The t-test component now makes use of the Apache Commons Math Library.
+    P-values may show slight changes due to improved precision in the
+    calculation.
+    
+    Access to the local implementation of the IDEA algorithm has been removed
+    due to problems found after its introduction in geWorkgbench 2.3.0.
+    
+    A large number of other improvements and bug fixes have been made and are
+    described further below.
+
+    --- New features and important changes in release 2.4.0 ---
+    Alignment results (BLAST)
+      - 3029 - Allow sequence hit import "Include" action to include hits from
+               multiple result sets.
+    CaArray
+      - 2944 - show caArray Experiment ID of selected expt.
+      - 3022 - Updated client to match new caArray version 2.5.  Not backward
+                compatible with caArray 2.4 or earlier.
+              - Change dialog radio-button label from "Remote" to "caArray 2.5"
+    Component Configuration Manager
+      - 2904, 3058 Allow components to belong to multiple categories.
+    File Parsers - (changes in tutorial chapters "File Formats", "Local Data
+                    Files").
+      - 3006 - Add support for Affymetrix Human Gene 1.0 ST whole-transcript and
+                Human Exon 1.0 ST annotation files
+      - 1957 - Restrictions on merging of microarray files tightened.
+      - 2963 - When loading network or pattern file, only show valid parent
+               nodes.
+      - 3027 - Annotation file with just Gene Symbol not sufficient
+    Gene Ontology Analysis
+      - 3042 - Prevent autoloading into Ontologzier of  HuGene and HuExon 1.0
+               ST annotation files.
+    GenSpace
+      - 2999 - Registration issue regarding genSpace/Remote Workspace
+    IDEA
+      - 3137 - Remove access to local IDEA implementation.  It was returning
+               few or no results versus the reference grid implementation.
+    Marker Annotations
+      - 2345 - Progress window redesigned 
+      - 3052 CGI filtering on collapsed fields described.
+    Marker sets/arrays phenotypes
+      - 3025 - Remove markers from sets when filtered out from dataset.
+    Menu items
+      - 2223 - Remove Command->Sets functionality from Menu Bar.
+    Master Regulator Analysis
+      - 2952 - Addition of two-FET method, 
+             - complete update of graphics to display multiple bar-graphs
+             - bar-graph display changed from t-value to rank
+      - 3020 - add ability to save image of bar code graph
+      - 3021 - add button to display only intersection set
+    Pattern Discovery
+      - 3010 - In Exhaustive, min support label changed from percent to number
+    Project Folders
+      - 3051, 3067 - Disable "Save" in right-click menu if component does not
+               implement it. 
+      - 2981 - Export as tab-delim default setting
+    Significance Analysis of Microarrays (SAM)
+      - 2986 - Addition of SAM interface to R local and grid services.
+    Sequence retriever
+      - 3064 - display all hits if no marker selected.
+      - 2985 - Grey-out transcript-start choice for protein query.
+    SkyBase
+      - 2510 - Added access to PDB-60 database.  As of 7/19/2012, the
+                databases have:
+                  * PDB60: 12,264 structures, 7,804,258 models.
+                  * NESG:     946 structures, 1,943,390 models. 
+    T-test
+      - 2989 - Changed to Apache Commons Math Library, p-values show slight
+               changes due to improved precision.
+      - 3044 - For sort mode, significant genes first sorted by t-value rather
+               than fold-change.
+      - 2724 - change procedure in fold change for situation where avg case or
+               avg control is negative.
+
+    --- Enhancements and selected bug fixes ---
+    Analysis
+      - 2446 - problems with parameter panels
+    ANOVA
+      - 3087 - Anova result does not sort properly by p-value
+    ARACNe
+      - 3114 - The "Analyze" button is not enabled when cancel ARACNe analyze
+               process.
+      - 3105 - java.lang.NoClassDefFoundError: AracneComputation
+      - 3040 - resampling during bootstrapping fails
+      - 2885 - refactoring the code of launching MINDY and ARACNE analysis
+    CaGrid
+      - 2892 - Out-of-memory error for ARACNE service (major revisions to
+               ARACNe grid service)
+    Cellular Networks KB
+      - 3008 - CNKB does not receive marker panel selections under Java 7
+      - 2961 - add .txt file filter to CNKB file export
+      - 2974 - Exported interactome contain lines with single gene symbol
+    Color mosaic
+      - 3017 - Array labels drawn reversed in display on Mac
+      - 3043 - Exception seen when cycling between different viewers
+      - 2296 - Clicking print button changes display size
+      - 3011 - Java 7 problem: array sets cause red display
+    Cytoscape
+      - 3074 - Exception when attempt to create subnetwork
+      - 3094 - Correlation cutoff of zero filters out all interactions
+    Dataset history
+      - 2794 - MRA doesn't report parameter
+    Experiment info
+      - 2835 - Autorefresh seems to work only under certain conditions
+    Expression profiles
+      - 2980 - Expression profile does not plot if have activated array set in
+               Java 7
+    File Parsers
+      - 3026 - 1 GO-related error message, a few mistakes
+      - 3030 - Internal annotations lost
+      - 2888 - Marker Sorting by Gene Name doesn't work properly
+      - 3053 - Exceptions in GO Viewer when annotation file used with superset
+               of markers.
+    Fold Change Analysis
+      - 3049 - controls not monitored for parameter changes
+    Gene Ontology Viewer
+      - 3018 - Gene Ontology Viewer shows wrong genes, when table is sorted
+    GenSpace
+      - 3093 - "Add as friend" button missing
+      - 3076 - Exception after try to run analysis without ethernet connection
+      - 2938 - Once stars are present, may not be able to further update
+    Help files
+      - 3088 - ARACNE Analysis help content not found.
+    Hierarchical Clustering
+      - 2995 - Code Cleaning-up for Hierarchical Clustering
+    IDEA
+      - 3002 - elapsed time calculation
+    Jmol
+      - 2894 - Update to JMOL 12.2.24 Jmol.jar
+    Marker sets/arrays phenotypes
+      - 2994 - Selective marker selection opens right-click window
+      - 3056 - EDT exception on activating large set
+    Master Regulator Analysis
+      - 2969 - If no network loaded, File Load button INOP
+      - 2671 - Network not always cleared
+      - 2786 - Rename tab
+      - 2601 - re-enble marker loading from file
+      - 3079 - MRA results differ depending on if markers loaded as symbols or
+               probesets
+    MatrixReduce
+      - 3089 - Not all parameters saved
+    Microarray Viewer
+      - 3104 - Microarray Viewer does not respond to marker set selections
+      - 3071 - Activating marker set causes empty display in Microarray Viewer
+               under Java 7
+    MINDy
+      - 3035 - Local and Grid produce different results
+      - 2968 - Heat map scrunched and on scroll, get third map
+      - 2951, 3057 Notify user if hub or modulators not in target set.
+    Normalization panel
+      - 3097 - Datafile section appeared multiple times in dataset history
+    Other
+      - 2983 - DSPattern, the classes that implement it, and the interface that
+               extends it are pathological.
+    Pattern Discovery
+      - 3101 - problems triggering range check on similarity threshold on Mac
+      - 2978 - In result full sequence view, tooltip positions only on first
+               sequence
+      - 2759 - Better enforcement of parameter settings needed
+      - 2611 - Problems loading files/Refreshing GUI
+    PCA
+      - 2359 - Saving server settings causes crash
+      - 2683 - fix precision in text field on 3D PCA
+    Position histogram
+      - 3007 - Problems with pane resizing
+    Project Folders
+      - 3103 - image snapshot of pathway diagram appears in closed parent node
+      - 3054 - Exception on save network node
+      - 0300 - need array info
+      - 2971 - improve file exists warning on write
+    Promoter Panel
+      - 3099 - fixed problem with missing tooltip information
+    Sequence Retriever
+      - 0082 - sequence retriever continues after warning no markers selected
+      - 3070 - exception after marker set activate/deactivate cycles
+    SkyBase
+      - 3108 - Skybase error
+    T-test
+      - 2982 - Number presentation for plot and hover box not in sync
+      - 3048 - "data is log2 transformed" check box not hooked up to parameter
+               saving mechanism 
+      - 3126 - t-test result export CSV writer does not check if for
+               existing extension.
+    
+    --- Versions of external files/components included in release 2.4.0 ---
+      - caArray client external v1.0 (UPDATED to caArray 2.5.0 client).
+      - caBIO client 4.3 (no change).
+      - caGrid - caGrid version 1.4 (no change)
+      - Cytoscape 2.8.2 (no change).
+      - gene_ontology.1_2.obo downloaded 2012-06-17 from geneontology.org.
+      - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on
+            server 2009-10. (no change).
+      - JMOL 12.2.24 (UPDATED). 
+      - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+
+    --- Changes to tutorials ---
+        All tutorials and "Help" files were updated for the components affected
+        by changes listed in the section, "New features and important changes
+        in release 2.4.0", except that the SAM component does not yet have a
+        tutorial.
+
+    --- Changes to "Help" ---
+        This is the Help system embedded in geWorkbench.  Most content now
+        derives from the geWorkbench Wiki tutorials.
+        
+        All "Help" files were updated in the same way as described for
+        changes to the tutorials.  In addition, three new chapters, derived
+        from tutorials, were added.
+        
+        - New Chapters
+          - Menu Bar
+          - SkyBase
+          - Volcano Plot
+
+    geWorkbench 2.3.0 (2012-03-16)
+    ====================================
+    --- Summary ---
+    geWorkbench v2.3.0 is a major release.  It includes significant
+    improvements in responsiveness and memory usage, and a streamlining of the
+    graphical interface to make using analysis, filtering, normalization and
+    visualization components much more easy.  
+    
+    Switching back and forth between large data nodes is now much faster.
+    
+    caArray downloads have been speeded up dramatically, and memory problems
+    that limited the number of arrays that could be downloaded were solved.
+    We have test-downloaded 527 arrays of type Affymetrix HT_HG-U133A in 16
+    minutes with no memory problems.
+
+    The analysis, filtering and visualization components are now reached
+    through a right-click menu directly on the data node, or through the
+    commands menu in the upper menu bar.  This allowed the removal of the
+    dedicated "commands" area from the geWorkbench graphical interface, making
+    much more room available for the display of results.
+    
+    Dynamic search for marker and gene names has been added to all filtering
+    components.
+    
+    A number of data and result export options have been added.  Microarray
+    data can now be exported to a tab-delimited file directly, or from the
+    tabular viewer, allowing subsets of the data to be exported.
+    
+    Interactomes stored in the Cellular Network Knowledge Base can now be
+    exported directly into the Project Folders component.
+    
+    A new component, IDEA (Interactome Dysregualtion Enrichment Analysis), is
+    included.
+    
+    The GenePattern-based K-Means Clustering analysis was added in
+    geWorkbench release 2.2.0 but was omitted from the release notes.  This is
+    corrected in this copy.
+
+    Full details of all changes are found below.
+
+
+    --- New features and changes in release 2.3.0 ---
+
+    Array Sets
+      - #2730 - Add ability to read in array sets from CSV file.
+      - #2828 - Interpret second column of array set CSV file as set names. 
+    caArray
+      - #2729 - Memory requirements during download were dramatically 
+                decreased. More than 500 arrays have been downloaded with no
+                adverse impact on memory usage. The previous limit was about
+                100 arrays before memory was exhausted. 
+    CNKB
+      - #2613 - Add export of interactome direct to Project 
+    Grid Services (caGrid)
+      - #2788 - Upgraded to caGrid release 1.4.
+      - #2861 - Data transfer from geWorkbench to Dispatcher and from
+                Dispatcher to grid service now uses caTransfer. This allows
+                transfer of much larger files to remote services. Not yet
+                implemented for return direction. 
+    Cytoscape
+      - #2841 - Upgraded to Cytoscape 2.8. 
+    File Parsers
+        #2848 - GEO GDS full.soft format handled. 
+    Filtering
+      - #2784 - Dynamic search added to preview dialog on all filters. Searches
+                on both marker and gene symbol.
+      - #2777 - "Deviation Filter" renamed to "Standard Deviation Filter".
+      - #2844 - "Multiple Gene ID Filter" renamed to "Entrez Gene ID Filter". 
+    GUI
+      - #2743 - Implement new GUI element to invoke analysis 
+    IDEA
+      - #2416 - New analysis component.
+    MINDy
+      - #2795 - Add export of result tables to CSV format file. 
+    MRA
+              - Changed from two-sided to right-sided (enrichment)
+                FET calculation. 
+      - #2623 - MARINa grid service added (variation on MRA, grid only).
+      - #2856 - Export of MRA results table to CSV and tab-delimited format
+                files (User-contributed code). 
+    Project Folders
+      - #2335 - Export microarray data to standard tab-delimited format. From
+                right-click menu.
+      - #2797 - Much faster switching between various data/result nodes for
+                large datasets, through major code improvements. 
+    Tabular Microarray Viewer
+      - #2762 - Export displayed data in spreadsheet format. Allows a selected
+                subset of data to be exported to a tab-delimited file. 
+
+    --- Enhancements and selected bug fixes ---
+
+    Analysis
+      - #2754 - All analyses should write timestamp to dataset history.
+      - #2872 - Do not close analysis window after parameter setup error. 
+    BLAST
+      - #2722 - BLAST made a normal analysis component.
+      - #2830 - A parsing problem in tblastx results due to changes in the HTML
+                returned by NCBI is fixed in 2.3.0. The number from column "N"
+                was appearing after the score in the e-value column.
+      - #2876 - Gap costs setting is removed for tblastx.
+      - #2880 - In the results table, the number of identities rather than
+                total aligned length was being reported under "align length". 
+    caArray
+      - #2769 - When more than one array is downloaded at a time, the arrays
+                are automatically merged and the data node is given the name of
+                the parent experiment. Previously, the name of each array was
+                appended to create a very long data node name.
+      - #2925 - Experiments are now referenced internally in the caArray
+                interface code by their unique experiment ids, not by their
+                names. There are experiments in caArray with duplicate names. 
+    CNKB
+      - #2696 - Clarified effect of "restrict to genes in microarray set"
+                during interactome export to Project.
+      - #2817 - Export interactomes using tab-delimited file format
+      - #2881 - Export interactome to project should use interactome name for
+                node name 
+    Color Mosaic
+      - #2887 - Limit size of screenshot to 100 Megapixels to avoid
+                out-of-memory problems.
+      - #2889 - Color Mosaic for t-test result incorrectly shows the original
+                dataset when you un-select and re-select "Display" button. 
+    Component Configuration Manger
+      - #2668 - Cytoscape changed from required to recommended for ARACNe.
+              - Cytoscape changed to loaded by default to avoid a windowing
+                problem on first use. 
+    Dataset History
+      - #2870 - fixed some inconsistencies between histories recorded for local
+                vs grid service runs. 
+    Expression Value Distribution (EVD)
+      - #2932 - EVD t-test was not interpreting activated array indices
+                properly. 
+    File Parsers
+      - #2386 - Add ability to load Pattern Discovery "pattern" files directly
+                into project.
+      - #2731 - improvements to handling of local OBO files.
+      - #2846 - preserve original file type extension in data node name. 
+    Fold Change Analysis
+      - #2739 - Check for error conditions in Fold Change calculation. 
+    Gene Ontology Analysis and Viewer
+      - #2753 - Make all columns in results tables sortable. 
+    genSpace
+      - #2479 - Filtering and Normalization events are now also captured, in
+                addition to analysis events.
+      - #2578 - Removing workspace comments was not working.
+      - #2586 - Consistency and error checking improved on genSpace server.
+      - #2587 - Proper sizing of workflow graphs on page.
+      - #2666 - Problem with remove friend fixed.
+      - #2792 - Tool usage statistics not properly refreshing.
+      - #2858 - Problems in workflow time window.
+      - #2916 - Rating stars were not being displayed.
+      - #2920 - After a friend request, the person is shown in your friend list
+                but his or her details are not visible.
+      - #2935 - Improvements to handling of workflow comments. 
+    Grid Services (caGrid)
+      - #2364 - Catch and report out-of-memory errors from Dispatcher client.
+      - #2790 - Clean up memory leaks. 
+    Matrix Reduce
+      - #2804 - Memory leak on switching between multiple result nodes fixed.
+      - #2803 - PSAM Logo diagrams from grid had parsing error.
+      - #1555 - matrixREDUCE did not work if used "Specify Pattern" option on
+                LINUX and Mac platforms. 
+    MINDy
+      - #2768 - Remove "Refresh Heat Map" button.
+      - #2911, 2949 - The grid service version of MINDy was using activated
+                marker sets rather than the target marker set selected in its
+                own GUI.
+      - #2912 - Mindy grid analysis using p-value throws Nullpointer exception.
+      - #2967 - Bonferroni correction was calculated using all markers, not
+                just target set. 
+    MRA
+      - #2822 - Bar graph calculated using converted p-value instead of
+                t-value.
+      - #2853 - MRA result node tooltip now shows number of master regulators.
+      - #2757 - Changes to export buttons. 
+    Menu Bar
+      - #2826 - Change "Export" to "File->Save->Dataset". 
+    Logging
+      - #2719 - Add timestamps for geWorkbench startup and shutdown to
+                stdout.log and stderr.log. 
+    Pattern Discovery
+      - #2595 - Simplify parameter labels.
+      - #2664 - Problems when invalid characters entered.
+      - #2721 - Pattern Discovery component converted to regular Analysis
+                component.
+      - #2898 - Problems in error dialog when invalid parameters entered. 
+      - #2976 - Problem with display of motif hits across lines on full
+                sequence view.
+      - #2977 - Problem with display of motif on scrolling view.
+    Project Folders
+      - #1025 - Fixed problem with representing arrays assigned to more than
+                one set in an EXP format file.
+      - #2691 - Display hover text with pattern count for pattern nodes. 
+    Sequence Retriever
+      - #2023 - Warn user if a query marker has no annotation.
+      - #2840 - Add option to only show one transcript per start site 
+      
+
+    --- Versions of external files/components included in release 2.3.0 ---
+      - Cytoscape 2.8.0 (updated).
+      - gene_ontology.1_2.obo downloaded 2012-02-01 from geneontology.org.
+      - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+      - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on
+            server 2009-10. (no change).
+      - JMOL 12.0.45 (no change). 
+      - caArray client external v1.0 (no change).
+      - caBIO client 4.3 (no change).
+
+  
+    --- Changes to "Online Help" ---  
+        This is the Help system embedded in geWorkbench.  Most content now
+        derives from the geWorkbench Wiki tutorials.
+
+      - Updates - all existing "Online Help" chapters that were previously
+            ported from the Wiki were updated as needed (see below - 
+            essentially all of them).
+      - New Chapters - the following wiki tutorials were newly ported to Help:
+        - Analysis Framework - describes the new way to launch an analysis,
+          filtering, or normalization component.
+        - caArray
+        - File Formats
+        - Fold Change Analysis
+        - Gene Ontology Analysis
+        - Gene Ontology Viewer
+        - Hierarchical Clustering
+        - Information Panel - replaced separate Comments, History and
+             Experiment Information entries.
+        - "Introduction" replaced with "Basics" section from tutorials.
+        - Local Data Files
+        - Project Folders 
+        - SOM
+
+
+    --- Changes to tutorials ---
+
+    General - all tutorials were updated to reflect the new dynamic-menu access
+              to analysis, filtering and normalization components.
+    BLAST 
+      - All screenshots of analysis parameter setting panels were recreated.
+      - Text was updated as appropriate to describe new analysis setup and
+        other minor changes.
+    caArray
+      - all relevant screenshots updated because the merge button has been
+        removed. 
+      - Text updated to explain automatic merge and naming of merged set after
+        experiment only.
+    CNKB
+      - Update text and screenshots pertaining to interactome export to project
+        or file.
+    Color Mosaic
+      - Update about memory limit on screenshot size.
+    Cytoscape
+      - UniProt LinkOut workaround described.
+    Data Subsets - Arrays
+      - Added function "Load Set" for loading array sets, plus dynamic search
+       updated. 
+      - Described using second column of arrays file ("Load Set") to hold set
+        names. Many screenshots updated.
+    Dataset Details
+      - pattern node hover text.
+    EVD
+      - tutorial and existing help synced, then ported back to Help. 
+    Filtering
+      - dynamic search described.
+    Fold Change
+      - document error condition handling.
+    Gene Ontology Results Viewer
+      - table sorting noted.
+    genSpace
+      - details of how not-yet accepted friend requests are handled were added,
+        as well as denied requests and cancelling requests. 
+      - Noted that filtering and normalization events now captured. 
+      - Added detail on depiction of repeated steps in workflows (linear vs
+        loops). Limit of 150 on displayed workflows.
+    Grid Services (caGrid)
+      - updated to describe new caTransfer usage, new screenshots of analysis
+        window with URLs.
+    Local Data Files
+      - relevant text and most screen shots updated to reflect removal of
+        "merge" radiobutton and implementation of automerge for microarray
+        data, and to give details of new features such as loading of pattern
+        files.
+    MenuBar
+      - Options for saving files (exp, pdb, adj, fasta). Previously was called
+        "Export". Now same as project right-click file save options.
+    MINDy
+      - revise to remove "Refresh Heat Map" button, add "Export" button.
+        Reshoot most screenshots to update those buttons and analysis
+        framework.
+    MRA
+      - Heavily revised to incorporate addition of MARINa, changes in export
+        options, and changes in bar graphs. All new screenshots.
+    Pattern Discovery
+      - All screenshots revised for new layout, from change to Analysis
+        component and also layout cleanup.
+    Project Folders -
+      - Options for saving files (exp, pdb, adj, fasta).
+      - Option to save microarray to tab-delimited format.
+      - Add description of how an array can be assigned to multiple sets
+        (within one list) in an EXP format file. 
+    Promoter
+      - all screenshots updated to reflect recent GUI changes.
+    Sequence Retriever
+      - Warn user if a query marker has no annotation. Add option to only show
+        one transcript per start site. All screenshots update to reflect new
+        option.
+    Viewing a Microarray Dataset
+      - Export displayed data in spreadsheet format.       
+    
+      
+
+    geWorkbench 2.2.2 (2011-08-19)
+    ====================================
+    ---Summary---
+    geWorkbench 2.2.2 is a bug fix release.  It corrects three issues
+    with the Gene Ontology Analysis and Gene Ontology Viewer components.
+    In certain circumstances after browsing the GO tree, if genes for a
+    term were copied to a new Marker set, genes with no EntrezID were also
+    copied. In the second issue, running GO analysis after restoring a saved
+    workspace did not work.  In the third issue, creating a set of new
+    markers from a GO term did not update pulldown menus properly, e.g.
+    in the ARACNe hub selection pulldown.
+
+    A new feature was added such that the list of arrays available for
+    download from caArray ("remote" option on file open box) are presented
+    in alphabetical order.
+
+    The installation instructions for Windows 7 and Vista have been updated.
+    As only users with administrative privileges on their machines can install
+    to C:\, we are now recommending installation to the user's home directory.
+
+    --- Changes/fixes in release 2.2.2 ---
+    File Loading
+     - #2705 - caArray array list searchability
+    Gene Ontology
+     - #2710 - GO tree browser returns additional markers
+     - #2711 - Gene Ontology analysis fails after reloading workspace
+     - #2713 - Marker set from GO does not appear in ARACNe Hub Markers box
+               when selected
+ 
+    There are no further changes included in this release.
+
+    geWorkbench 2.2.1 (2011-07-29)
+    ====================================
+    ---Summary---
+    geWorkbench 2.2.1 provides a number of improvements, especially as related
+    to network import, display and export, sequence retrieval, and pattern
+    discovery.  If a network is generated or loaded that may be to large to
+    view in Cytocape, it can now instead by viewed as a text file.  The
+    new "Fold Change" analysis component is included, which was to be released
+    in version 2.2.0 but was omitted.  A new feature to overlay a t-test result
+    onto a Cytoscape network, which was inadvertently disabled in release
+    2.2.0, now works again.  The Gene Ontology analysis component now supports
+    uses of  alternate ontology files (e.g. from the GO website).  Sequence
+    retrieval for DNA sequences is now done using the UCSC refGene table, and
+    is available for all organisms with genomes supported by UCSC.
+
+    --- New features and changes in release 2.2.1---
+
+    ANOVA
+      - #2618 - Control buttons repositioned for easier use. 
+      - #2694 - The simple range check as a test of whether data was
+        log-normalized was removed.
+    ARACNe
+      - #2494 - Bonferroni correction option added. 
+      - The "Choose edges with highest MI" option was renamed to "Merge
+        multiple probesets".
+      - #2648 - The adjacency matrix is no longer made symmetric. Each line now
+        starts with a hub gene.
+      - Similarly, the adjacency matrix, when saved to file, is not made
+        symmetric.
+      - #2679 - The "merge multiple probesets" option was not recorded in
+        the dataset history.
+      - Merging of multiple probesets is now just within a hub gene, not global.
+      - #2684 - When a subset of markers was activated, the grid service
+        version used an incorrect offset into the marker list.  
+    BLAST
+      - #2665 - Previous search results were not cleared if a following search
+        returned no hits.
+    Color Mosaic
+      - #2401 - Export button and right-click menu - both now support export of
+        significance results (p-values) from both t-test and ANOVA. 
+    CNKB
+      - Export of network adjacency matrix from Project Folder omitted
+        gene/probeset names. 
+    Cytoscape
+      - t-test overlay on network did not work in release 2.2.0 due to a
+        late change.  Fixed.
+      - #2650 - Display all networks at the gene level.  When multiple
+        probesets represent a gene in the network, the network will be
+        summarized at the gene level.  As a result, the count of the number of
+        nodes and edges displayed in Cytoscape may differ from the counts
+        present in, e.g. a complete ARACNe adjacency matrix (ARACNe probeset
+        merging option not used).
+      - #2589, #2638 - If a network might be too large to view in Cytoscape,
+        the user is offered an alternate visualization (text). The threshold
+        for warning can be changed by the user. This replaces warnings that
+        were previously built in to several components e.g. ARACNe. Now, an
+        adjacency matrix is always created, regardless of size.
+      - #2597, #2598, #2599 - Inconsistencies in how selected nodes in
+        Cytoscape were reflected as markers in the Markers component were found
+        and fixed. 
+    File Open Dialog
+      - #2698 - The "merge" checkbox is no longer disabled when a file type is
+        selected which cannot be merged.  There were synchronization problems.
+    Fold-Change Analysis
+      - New component accidentally omitted from release 2.2.0.
+    Network Import
+      - Networks can now be imported either from Adjacency matrix files (#2432)
+        or from SIF-format (#2434) files. The networks can be represented by
+        gene symbols, Entrez IDs, or probeset names, or by some other identifier
+        (#2432). Networks are represented in memory with the same identifiers
+        that were imported. That is, if a network is read in using gene symbols,
+        then it is represented at this level within geWorkbench. Probesets for
+        each gene can be obtained as needed for particular analyses.
+      - #2608, #2645 - On import, .SIF and .ADJ file extensions are
+        automatically recognized.
+      - On export, .ADJ is automatically added to file. 
+    Gene Ontology Analysis
+      - #2512 - The analysis now supports using an alternate annotation file
+        rather than an Affymetrix annotation file. Organism annotation files
+        from the geneontology.org website can now be used.
+    GenSpace 
+      - The J2EE framework used in geWorkbench 2.2.0 was replaced with one based
+        on SOAP.
+      - #2666 - The "Remove Friend" feature did not properly update the GUI.
+    Marker Annotations
+      - #2658 - a missing CGAP URL was added to the export file.
+    MarkUs
+      - #2622 - Added support for job description and email notification
+        fields. 
+    Master Regulator Analysis
+      - #2610 - MRA can now be run from gene-level adjacency matrices created
+        by CNKB.
+      - #2301 - When saving results (target lists for MRs), a ".csv" file
+        chooser is used and will append this extension automatically. 
+    MINDy
+      - #2659 - If MINDy was run remotely on the grid service, sorting on the
+        modulators column of the results table did not work.
+      - #2657 - The "All Markers" checkbox was removed, as its function has been
+        taken over by a separate filter control.
+      - #2314 - An inconsistency in how modulators and targets were
+        selected/deselected with respect to the "Displayed Targets Filter" was
+        fixed. 
+    Pattern Discovery
+      - #2682 - Some parameters were not properly captured in the dataset
+        history.
+      - #2672 - Pattern nodes were not always properly restored when the
+        workspace was saved and restored.
+      - #2664 - In Exhaustive discovery mode, the "min support" parameter is
+        now input only as an integer representing the floor for support.  The
+        option to enter the minimum exhaustive support as a percent of initial
+        support was removed.
+      - #2663 - If discovered patterns were saved to file and reloaded, they were
+        not always displayed.
+      - #2593 - Problems that occurred when a run was cancelled or the server 
+        was unreachable were fixed. 
+      - The Pattern Discovery (Splash) server URL was changed to
+        splash.c2b2.columbia.edu.
+    PCA
+      - #2670 - PCA did not run if geWorkbench was installed to a path
+        containing a space.
+    Project Folders
+      - #2626 - Mousing-over a network node will display the number of nodes
+        and edges in hover text.
+      - #2646 - When saving a network, the ".adj" file filter will append
+        ".adj" to the file created. 
+    Sequence Retriever (#2630, #2631, #2632)
+      - For DNA, now queries the "refGene" table rather than UCSC "known genes",
+        so can now retrieve genomic sequence for all UCSC supported species.
+      - The transcription start point was off by one in query and display.
+      - Identifiers for retrieved sequences were being truncated if long.
+      - The "local" option for sequence retrieval was removed.
+      - The sequence location "spinner" controls can now be set to zero, and
+        step in increments of 100. 
+
+    geWorkbench Installer
+      - When run in Windows, the installer version of geWorkbench now displays
+        its correct icon in the Windows task bar. 
+
+    ---Online Help updates---
+       Help files were updated for the following components:
+      - ANOVA
+      - ARACNe  
+      - BLAST
+      - CNKB
+      - Cytoscape
+      - Filtering
+      - JMOL 
+      - MarkUs
+      - Master Regulator Analysis
+      - MINDy
+      - Normalization
+      - Pattern Discovery
+      - Promoter Analysis
+      - Pudge
+      - t-test
+
+    ---Versions of external files/components included in release 2.2.1---
+      - Cytoscape 2.7.0 (no change).
+      - gene_ontology.1_2.obo downloaded 2011-06-29 from geneontology.org.
+      - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+      - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on server
+        2009-10. (no change).
+      - JMOL 12.0.45 (updated). 
+
+
+    geWorkbench 2.2.0 (2011-05-24)
+    ====================================
+    ---Summary---
+    geWorkbench 2.2.0 is a major release containing more than 180 new features,
+    enhancements and bug fixes.  The most important of each are summarize below.
+    New filters were added to give the user options to deal with many-to-many
+    relationships between genes and markers (probesets).  New network comparison
+    and manipulation features were added to the Cytoscape component.  Significant
+    improvements were made to the Master Regulator Analysis component to enable
+    the use of recently published procedures.  The Gene Ontology component can
+    now serve as a full, standalone GO term browser.  Options for import and export
+    of interaction networks (interactomes) were added.
+
+    --- New features and changes in release 2.2.0---
+    CNKB
+      - #2389 - export complete CNKB interactomes (SIF or ADJ formats). 
+    Cytoscape
+      - #2424 - 1) calculate the Pearson's correlation coefficient for the expression
+        profiles of each pair of nodes connected by an edge in an interaction network.
+        Filter edges to display based on the magnitude of the correlation coefficient.
+      - #2424 - 2) create a new subnetwork containing only edges exceeding correlation
+        threshold calculated in (1).
+      - #2429 - From an existing network, create a subnetwork containing only nodes in
+        a marker set defined in the Markers component. 
+      - Color edges by interaction type.
+    GenSpace
+      - numerous improvements.
+    File Parsers
+      - #2388 - import an ARACNe adjacency matrix from a file. 
+    Filters
+      - #2444 - Multiple probeset per gene filter - for genes with multiple probesets
+        (markers), remove all but one probeset based on: retain only 
+        (a) highest coefficient of variation, (b) highest mean, (c) highest median.
+      - #2445 - Multiple Entrez GeneID Filter: Filter out markers which are annotated to
+        (a) no Entrez gene id, or (b) multiple Entrez gene ids. 
+    Fold-change Analysis
+      - #2431 - a new component that performs fold-change analysis and
+        places markers that pass the specified threshold into two new sets in the
+        Markers component:  one for positive fold-change, and the other for
+        negative fold-change.
+    Gene Ontology
+      - The Gene Ontology component is now always available when a microarray dataset
+        has been loaded along with its annotation file.
+      - The GO Tree can be browsed or searched for any term. 
+      - The markers annotated to any term can be returned to a new set in the Markers component.
+      - #1875 - most recent Gene Ontology OBO file now downloaded automatically from 
+        internet when geWorkbench started, with option to instead use a specified file from disk. 
+    GenePattern GSEA
+      - analysis component added.
+    GenePattern K-means Clustering
+      - analysis component added.
+    Master Regulator Analysis
+      - #2523 and others.  Master Regulator Analysis component fully revised. 
+        Now allow any list of markers to be used for the phenotype signature.
+        Bar code graph revised to match style of published work. 
+
+    ---Enhancements and selected bug fixes---
+    ARACNe
+      - #2366 - in ARACNe, bootstrapping is re-enabled but only single threaded.
+      - #2482 - ARACNe results can now be pruned to retain only highest MI edge per
+        gene-gene pair, or return all edges.
+    BLAST
+      - #2419 - continued improvements to BLAST interface to match NCBI website
+        functionality and to improve usability.
+    CCM
+      - "Sequence Analysis" -> "BLAST Analysis", "Alignment Viewer" ->
+        "BLAST Alignment Viewer".
+    Gene Ontology Viewer
+      - #2391 - When a marker set is returned for a GO term, the set is given
+        the term name.
+    GEO Soft
+      - #2402, #2462, #2465 - GEO Soft parsers improved to handle various
+        special cases - multiple platforms, missing values, mixed sample
+        and data matrix files...
+    Grid Services
+      - #1773 - simplified grid service activation (removed one radio button).
+    JMOL
+      - #2505 - updated to JMOL version 12.0.35.
+    Markers/Arrays component
+      - #2430 - dynamic filtering of displayed marker or
+        array list as search term is entered.
+    MarkUs
+      - #2500 - Add ability to retrieve prior MarkUs jobs by job id
+      - #2509 - add private key option to MarkUs job submission 
+    MINDy
+      - #2214 - corrected sign of modulation effect in table displays.
+    Pattern Discovery #2119
+      - corrected display problems in Pattern Discovery
+        related to regular expressions and use of substitution matrices.
+    Preferences
+      - #2393 - Added ability to reorder data sorted by marker name,
+        gene name, or original order (set in preferences, affects all components).
+    Sequence Retriever
+      - #2518 - fixed problem with obtaining name of latest
+        human genome build from Santa Cruz.
+    Tabular Microarray Viewer
+      - #2253 - Tabular Microarray viewer now allows adjustable precision in
+        display, and choice of fixed or scientific notation.
+    t-test
+      - #1626 - changed math package used to correct precision problem
+        with p-value calculation at very small p-values.
+    Volcano Plot
+      - #2492 - extreme point color range corrected. 
+
+
+    ---Online Help updates---
+      - ARACNe -  better descriptions of some features.
+      - CNKB - fully updated to document new features.
+      - Cytoscape - fully updated to document new features.
+      - Master Regulator Analysis - full update to reflect
+        - changed handling of signature genes
+        - changes to "bar code" graph generation
+      - MINDy - updated to reflect bug fix.
+      - PatternDiscovery - Replaced all screenshots to reflect GUI improvements.
+      - t-test - fully updated.
+
+    ---Refactoring---
+      -A major refactoring occurred throughout the core and many components.
+
+    ---Versions of external files/components included in release 2.2.0---
+    - Cytoscape 2.7.0 (no change).
+    - gene_ontology.1_2.obo downloaded 2011-04-19 from geneontology.org.
+    - Ontologizer.jar version 2.0, file released 2010-03-10 (no change).
+    - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on server 2009-10. (no change).
+    - JMOL 12.0.35 (updated). 
+
+    geWorkbench 2.1.0 (2010-09-10)
+    ====================================
+    --- New features and changes in release 2.1.0---
+    - BLAST interface (Sequence Alignment component) upgraded to include all 
+      parameter options offered on NCBI BLAST website (#2019, #2323).
+    - CNKB component and Gene Ontology Enrichment Viewer - Introduced an
+      "Expand all" functionality for GO Tree view (#2303).
+    - Coefficient of Variation data filter added.
+    - System Information display added (Main menu->Help->System Info),
+      including Java memory allocated and used (#2340).
+    - Arrays component - can now save list of array subsets (#2297).
+    - Cytoscape - updated to version 2.7.0 (#2163).
+    - Online Help 
+      - BLAST (Sequence Alignment) full update of chapter to match new functionality.
+      - Filtering - added section for Coefficient of Variation filter.
+      - MINDy - added section on using ARACNe preprocessing.
+      - Pattern Discovery - chapter replaced with new material from Wiki.
+      - Fixed list formatting problem in chapters ported from wiki.
+
+    ---bug fixes (selected)---
+    - Annotation file parser - duplicate entries in annotation file can now be
+      skipped (#1624).
+    - ARACNe bootstrap threading error - changed to single-threaded operation (#2366).
+    - BLAST (Sequence Alignment) - Fixed problem where due to a change at the
+      NCBI BLAST site geWorkbench could not download sequences of BLAST hits (#2351).
+    - CCM - Updated filter descriptions to match functional changes made in release 2.0.0.
+    - CNKB - display only databases with available interactions (#2231).
+    - CNKB - fix incorrect Gene Ontology tree display (#1210, #2303).
+    - Filtering components -check for valid inputs (#2242).
+    - Hierarchical Clustering - Fixed problem when saving a workspace that
+      contains a large dendrogram display (#2190).
+    - JMOL - Fixed a performance problem (#2305).
+    - Pattern Discovery - temporary pattern node prevents workspace save (#2363).
+    - SkyBase - add input validation (#2325, #2356).
+    - SkyBase - fix save sequence functionality (#2357).
+    - t-test - fixed inconsistencies in interface and functioning regarding choice of
+      using the t-distribution vs permutations (#2365).
+    - Welcome screen is now version aware - it will always appear first time
+      when a new version is run (#2294). 
+
+    ---Refactoring---
+    - Hierarchical Clustering - major revamp in course of fixing bug #2190 above.
+    - Plugin Object - code cleaned and refactored (#2312).
+    - SequenceView Object - code cleaned and refactored (#2278).
+    - SwingWorker - replace/remove deprecated and duplicate copies of SwingWorker (#2315).
+
+
+    ---Versions of external files/components included in release 2.1.0---
+    - Cytoscape 2.7.0.
+    - gene_ontology.1_2.obo downloaded 2010-09-03 from geneontology.org.
+    - Ontologizer.jar version 2.0, file released 2010-03-10.
+    - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on server 2009-10.
+    - JMOL 12.0 RC10. 
+
+
+    geWorkbench 2.0.2 (2010-07-16)
+    ====================================
+    - Fixes a problem which prevented the genSpace component from
+      posting events to its server.
+    - Full update of the MINDy Online Help chapter.
+    - DPI options in MINDy disabled, as not needed.
+
+
+    geWorkbench 2.0.1 (2010-06-25)
+    ====================================
+    - Minor client-side changes to allow grid components to communicate
+      with grid services behind the Columbia firewall.
+    - Updates the CNKB Online Help chapter.
+
+
+    geWorkbench 2.0.0 (2010-06-09)
+    ====================================	
+    ---New components---
+
+    - Skyline - A high-throughput comparative modelling pipeline. 
+             It creates structural homology models for protein sequences
+             with similarity to a protein with an experimentally determined
+             3-D structure.  The input is a PDB file.
+                
+    - Skybase - SkyBase is a database that stores the homology models built by
+             SkyLine analysis for all NESG PSI2 protein structures.  It is
+             queried using FASTA-format protein sequence files.
+                
+    - Pudge -  Interface to a protein structure prediction server which integrates
+             tools used at different stages of the structural prediction process.
+             Modelling starts with a FASTA-format protein sequence file.
+
+    ---Other major new features in release 2.0.0---
+    - Cellular Network Knowledge Base (CNKB) - Revamped interface to allow choice
+        of interactome and data types.
+    - File parsers added:
+        MAGE-TAB data matrix
+        GEO Soft format - added series (GSE) and curated matrix (GDS). 
+    - Filtering - completely revamped - now works directly for all modes,
+        allows specification of minimum % matching arrays before filtering occurs.
+    - More than 250 "bug reports" were closed. These included many new features,
+        improvements in the usability of numerous components, and actual bug fixes.
+    - Java 6 - Moved from Java 5 to Java 6. geWorkbench now requires Java 6.
+        Works on both 32 bit and 64 bit VMs (JREs).
+    - Look and Feel - Switched to new, more modern Look and Feel (Nimbus).
+        geWorkbench appearance now consistent across all platforms.
+    - caBIO component updated from 4.2 to 4.3. 
+    
+
+    ---Other major changes in release 2.0.0---
+
+    - caArray - Improved memory usage on downloads from caArray.
+    - CNKB - Can now return markers direct from CNKB without use of Cytoscape.
+    - Color Mosaic - enhancements to display (bug 2147):
+        toggle array names on/off
+        search on array name, accession, or label 
+    - Component Configuration Manager - now can filter display list by categories:
+        Analysis, Viewer, Normalizer, Filter
+    - Cytoscape - Corrected mapping between gene names in Cytoscape display and
+        markers in Marker Sets panel (now uses Entrez IDs).
+    - Dendrogram - can now create Array subsets as well as marker subsets.
+    - File loading - Checking for "out of memory" errors during file loading.
+    - File Parser menu - The file parser selection menu now shows valid file extensions
+        for each type.
+    - GUI - in switching to new L&F, fixed many text highlighting problems that were
+        previously seen on Macintosh only but now appeared on Windows also.
+    - Markers and Arrays - Hover text available in Markers and Arrays phenotypes
+        to visualize long names if needed.
+    - Marker Annotation - search results can be saved to a text file, including
+        relevant URLs and pathway BioCarta pathway names.
+    - Online Help - New or fully updated chapters added for:
+        - Component Configuration Manager
+        - Filtering
+        - Normalization
+    - Promoter - JASPAR promoter motifs now filterable by taxon.
+    - Sequence alignment (BLAST) - many enhancements, including
+        added additional databases to match those listed at NCBI
+        improved handling of results from searches containing long query sequences. 
+
+    ---Versions of external files/components included in release 2.0.0---
+    - Cytoscape 2.4.
+    - gene_ontology.1_2.obo downloaded 5/24/2010 from geneontology.org.
+    - Ontologizer.jar version 2.0, file released 3/10/2010.
+    - Jaspar_CORE (http://jaspar.genereg.net/) SQL files last updated on server 10/2009.
+    - JMOL - updated to 12.0 RC10. 
+
+
+    geWorkbench 1.8.0 (2009-11-05)
+    ====================================
+
+    ---New components---
+
+    - Gene Ontology Enrichment - Analysis and visual components.
+       Analysis component is built on Ontologizer 2.0.
+
+
+    ---Other changes in release 1.8.0---
+
+    - caArray - Update caArray component to use caArray 2.3.0 Java API.
+        Please note that geWorkbench 1.8.0 is not compatible with earlier
+        versions of caArray.
+    - CNKB - The network graph generated by CNKB was only showing nodes
+        centered about a focus node.  Now all accepted nodes will be
+        displayed.
+    - Dataset History - Additions for several modules.
+    - Grid Services - A number of fixes to grid services were made.
+    - Marker Annotations - Fixed a problem with retrieving marker
+        annotations when microarray data downloaded from caArray.
+    - Mark-Us - JMOL dependency added for molecule display.
+    - Promoter - Update JASPAR motifs to release of December 2007.
+        -Note on October 12, 2009 a new version of JASPAR was released
+        which made an incompatible change in the file format.
+    - Promoter - component now displays logos using the "Schneider" method,
+        including his "small-value correction", rather than using a previous
+        "in-house" method.
+    - Promoter - the displayed data now does not include the effects of
+        the pseudo-count normalization process.
+    - Promoter - Added ability to specify pseudocount or select previous
+        hard-coded option of square root of number of sequences.
+    - Promoter - Loaded TFs now are properly added to the list of
+        available TFs.
+    - Sequence Alignment (BLAST) - PFP filtering option removed
+    - Usability fixes - operation of cancel buttons, progress bar.
+    - Release Notes - Added specific installation instructions.
+
+
+    ---Online Help chapters updated---
+    - ANOVA
+    - ARACNe
+    - CNKB
+    - Marker Annotations
+    - Master Regulator Analysis
+    - Promoter
+    - Sequence Alignment (BLAST) 
+
+
+    geWorkbench 1.7.0 (2009-07-17)
+    ====================================
+
+    ---New components---
+
+    -  MarkUs - The MarkUs component assists in the assessment of the
+        biochemical function for a given protein structure. It serves
+        as an interface to the Mark-Us web server at Columbia. Mark-Us
+        identifies related protein structures and sequences, detects
+        protein cavities, and calculates the surface electrostatic
+        potentials and amino acid conservation profile.
+
+    -  MRA - The Master Regulator Analysis component attempts to identify
+        transcription factors which control the regulation of a set
+        of differentially expressed target genes (TGs). Differential
+        expression is determined using a t-test on microarray gene
+        expression profiles from 2 cellular phenotypes, e.g. experimental
+        and control.
+
+    -  Pudge - Interface to a protein structure
+        prediction server (Honig lab) which integrates tools used
+        at different stages of the structural prediction process.
+
+    -  ARACNe2 - upgraded to ARACNe2 distribution from Califano lab,
+        which adds selectable modes (Preprocessing, Discovery, Complete)
+        and a new algorithm (Adaptive Partitioning). Preprocessing allows
+        determination of key parameters from actual input dataset.
+
+    -  caGrid v1.3 - Upgrading of grid services to caGrid v1.3 +
+        introduction of caTransfer for large data transfers.
+
+    -  Component Configuration Manager - allows individual components to
+        be loaded into or unloaded from geWorkbench.
+
+    -  genSpace collaborative framework - discovery and visualization
+        of workflows. Implemented user registration and preferences.
+
+    - SVM 3.0 (GenePattern) - Support Vector machines for classification.
+
+    ---Other changes in release 1.7.0---
+
+    - Analysis - Parameter saving implemented in all components. If
+        current settings match a saved set, it is highlighted.  
+    - ARACNe - improved description of DPI in Online Help.  
+    - caArray - query filtering on Array Provider, Organism and Investigator
+        implemented.  
+    - caArray - can now add a local annotation file to caArray data downloads.  
+    - caGrid - caGrid connectivity is now built directly in to supported
+        components rather than being a separate component itself.
+    - caScript - The caScript editor is no longer supported.  
+    - Color Mosaic - now interactive with the Marker Sets list and Selection set.  
+    - Cytoscape - Upgrade to Cytoscape version 2.4 for network visualization
+        and interaction.
+    - Cytoscape - Set operations on genes being returned from
+        Cytoscape network visualizations, via right-click menu.
+    - Cytoscape - Changes to tag-for-visualization - e.g., now only
+       one way, from marker set to Cytoscape, not vice-versa.  
+    - Gene Ontology file - the OBO 1.2 file format is supported.  
+    - Marker Annotations - Direct access to the NCI Cancer Gene Index was
+        added. It supplies detailed literature-based annotations on a
+        curated set of cancer-related genes.  
+    - Marker Annotations - add export to CSV file.  
+    - Marker Sets component - a set copy function was added.  
+    - MINDy - many improvements to display and results filtering - including
+        marker set filtering.  
+    - Scatter Plot - Up to 100 overlapping points can be displayed in a single
+        tooltip.  
+    - Various - A number of components were refactored.
+    - Workspace saving - now works properly for all components.
+
+
+    geWorkbench 1.6.3 (2009-01-08)
+    ====================================
+	
+    - geWorkbench 1.6.3 fixes several caArray related issues:
+       - connection issue that may cause a time-out on some machines.
+       - incorrect caching of caArray query results.
+       - duplicate query process removed. 
+
+
+    geWorkbench 1.6.2 (2008-11-14)
+    ====================================
+
+    - geWorkbench 1.6.2 provides improved proxy communication with its grid
+    service dispatcher component (see Mantis bug 1631).
+    - A problem was fixed in the server-side grid implementation of
+      hierarchical clustering (Mantis bug 1598).
+
+
+    geWorkbench 1.6.1 (2008-11-07)
+    ====================================
+    - A Java servlet now provides connectivity to the Cellular Networks
+      Knowledge Base database through the firewall.
+    - Online help for the Sequence Retriever component was added.
+    - The GenePix annotation parser was augmented to include more data fields.
+    - Added a missing GenSpace component.
+    - The GenSpace component was moved from the visual area to the command area.
+    - Volcano plot scaling was fixed to display extreme P-values (E-45).
+    
+
+  
+    geWorkbench 1.6.0 (2008-10-24)
+    ====================================
+    - Adds Mindy component
+    - The GO Terms component is not included in this release.  It will
+           return in a future release.
+    - Fixed a problem (caused by a change in a server-side URL) with
+        retrieving annotations for genes in Biocarta pathway diagrams (bug 1577).
+    - The default caArray server was set to the production server at NCI
+        (array.nci.nih.gov, port 8080) (bug 1602). The URL for the staging
+      array was updated to array-stage.nci.nih.gov.
+    - An incorrect argument was being sent to NCBI's BLAST server. Due to
+        recent changes there implementing stricter checking, blastn would no
+        longer run. (bug 1597).
+    - Corrected a problem where, when using the adjusted Bonferroni correction,
+        or the Westphal-Young with MaxT, only values with positive fold-changes
+        were returned and displayed (bug 1603).
+    - Added a feature whereby the user is warned before any operation that
+        will alter the dataset, e.g. before filtering out markers, or before
+        a log2 transformation.
+    - Added a feature to allow adding a new empty marker set. This can then
+        be used to receive markers selected interactively in Cytoscape (bug 1541).
+    - Fixed a problem displaying patterns in the sequence viewer after running
+        Pattern Discovery (SPLASH) (bug 1415).
+    - Fixed a problem with displaying adjacency matrices generated by ARACNE
+        in the Cytoscape component (bug 1449). 
+
+
+    - Numerous changes were made to improve responsiveness, including when
+          - selecting a marker in a large dataset (bug 1346),
+          - right-clicking on Project with a large dataset (bug 1337),
+          - saving a workspace (bug 1525), and
+          - starting an analysis (bug 1544). 
+     - Remaining changes, not listed here in detail, included
+          - internal issues within geWorkbench,
+          - improved verification of parameters and set selections before
+            beginning a calculation,
+          - improvements to the graphical user interfaces of many components, and
+          - corrections to the grid implementations of analytical services
+            (Hierarchical Clustering, SOM, ANOVA etc). 
+
+
+    geWorkbench 1.5.1 (2008-09-23)
+    ==================================== 
+        -  It addresses changes in the APIs for the caArray and caBIO
+           data services since geWorkbench 1.5 was released.  geWorkbench 1.5.1
+           can currently connect with caArray 2.1 and caBIO 4.0/4.1.
+        -  It also includes an update to parse the new release 26 of Affymetrix
+           annotation files.
+        -  Fixes a problem where annotation information was not associated with
+           arrays that were merged.
+
+
+    geWorkbench 1.5.0 (2008-07-03)
+    ====================================
+    ---New Modules---
+          - ARACNE – gene network reverse engineering (from Andrea
+              Califano's lab at Columbia University, 
+              http://wiki.c2b2.columbia.edu/califanolab/index.php/Software). 
+          - ANOVA – Analysis of variance, ported from TIGR's MEV,
+              http://www.tm4.org/mev.html). 
+          - caArray2.0 connectivity – query for and download data from
+              caArray 2.0 directly into geWorkbench.
+          - Cellular Networks Knowledge Base – database of molecular 
+              interactions.  (from Andrea Califano's lab at Columbia University, 
+              http://amdec-bioinfo.cu-genome.org/html/BCellInteractome.html).
+          - GenSpace - provide social networking capabilities and 
+          allow you to connect with other geWorkbench users.
+          - MatrixReduce – transcription factor binding site prediction
+              (from Harmen Bussemaker's lab at Columbia University, 
+              http://bussemaker.bio.columbia.edu/software/MatrixREDUCE/).
+          - Analysis components ported from GenePattern (http://www.genepattern.org) 
+              - Principle Component Analysis (PCA)
+              - K-nearest neighbors (KNN)
+              - Weighted Voting (WV)
+
+    ---New File types supported---
+           - The NCBI GEO series matrix file for microarray data (tab-delimited)
+
+    ---New server side architecture---
+           - Invocation of caGrid services is now delegated to an independent 
+              component (the Dispatcher). This makes it possible to exit geWorkbench 
+              after submitting a long-running job and then automatically pick up any 
+              results next time the application starts. 
+
+     ---Other changes---
+          - The Marker and Array/Phenotypes components now support algebraic operations 
+              (union, intersection, XOR) on marker and array groups.
+          - Upon exiting the application, the user is prompted to store their workspace.
+          - Workspace persistence problems have been resolved.
+          - The Marker Annotations component has been enhanced in several ways:
+              -- The integration with caBIO has been updated to use API Version 4.0
+              -- The caBIO Pathway component (previously an independent geWorkbench 
+                    component that would display BioCarta pathway images) has been 
+                    integrated into the Marker Annotations component.
+              -- Markers can be returned from BioCarta pathway diagrams.
+              -- A new option is provided to choose between human or mouse CGAP 
+                    annotation pages.
+
+
+===============================================================================
+    4.0 Known Issues/Defects
+===============================================================================
+   
+    ---Running BLAST on multiple sequences---
+        (Not seen recently) - The NCBI BLAST server may return an error when  multiple
+        sequences are searched from geWorkbench.  The queries are sent serially,
+        one at a time.   This appears to depend on the load on the
+        NCIB BLAST server.
+   
+   
+    ---Affymetrix Annotation files---
+
+        Due to licensing restrictions, Affymetrix annotation files cannot be
+        included in this distribution.  geWorkbench users who are working
+        with Affymetrix chip data should retrieve the latest version of the
+        appropriate annotation file for the chip type they using directly from
+        Affymetrix.  geWorkbench uses the CSV format annotation files.
+
+        Affymetrix annotation files can be downloaded from their support site,
+        at www.affymetrix.com.  Although there are frequent changes to their website,
+        the files can be found starting on the Support tab of the website:
+        (1) the Technical Documentation section, e.g.:
+            * Support->Affymetrix Microarray Solutions->Technical Documentation->Annotation Files 
+        (2) Under "Support by Product".
+
+
+        An example file from the Affymetrix site is
+        "HG_U95Av2.na34.annot.csv.zip".  This file must be
+        unzipped before use.  You can place the file in any convenient
+        directory.  When you load a new data file, you will be asked
+        for the location of the annotation file and can browse to it. 
+
+
+    ---Grid Computations---
+        The reference implementations of the server-side grid-enabled algorithms
+        currently are running on a single front-end server not meant for
+        heavy computational use.  That server is not configured for computing on large
+        datasets or for long-running jobs.
+ 
+
+
+===============================================================================
+    5.0 Bug Reports and Support
+===============================================================================
+    
+    Support is provided via online forums at the NCI's Molecular Analysis Tools
+    Knowledge Center. 
+
+        See https://cabig-kc.nci.nih.gov/Molecular/forums/
+
+
+    Finally, please see the geWorkbench project page for additional known issues and FAQs.
+
+        www.geworkbench.org.
+
+    
+
+===============================================================================
+    6.0 Documentation and Files
+===============================================================================
+
+    
+    The documents and support files in this distribution include:
+
+    geWorkbench Release Notes:
+        ReleaseNotes_2.6.0.txt (this file)
+         
+  
+    geWorkbench License: 
+        geWorkbenchLicense.txt
+
+       
+    For other documentation not directly included as part of the
+    distribution, see the following section (7.0) Web Resources.
+
+   
+
+===============================================================================
+    7.0 geWorkbench Web Resources
+===============================================================================
+     
+ 
+    The geWorkbench team maintains a Wiki containing extensive documentation.
+    It is available at:  http://www.geworkbench.org
+
+ 

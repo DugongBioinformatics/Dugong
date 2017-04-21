@@ -1,0 +1,26 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="PudgeBrowser"
+		class="org.geworkbench.components.pudge.PudgeBrowser" version="1.0"
+		author="geWorkbench Development Team" 
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Pudge"
+		description="Visualization of Pudge results." 
+		category="Visualizer, Sequence, Structure, Remote Access"
+	 >
+	 	<required-component class="org.geworkbench.components.pudge.PudgeAnalysis" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="PudgeBrowser" name="PudgeBrowser"
+		class="org.geworkbench.components.pudge.PudgeBrowser" source="pudge">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>

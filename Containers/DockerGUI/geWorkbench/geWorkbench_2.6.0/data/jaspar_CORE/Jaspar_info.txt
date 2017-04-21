@@ -1,0 +1,3 @@
+These files were obtained from the October 12, 2009 version of Jaspar, at the following URL:
+
+http://jaspar.genereg.net/html/DOWNLOAD/jaspar_CORE/non_redundant/all_species/sql_tables/

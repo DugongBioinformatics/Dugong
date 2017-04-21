@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
+	<classpathentry kind="lib" path="lib/cytoscape.jar"/>
+	<classpathentry kind="lib" path="lib/automatic-layout-2.8.2-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-jwsdp.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

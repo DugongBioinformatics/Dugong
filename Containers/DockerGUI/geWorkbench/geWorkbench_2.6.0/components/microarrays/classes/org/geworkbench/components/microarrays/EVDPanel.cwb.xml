@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="Expression Value Distribution"
+		class="org.geworkbench.components.microarrays.EVDPanel" version="1.0"
+		author="geWorkbench Development Team" authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/EVD"
+		description="The Expression Value Distribution component
+ plots a histogram of expression values versus their frequency of occurence."
+		category="Visualizer, Microarray"
+		loadByDefault="true">
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="EVDPanel" name="Expression Value Distribution"
+		class="org.geworkbench.components.microarrays.EVDPanel" source="microarrays">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="Color Mosaic Panel"
+		class="org.geworkbench.components.colormosaic.ColorMosaicPanel"
+		version="1.0" 
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Color_Mosaic"
+		description="A color spectrum is used to indicate the relative magnitudes of the measurements.
+ The arrays (columns) are grouped by input group membership,
+ i.e. set 1,set 2 etc. Each row corresponds to a marker,
+ and marker display is ordered by p-value in ascending order
+ (from most significant to least significant)."
+		category="Visualizer, Microarray" loadByDefault="true">
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="ColorMosaicPanel" name="Color Mosaic"
+		class="org.geworkbench.components.colormosaic.ColorMosaicPanel"
+		source="colormosaic">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>
+

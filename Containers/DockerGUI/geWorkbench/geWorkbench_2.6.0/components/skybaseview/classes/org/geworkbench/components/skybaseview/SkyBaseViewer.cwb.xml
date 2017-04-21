@@ -1,0 +1,27 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="SkyBase Viewer"
+				class="org.geworkbench.components.skybaseview.SkyBaseViewer"
+				version="1.0"
+				author="Murray lab (C2B2)"
+				authorURL="http://skybase.c2b2.columbia.edu/nesg3/index.html"
+				toolURL="http://skybase.c2b2.columbia.edu/nesg3/help/help.html"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/SkyBase"
+				description="Displays detailed information about models resulting from SkyBase Analysis. Views include (1) a Jmol model viewer, (2) a bar chart for all models displaying model quality pG score, template coverage, model-template sequence identity and model rank, (3) a table with more detailed information about all the models, and (4) model-template and model-query sequence alignments. "
+				category="Visualizer, Sequence, Structure"
+	 >
+		<required-component class="org.geworkbench.components.skybase.SkyBaseAnalysis" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+
+	</component>
+
+  <plugin id="SkyBaseViewer" name="SkyBase Viewer" class="org.geworkbench.components.skybaseview.SkyBaseViewer" source="skybaseview">
+    <gui-area name="VisualArea"/>
+  </plugin>
+
+</component-descriptor>

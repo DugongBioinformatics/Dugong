@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/swingx-2006_10_27.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli.jar"/>
+	<classpathentry kind="lib" path="lib/workbook-0.91.jar"/>
+	<classpathentry kind="lib" path="lib/aracne1.jar"/>
+	<classpathentry kind="lib" path="lib/MINDY-0.3.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

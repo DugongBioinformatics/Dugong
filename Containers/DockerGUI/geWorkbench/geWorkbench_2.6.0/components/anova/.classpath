@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
+	<classpathentry kind="lib" path="lib/JSciCore.jar"/>
+	<classpathentry kind="lib" path="lib/JSciPartial.jar"/>
+	<classpathentry kind="lib" path="lib/mev-algorithm-impl.jar"/>
+	<classpathentry kind="lib" path="lib/mev-algorithm-support.jar"/>
+	<classpathentry kind="lib" path="lib/mev-base.jar"/>
+	<classpathentry kind="lib" path="lib/mev-util.jar"/>
+	<classpathentry kind="lib" path="lib/mev-gui-impl.jar"/>
+	<classpathentry kind="lib" path="lib/mev-gui-support.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

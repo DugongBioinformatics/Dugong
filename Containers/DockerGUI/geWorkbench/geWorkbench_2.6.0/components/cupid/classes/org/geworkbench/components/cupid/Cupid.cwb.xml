@@ -1,0 +1,22 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="CUPID Interface"
+		class="org.geworkbench.components.cupid.Cupid"
+		version="1.0" 
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Cupid"
+		description="This component allows query of a database of predicted miRNA-mRNA interactions created using the CUPID algorithm (Sumazin et al., 2011)"
+		category="Visualizer, Network, Sequence, Remote Access" loadByDefault="false">
+		http://wiki.c2b2.columbia.edu/workbench/index.php/Cupid
+	</component>
+
+	<plugin id="Cupid" name="CUPID Interface"
+		class="org.geworkbench.components.cupid.Cupid"
+		source="cupid">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>

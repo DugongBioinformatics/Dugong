@@ -1,0 +1,22 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="ceRNA Query Interface"
+		class="org.geworkbench.components.cerna.CeRNA"
+		version="1.0"
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/CeRNA_Query"
+		description="This component provides query access to a precomputed database of competitive endogenous RNA (ceRNA) interactions, also called sponge interactions. These interactions underlie a post-transcriptional layer of regulation, and were predicted using the Hermes algorithm (Sumazin et al., 2011)." 
+		category="Visualizer, Network, Sequence, Remote Access" 
+		loadByDefault="false">
+	</component>
+
+	<plugin id="CeRNA" name="CeRNA Interface"
+		class="org.geworkbench.components.cerna.CeRNA"
+		source="cerna">
+		<gui-area name="VisualArea" />
+	</plugin>
+
+</component-descriptor>

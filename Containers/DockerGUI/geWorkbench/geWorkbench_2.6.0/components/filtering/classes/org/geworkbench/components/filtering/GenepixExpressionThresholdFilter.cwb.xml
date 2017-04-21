@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Genepix Expression Threshold Filter"
+				class="org.geworkbench.components.filtering.GenepixExpressionThresholdFilter"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Filtering"
+				description="Applicable to 2-channel arrays (Genepix)
+ data only. Defines applicable ranges for each channel,
+ and filters out markers for which more than a user-specified number or percentage have
+ either channel intensity inside (or outside)
+ the defined range."
+ 				category="filter"
+	 >
+		<required-component class="org.geworkbench.components.filtering.FilteringPanel" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+
+	</component>
+
+	<plugin id="genepixexpressionthresholdfilter" name="Genepix Expression Threshold Filter" class="org.geworkbench.components.filtering.GenepixExpressionThresholdFilter" source="filtering"/>
+
+</component-descriptor>

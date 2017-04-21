@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="T Test Analysis"
+		class="org.geworkbench.components.ttest.TtestAnalysis"
+		version="1.0"
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Differential_Expression"
+		description="This component computes the Student's t-test result
+ for the significance of any differential expression seen between two
+ clases of microarray gene expression profiles (case and control)."
+		category="Analysis, Microarray"
+		loadByDefault="true"
+ 	 >
+		<required-component class="org.geworkbench.components.colormosaic.ColorMosaicPanel" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="TtestAnalysis" name="T Test Analysis" class="org.geworkbench.components.ttest.TtestAnalysis" source="ttest"/>
+
+</component-descriptor>

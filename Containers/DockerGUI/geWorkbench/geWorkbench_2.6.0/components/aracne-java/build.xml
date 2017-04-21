@@ -1,0 +1,91 @@
+<project name="AracneService" basedir="." default="generate.service">
+
+	<property name="service.name" value="AracneService" />
+	<property name="dest.dir" value="build" />
+	<property name="dest.dir.classes" value="${dest.dir}/${service.name}" />
+	<property name="dest.dir.lib" value="${dest.dir}/lib" />
+	<property environment="env" />
+	<property name="axis2.home" value="${env.AXIS2_HOME}" />
+	<property name="tomcat.dir" value="${env.CATALINA_HOME}" />
+	<property name="repository.path" value="${tomcat.dir}\webapps\axis2\WEB-INF\services" />
+
+	<path id="build.class.path">
+		<fileset dir="${axis2.home}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="lib">
+			<!-- its own lib -->
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="client.class.path">
+		<fileset dir="${axis2.home}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${dest.dir.lib}">
+			<include name="*.jar" />
+		</fileset>
+
+	</path>
+	<target name="clean">
+		<delete dir="${dest.dir}" />
+	</target>
+
+	<target name="prepare">
+		<mkdir dir="${dest.dir}" />
+		<mkdir dir="${dest.dir.classes}" />
+		<mkdir dir="${dest.dir.classes}/META-INF" />
+		<mkdir dir="${dest.dir.classes}/lib" />
+	</target>
+
+	<target name="generate.service" depends="clean,prepare">
+
+		<copy file="src/META-INF/services.xml" tofile="${dest.dir.classes}/META-INF/services.xml" overwrite="true" />
+		<copy toDir="${dest.dir.classes}/lib" overwrite="true">
+			<fileset dir="lib">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<javac srcdir="src" destdir="${dest.dir.classes}" includes="org/geworkbench/components/aracne/service/**,org/geworkbench/components/aracne/data/**">
+			<classpath refid="build.class.path" />
+		</javac>
+
+		<jar basedir="${dest.dir.classes}" destfile="${dest.dir}/${service.name}.aar" />
+
+		<copy file="${dest.dir}/${service.name}.aar" tofile="${repository.path}/${service.name}.aar" overwrite="true" />
+
+		<copy toDir="${tomcat.dir}/bin" overwrite="true">
+			<fileset dir=".">
+				<include name="Bcell-100.exp_ARACNe_*.txt" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="rpc.client" depends="clean,prepare">
+
+		<antcall target="rpc.client.compile" />
+
+		<antcall target="rpc.client.jar" />
+
+		<antcall target="rpc.client.run" />
+
+	</target>
+
+	<target name="rpc.client.compile">
+		<javac srcdir="test" destdir="${dest.dir.classes}" includes="org/geworkbench/aracne/service/client/**,org/geworkbench/components/aracne/data/**">
+			<classpath refid="build.class.path" />
+		</javac>
+	</target>
+
+	<target name="rpc.client.jar">
+		<jar basedir="${dest.dir.classes}" destfile="${dest.dir.lib}/rpc-client.jar" includes="org/geworkbench/aracne/service/client/**,org/geworkbench/components/aracne/data/**" />
+	</target>
+
+	<target name="rpc.client.run">
+		<java classname="org.geworkbench.aracne.service.client.AracneClient" fork="true">
+			<classpath refid="client.class.path" />
+		</java>
+	</target>
+</project>

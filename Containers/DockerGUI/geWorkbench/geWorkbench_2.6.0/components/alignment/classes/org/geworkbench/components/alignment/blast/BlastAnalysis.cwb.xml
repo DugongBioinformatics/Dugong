@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="BLAST Analysis"
+		class="org.geworkbench.components.alignment.blast.BlastAnalysis"
+		version="1.0" 
+		author="geWorkbench Development Team"
+		authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/BLAST"
+		description="The Sequence Alignment component allows amino-acid (protein)
+ or nucleotide (DNA) sequences to be submitted to the NCBI BLAST server
+ for sequence similarity search against various databases."
+        category="Analysis, Remote Access, Sequence"
+        loadByDefault="true">
+		<required-component
+			class="org.geworkbench.components.alignment.BlastViewComponent" />
+		<required-component
+			class="org.geworkbench.components.sequences.SequenceViewAppComponent" />
+		<related-component class="org.geworkbench.components.promoter.PromoterView" />
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+	<plugin id="BlastAnalysis" name="BLAST Analysis"
+		class="org.geworkbench.components.alignment.blast.BlastAnalysis"
+		source="alignment">
+		<!-- <gui-area name="CommandArea" />   -->
+	</plugin>
+</component-descriptor>

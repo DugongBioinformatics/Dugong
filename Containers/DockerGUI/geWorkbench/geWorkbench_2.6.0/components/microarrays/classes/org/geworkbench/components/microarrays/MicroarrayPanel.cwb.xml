@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component  name="Microarray Viewer"
+				class="org.geworkbench.components.microarrays.MicroarrayPanel"
+				version="1.0"
+				author="geWorkbench Development Team"
+				authorURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				toolURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Home"
+				tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Viewing_a_Microarray_Dataset"
+				description="Displays a representation of the data from the
+ microarray dataset, centered either around zero (absolute display)
+ or around the marker average value (relative display)."
+				category="Visualizer, Microarray"
+				loadByDefault="true"
+	 >
+		<license><![CDATA[
+			<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1252"></head>
+				<body>----</body>
+			</html>
+		]]></license>
+
+	</component>
+
+
+	<plugin id="MicroarrayPanel" name="Microarray Viewer" class="org.geworkbench.components.microarrays.MicroarrayPanel" source="microarrays">
+		<gui-area name="VisualArea"/>
+		<!-- An example 'subscription' directive: Set enabled to 'No' to prevent subscription for certain type. -->
+		<subscription type="org.geworkbench.events.ProjectEvent" enabled="Yes"/>
+	</plugin>
+
+
+
+</component-descriptor>

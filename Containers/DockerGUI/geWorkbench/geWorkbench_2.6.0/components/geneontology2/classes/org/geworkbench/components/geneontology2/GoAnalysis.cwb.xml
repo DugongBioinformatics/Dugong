@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+
+	<component name="Gene Ontology Term Analysis (Ontologizer 2.0)"
+		class="org.geworkbench.components.geneontology2.GoAnalysis"
+		version="1.0"
+		author="Robinson lab (Charite, Berlin)"
+		authorURL="http://compbio.charite.de/index.php/peter-n-robinson.html"
+		toolURL="http://compbio.charite.de/index.php/ontologizer2.html"
+		tutorialURL="http://wiki.c2b2.columbia.edu/workbench/index.php/Gene_Ontology_Term_Analysis"
+		description="Gene Ontology Term Analysis, built on Ontologizer 2.0. From Peter Robinson's group at the Charite Medical Institute, Berlin. From author description: Depending on the method, the results of analysis consist of a list of many differentially regulated genes or a partitioning of many or all of the genes in the data set into clusters (groups) that putatively share some functionally relevant characteristic. Among the many uses to which the Gene Ontology (GO) has been put is to provide a summary of such lists of genes/proteins according to functional role, biochemical reaction, or location of the gene product in the cell. Ontologizer 2.0 supports not only the standard approach to GO term enrichment analysis but also our new parent-child method as described in Grossmann et al. (2007)  as well as topology based methods as described in Alexa et al. (2006)  and Falcon et al. (2007).
+"
+		category="Analysis, Microarray"
+		loadByDefault="true"
+		>
+
+		<required-component class="org.geworkbench.components.geneontology2.GoAnalysisResultView" />
+	</component>
+	
+	<plugin id="GeneOntology2" name="Gene Ontology Term Analysis (Ontologizer 2.0)"
+		class="org.geworkbench.components.geneontology2.GoAnalysis" source="geneontology2" />
+	
+</component-descriptor>

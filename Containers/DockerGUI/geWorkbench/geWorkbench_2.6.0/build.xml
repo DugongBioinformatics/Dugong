@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<project name="geWorkBench" default="run">
+	<!-- ===================================================================== -->
+	<!-- INIT  -->
+	<!-- ===================================================================== -->
+	<target name="init" description="Initializes the build environment.">
+		<!-- Project-wide properties -->
+		<presetdef name="javac">
+			<javac includeantruntime="false" />
+		</presetdef>
+		<!-- App name -->
+		<property name="app" value="geWorkbench"/>
+		<!-- Paths -->
+		<property name="classes" value="classes"/>
+		<property name="conf" value="conf"/>
+		<property name="temp" value="temp"/>
+		<!-- Directory for releases -->
+		<property name="cleanFolder" value="../cleanFolder"/>
+		<!-- Directory for developer kit releases -->
+		<!-- The executable libs -->
+		<property name="lib" value="lib"/>
+		<!-- The executable 64bit libs -->
+		<property name="lib64" value="lib64" />
+		<!-- The components directory -->
+		<property name="components" value="components"/>
+		<!-- Release info -->
+		<property name="release.file" value="${dist}/${app}-${version}"/>
+		<condition property="32bit">
+			<equals arg1="${sun.arch.data.model}" arg2="32" />
+		</condition>
+		<condition property="64bit">
+			<equals arg1="${sun.arch.data.model}" arg2="64" />
+		</condition>
+
+	</target>
+	<target name="classpath.32" depends="init" if="32bit">
+		<property name="Dlib" value="${lib}" />
+		<echo message="32bit: ${32bit}" />
+	</target>
+	<target name="classpath.64" depends="init" if="64bit">
+		<property name="Dlib" value="${lib64};${lib}" />
+		<echo message="64bit: ${64bit}" />
+	</target>
+	<!-- ===================================================================== -->
+	<!-- PREPARE  -->
+	<!-- ===================================================================== -->
+	<target name="prepare" depends="init, classpath.32, classpath.64" description="Prepares for compilation.">
+		<path id="classpath">
+			<fileset dir="${lib}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		<!-- Classpath for running -->
+		<path id="run.classpath">
+			<!-- pathelement location="${classes}"/ -->
+			<pathelement location="geworkbench-parsers.jar"/>
+			<pathelement location="geworkbench-engine.jar"/>
+			<pathelement location="geworkbench-util.jar"/>
+			<pathelement location="geworkbench-builtin.jar"/>
+			<pathelement location="geworkbench-events.jar"/>
+			<pathelement location="geworkbench-bison.jar"/>
+			<pathelement location="geworkbench-others.jar"/>
+			<pathelement location="${conf}"/>
+			<pathelement location="."/>
+			<path refid="classpath"/>
+		</path>
+		<!-- BootClasspath for running jdic on mac -->
+		<path id="bootclasspath">
+			<pathelement path="/Library/Java/Home/lib/plugin.jar:/Library/Java/Home/lib/deploy.jar"/>
+		</path>
+		<property name="bootclasspath" refid="bootclasspath"/>
+	</target>
+	<!-- ====================================================================== -->
+	<!-- RUN PRODUCTION-->
+	<!-- ====================================================================== -->
+	<target name="run" depends="prepare" description="Runs geWorkbench.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx1024M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+	
+	<target name="run1G" depends="prepare" description="Runs geWorkbench with max 1G Java heap memory.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx1024M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+	
+	<target name="run2G" depends="prepare" description="Runs geWorkbench with max 2G Java heap memory.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx2048M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+	
+	<target name="run4G" depends="prepare" description="Runs geWorkbench with max 4G Java heap memory.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx4096M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+	
+	<target name="run8G" depends="prepare" description="Runs geWorkbench with max 8G Java heap memory.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx8192M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+	
+	<target name="run16G" depends="prepare" description="Runs geWorkbench with max 16G Java heap memory.">
+		<java fork="true" classname="org.geworkbench.engine.config.UILauncher">
+			<jvmarg value="-Xss1024k"/>
+			<jvmarg value="-Xmx16384M"/>
+			<jvmarg value="-XX:MaxPermSize=128m" />
+			<jvmarg value="-Djava.library.path=${Dlib}"/>
+			<jvmarg value="-Xbootclasspath/p:${bootclasspath}" />
+			<arg value="all.xml"/>
+			<classpath refid="run.classpath"/>
+		</java>
+	</target>
+</project>
