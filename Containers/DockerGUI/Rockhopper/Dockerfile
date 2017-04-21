@@ -41,5 +41,3 @@ ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 ENTRYPOINT ["/root/Desktop/Rockhopper/start.sh"]
 CMD ["--tail-log"]
-
-WORKDIR /data
