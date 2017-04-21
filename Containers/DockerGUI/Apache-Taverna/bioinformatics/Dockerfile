@@ -14,7 +14,7 @@
 #
 ###########################################################################
 
-FROM bigscience/dugong
+FROM dugong/dugong:xfce
 MAINTAINER Fabiano Menegidio
 
 RUN apt-get update
