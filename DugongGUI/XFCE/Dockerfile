@@ -52,8 +52,10 @@ ENV VNC_RESOLUTION 1366x768
 
 ############### Add Linux Mint dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "3EE67F3D0FF405B2"
-RUN echo "deb http://packages.linuxmint.com/ rafaela main upstream import" >> /etc/apt/sources.list.d/mint.list && \
-    echo "deb http://extra.linuxmint.com/ rafaela main " >> /etc/apt/sources.list.d/mint.list
+RUN echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list && \
+    apt-get install --allow-unauthenticated linuxmint-keyring && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
 
 ############### Add Xenial dependencies and update packages
 RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted universe multiverse" >> /etc/apt/sources.list.d/xenial.list && \
@@ -116,6 +118,9 @@ ADD .config/GUI/xfce/ $HOME/
 RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
+
+############### Clean apt-get
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 VOLUME ["/data", "/config"]
 
