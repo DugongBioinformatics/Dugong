@@ -25,3 +25,10 @@ RUN wget https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkben
     && mv /root/Desktop/geWorkbench_v2.6.0_Linux_JRE7_x64.bin /root/Desktop/geWorkbench \
     && chmod +x /root/Desktop/geWorkbench/geWorkbench_v2.6.0_Linux_JRE7_x64.bin \
     && /bin/bash sh /root/Desktop/geWorkbench/geWorkbench_v2.6.0_Linux_JRE7_x64.bin
+
+VOLUME ["/data", "/config"]
+
+ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/root/Desktop/Rockhopper/start.sh"]
+CMD ["--tail-log"]
