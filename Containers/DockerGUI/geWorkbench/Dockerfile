@@ -20,11 +20,8 @@ MAINTAINER Fabiano Menegidio
 
 ################### Install geWorkbench
 WORKDIR /root/
-RUN wget wget https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Linux_JRE7_x64.bin \
-    && mkdir /root/geWorkbench \
-    && mv /root/geWorkbench_v2.6.0_Linux_JRE7_x64.bin /root/geWorkbench \
-    && chmod +x /root/geWorkbench/geWorkbench_v2.6.0_Linux_JRE7_x64.bin \
-    && /bin/bash sh /root/geWorkbench/geWorkbench_v2.6.0_Linux_JRE7_x64.bin
+ADD geWorkbench_2.6.0 /root/geWorkbench_2.6.0
+RUN ln -s /root/geWorkbench_2.6.0/geWorkbench /root/Desktop/geWorkbench
     
 VOLUME ["/data", "/config"]
 
