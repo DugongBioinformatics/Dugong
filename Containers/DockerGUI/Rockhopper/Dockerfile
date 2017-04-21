@@ -21,8 +21,8 @@ MAINTAINER Fabiano Menegidio
 WORKDIR /root/Desktop
 RUN wget http://cs.wellesley.edu/~btjaden/Rockhopper/download/current/Rockhopper.jar \
     && mkdir /root/Desktop/Rockhopper \
-    && mv /root/Desktop/Rockhopper.jar /root/Desktop/Rockhopper
-    && chmod +x /root/Desktop/Rockhopper/Rockhopper.jar
+    && mv /root/Desktop/Rockhopper.jar /root/Desktop/Rockhopper \
+    && chmod +x /root/Desktop/Rockhopper/Rockhopper.jar \
     && ln -s /root/Desktop/Rockhopper/Rockhopper.jar Rockhopper
     
 ################### Download example files
@@ -34,8 +34,6 @@ ADD start.sh /root/Desktop/Rockhopper/
 RUN chmod +x /root/Desktop/Rockhopper/start.sh 
 
 VOLUME ["/data", "/config"]
-
-USER $USER
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
