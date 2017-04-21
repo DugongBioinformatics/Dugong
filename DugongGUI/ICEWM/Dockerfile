@@ -53,7 +53,6 @@ ENV VNC_RESOLUTION 1366x768
 ############### Add Linux Mint dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "3EE67F3D0FF405B2"
 RUN echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list && \
-    apt-get install --allow-unauthenticated linuxmint-keyring && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ############### Add Xenial dependencies and update packages
