@@ -31,7 +31,15 @@ RUN wget http://cs.wellesley.edu/~btjaden/Rockhopper/download/Example_Condition1
     && wget http://cs.wellesley.edu/~btjaden/Rockhopper/download/Example_Condition2.fastq
     
 ADD start.sh /root/Desktop/Rockhopper/
-RUN chmod +x /root/Desktop/Rockhopper/start.sh
+RUN chmod +x /root/Desktop/Rockhopper/start.sh 
 
-CMD 
+VOLUME ["/data", "/config"]
 
+USER $USER
+
+ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/root/Desktop/Rockhopper/start.sh"]
+CMD ["--tail-log"]
+
+WORKDIR /data
