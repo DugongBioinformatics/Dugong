@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/geworkbench-core"/>
-	<classpathentry kind="lib" path="/geworkbench-core/lib/axiom-api-1.2.10.jar"/>
-	<classpathentry kind="lib" path="/geworkbench-core/lib/axis2-kernel-1.5.3.jar"/>
-	<classpathentry kind="output" path="classes"/>
-</classpath>

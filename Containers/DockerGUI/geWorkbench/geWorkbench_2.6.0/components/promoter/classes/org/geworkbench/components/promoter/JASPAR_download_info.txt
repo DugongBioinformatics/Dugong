@@ -1,9 +1,0 @@
-The two JASPAR data files were retrieved from the JASPAR website on August 20, 2009.  They were dated December 1, 2007.
-
-The URL was http://jaspar.genereg.net/html/DOWNLOAD/mySQL/JASPAR_CORE_2008/
-
-The two files used are:
-MATRIX_DATA.txt
-MATRIX_ANNOTATION.txt
-
-They are the flat file dump of the JASPAR database.
