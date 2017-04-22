@@ -51,7 +51,7 @@ ENV VNC_PW vncpassword
 ENV VNC_RESOLUTION 1366x768
 
 ############### Add Linux Mint dependencies and update packages
-RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "4A85297A4F26FEE0AE7AC2F4759A8E0E5BA15160"
+RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2"
 RUN echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
