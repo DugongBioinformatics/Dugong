@@ -3,6 +3,7 @@
 # create an ubuntu user
 PASS=dugong
 USER=dugong
+HOME=/home/dugong
 echo "User: $USER Pass: $PASS"
 useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $USER
 echo "$USER:$PASS" | chpasswd
