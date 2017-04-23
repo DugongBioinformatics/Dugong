@@ -7,3 +7,7 @@ git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew
 echo "export BREWPATH="~/.linuxbrew/bin:$BREWPATH"" >> ~/.bashrc
 echo "export MANPATH="~/.linuxbrew/share/man:$MANPATH"" >> ~/.bashrc
 echo "export INFOPATH="~/.linuxbrew/share/info:$INFOPATH"" >> ~/.bashrc
+echo "export BREWPATH="~/.linuxbrew/bin:$BREWPATH"" >> /home/dugong/.bashrc
+echo "export MANPATH="~/.linuxbrew/share/man:$MANPATH"" >> /home/dugong/.bashrc
+echo "export INFOPATH="~/.linuxbrew/share/info:$INFOPATH"" >> /home/dugong/.bashrc
+chown -R dugong:dugong ~/.linuxbrew
