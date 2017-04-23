@@ -153,20 +153,21 @@ RUN gem install showterm
 ############### Install Basemount, a FUSE driver that allows a BaseSpace user access to their data.
 RUN bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
 
-EXPOSE 22
-EXPOSE 3000
-WORKDIR /home/$NB_USER/work
-
 COPY config/startup.sh /usr/local/bin/
 RUN chmod +X /usr/local/bin/startup.sh
-
 VOLUME ["/data", "/config"]
 RUN chown dugong:dugong /data \
     && chown dugong:dugong /config
 
+EXPOSE 22
+EXPOSE 3000
+
+USER root
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
 CMD ["/usr/local/bin/startup.sh"]
+CMD ["--tail-log"]
 
 WORKDIR /data
+
 USER $NB_USER
