@@ -114,7 +114,8 @@ ADD .config/GUI/xfce/ $HOME/
 
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
-RUN $INST_SCRIPTS/generate_container_user.sh
+RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
+RUN $STARTUPDIR/generate_container_user.sh
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 ############### Clean apt-get
