@@ -115,6 +115,7 @@ ADD .config/GUI/xfce/ $HOME/
 ############### Configure startup Dugong
 #RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
+RUN $INST_SCRIPTS/generate_container_user.sh
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 ############### Clean apt-get
