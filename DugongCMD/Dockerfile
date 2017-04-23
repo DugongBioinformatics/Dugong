@@ -89,6 +89,20 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
+###############  tty.js
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12
+RUN apt-get update
+RUN apt-get install -y --force-yes nodejs
+RUN apt-get clean
+ADD tty.js /tty.js/
+
+###############  Install showterm - record terminal / shell
+RUN apt-get install ruby ruby-dev rubygems -y
+RUN gem install showterm
+
+############### Install Basemount, a FUSE driver that allows a BaseSpace user access to their data.
+RUN bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
+
 ############### RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
     
 RUN echo "User: $NB_USER Pass: $NB_PASS" && \
@@ -139,20 +153,6 @@ RUN git clone https://github.com/Linuxbrew/linuxbrew.git $HOME/.linuxbrew && \
     
 USER root
 
-###############  tty.js
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12
-RUN apt-get update
-RUN apt-get install -y --force-yes nodejs
-RUN apt-get clean
-ADD tty.js /tty.js/
-
-###############  Install showterm - record terminal / shell
-RUN apt-get install ruby ruby-dev rubygems -y
-RUN gem install showterm
-
-############### Install Basemount, a FUSE driver that allows a BaseSpace user access to their data.
-RUN bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
-
 COPY config/startup.sh /usr/local/bin/
 RUN chmod +X /usr/local/bin/startup.sh
 VOLUME ["/data", "/config"]
@@ -162,7 +162,6 @@ RUN chown dugong:dugong /data \
 EXPOSE 22
 EXPOSE 3000
 
-USER root
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
 CMD ["/usr/local/bin/startup.sh"]
