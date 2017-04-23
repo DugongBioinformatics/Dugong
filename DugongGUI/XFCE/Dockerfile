@@ -65,6 +65,7 @@ RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main restricted uni
 ############### Add BioLinux 8 dependencies and update packages
 RUN echo 'deb http://nebc.nerc.ac.uk/bio-linux/ unstable bio-linux' >> /etc/apt/sources.list.d/biolinux.list && \
     echo 'deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list && \
+    echo 'deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list && \
     echo 'deb http://cran.r-project.org/bin/linux/ubuntu precise/' >> /etc/apt/sources.list.d/biolinux.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 && \
     apt-get update && \
