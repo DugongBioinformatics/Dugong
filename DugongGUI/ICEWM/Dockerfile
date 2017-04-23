@@ -113,16 +113,21 @@ RUN $INST_SCRIPTS/icewm_ui.sh
 ADD .config/GUI/icewm/ $HOME/
 
 ############### Configure startup Dugong
-RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD .config/scripts $STARTUPDIR
+RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
+RUN $STARTUPDIR/generate_container_user.sh
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
-VOLUME ["/data", "/config"]
+############### Clean apt-get
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-USER $USER
+VOLUME ["/data", "/config"]
+RUN chown -R dugong:dugong /data && \
+    chown -R dugong:dugong /config
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
 
 WORKDIR /data
+USER dugong
