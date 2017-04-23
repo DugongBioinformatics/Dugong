@@ -9,4 +9,4 @@ wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.
     rm Miniconda2-latest-Linux-x86_64.sh && \
     echo "export PATH=~/.conda2/bin:$PATH" >> ~/.bashrc && \
     echo "export PATH=~/.conda2/bin:$PATH" >> /home/dugong/.bashrc && \
-    chown dugong:dugong ~/.conda2
+    chown -R dugong:dugong ~/.conda2
