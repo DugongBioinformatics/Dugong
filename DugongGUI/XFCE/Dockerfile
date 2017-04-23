@@ -116,6 +116,7 @@ ADD .config/GUI/xfce/ $HOME/
 ADD .config/scripts $STARTUPDIR
 RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/generate_container_user.sh
+ADD .config/scripts/.bashrc $HOME/.bashrc
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 ############### Clean apt-get
