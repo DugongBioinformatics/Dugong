@@ -112,6 +112,14 @@ RUN $INST_SCRIPTS/conda3.sh
 RUN $INST_SCRIPTS/icewm_ui.sh
 ADD .config/GUI/icewm/ $HOME/
 
+############### http://bugs.python.org/issue19846
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+ENV LANG C.UTF-8
+
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
 RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
