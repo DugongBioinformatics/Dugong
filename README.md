@@ -143,7 +143,7 @@ docker exec -it Dugong /bin/bash
 
 Two other methods for accessing DugongGUI is through VNC or noVNC. Ports 6901 and 5901 are respectively the VNC and noVNC execution ports. These ports are specified during container creation on the host machine and can be changed as per Docker documentation.
 
-To access noVNC it is enough that the user directs his navigator to the address below, after starting the Dugong container. The default password for noVNC access is ***vncpassword*** and can be changed at any time.
+To access noVNC it is enough that the user directs his navigator to the address below, after starting the Dugong container. The default password for noVNC access is ***vncpassword*** and can be changed at any time. The default DugongGUI user is the ***dugong*** with the ***dugong*** password.
 
 ```
 http://<IP or Host>:<port>/vnc_auto.html?password=vncpassword
@@ -151,7 +151,7 @@ http://<IP or Host>:<port>/vnc_auto.html?password=vncpassword
 
 A client is required for Dugong access through the VNC protocol. During the tests, the VNC® Viewer for Google Chrome application was used in the Chrome Web Store.
 
-For access to DugongCMD the user can use an SSH client of his choice. We also provide access through the tty application, requiring only that the user direct their browser to the address below followed by port 3000. The default DugongCMD user is the ***docker*** with the ***docker*** password.
+For access to DugongCMD the user can use an SSH client of his choice. We also provide access through the tty application, requiring only that the user direct their browser to the address below followed by port 3000. The default DugongCMD user is the ***dugong*** with the ***dugong*** password.
 
 ```
 http://<IP or Host>:3000
