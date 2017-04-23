@@ -122,11 +122,12 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 VOLUME ["/data", "/config"]
-
-USER $USER
+RUN chown -R dugong:dugon /data && \
+    chown -R dugong:dugon /config
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
 
 WORKDIR /data
+USER dugong
