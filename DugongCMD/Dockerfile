@@ -114,11 +114,10 @@ VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
 
+WORKDIR /data
+
 EXPOSE 22
 EXPOSE 3000
 
 ENTRYPOINT ["tini", "--"]
-ENTRYPOINT ["/dockerstartup/startup.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
-
-WORKDIR /data
