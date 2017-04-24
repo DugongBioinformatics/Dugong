@@ -90,6 +90,15 @@ RUN $INST_SCRIPTS/conda3.sh
 ############### Download and install npm
 RUN $INST_SCRIPTS/npm.sh
 
+############### Download and install tty.js
+RUN $INST_SCRIPTS/tty.sh
+
+############### Download and install jotty
+RUN $INST_SCRIPTS/jotty.sh
+
+############### Download and install wetty
+RUN $INST_SCRIPTS/wetty.sh
+
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 RUN locale-gen en_US.UTF-8  
