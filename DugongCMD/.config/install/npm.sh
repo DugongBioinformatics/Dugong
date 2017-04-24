@@ -2,7 +2,7 @@
 ### every exit != 0 fails the script
 set -e
 
-echo "Install tty.js"
+echo "Install npm"
 apt-get update 
 apt-get install -y npm
 apt-get clean -y
