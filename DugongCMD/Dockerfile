@@ -162,9 +162,8 @@ RUN chown dugong:dugong /data \
 EXPOSE 22
 EXPOSE 3000
 
+WORKDIR /data
+
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
 CMD ["/usr/local/bin/startup.sh"]
-
-WORKDIR /data
-USER $NB_USER
