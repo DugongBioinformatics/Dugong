@@ -2,7 +2,7 @@
 
 mkdir /var/run/sshd
 
-cd /tty.js && nodejs ./tty-me.js --daemonize
+sh tty.js --port 3000
 
 while [ 1 ]; do
     /bin/bash
