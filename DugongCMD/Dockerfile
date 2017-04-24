@@ -84,11 +84,12 @@ RUN $INST_SCRIPTS/conda2.sh
 ############### Download and install Miniconda3
 RUN $INST_SCRIPTS/conda3.sh
 
-############### Add .bashrc
-ADD .config/scripts/.bashrc $HOME/.bashrc
-
-############### Download and install tty.js
-RUN $INST_SCRIPTS/tty.sh
+###############  tty.js
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12
+RUN apt-get update
+RUN apt-get install -y --force-yes nodejs
+RUN apt-get clean
+ADD tty.js /tty.js/
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
@@ -103,6 +104,9 @@ ADD .config/scripts $STARTUPDIR
 RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/generate_container_user.sh
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
+
+############### Add .bashrc
+ADD .config/scripts/.bashrc $HOME/.bashrc
 
 ############### Clean apt-get
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
