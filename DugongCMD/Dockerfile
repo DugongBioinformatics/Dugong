@@ -127,4 +127,4 @@ EXPOSE 22
 EXPOSE 3000
 
 ENTRYPOINT ["tini", "--"]
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/dockerstartup/startup.sh"]
