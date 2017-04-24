@@ -84,7 +84,8 @@ RUN $INST_SCRIPTS/conda2.sh
 ############### Download and install Miniconda3
 RUN $INST_SCRIPTS/conda3.sh
 
-
+############### Download and install tty.js
+RUN $INST_SCRIPTS/tty.sh
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
@@ -93,3 +94,27 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
+
+############### Configure startup Dugong
+ADD .config/scripts $STARTUPDIR
+RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
+RUN $STARTUPDIR/generate_container_user.sh
+ADD .config/scripts/.bashrc $HOME/.bashrc
+RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
+
+############### Clean apt-get
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+VOLUME ["/data", "/config"]
+RUN chown -R dugong:dugong /data && \
+    chown -R dugong:dugong /config
+
+EXPOSE 22
+EXPOSE 3000
+
+ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+CMD ["--tail-log"]
+
+WORKDIR /data
+USER dugong
