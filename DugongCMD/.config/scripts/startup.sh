@@ -1,8 +1,9 @@
 #!/bin/bash
 
 mkdir /var/run/sshd
+/usr/sbin/sshd
 
-sh tty.js --port 3000
+cd /tty.js && node ./tty-me.js --daemonize
 
 while [ 1 ]; do
     /bin/bash
