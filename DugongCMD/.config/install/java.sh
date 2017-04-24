@@ -4,5 +4,5 @@ set -e
 
 echo "Install Java 8 and Icedtea Plugin 8"
 apt-get update 
-apt-get install -y --allow-unauthenticated openjdk-8-jre icedtea-8-plugin
+apt-get install -y --allow-unauthenticated openjdk-8-jre
 apt-get clean -y
