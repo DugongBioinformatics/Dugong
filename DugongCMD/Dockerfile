@@ -113,7 +113,7 @@ EXPOSE 22
 EXPOSE 3000
 
 ENTRYPOINT ["tini", "--"]
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/dockerstartup/startup.sh"]
 CMD ["--tail-log"]
 
 WORKDIR /data
