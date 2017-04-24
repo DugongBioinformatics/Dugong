@@ -28,6 +28,12 @@ LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
 LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
 LABEL tags="Bioinformatics"
 
+############### Environment config
+ENV HOME /headless
+ENV STARTUPDIR /dockerstartup
+WORKDIR $HOME
+ENV DEBIAN_FRONTEND noninteractive
+
 ############### Add Linux Mint dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2"
 RUN echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list && \
@@ -49,3 +55,41 @@ RUN echo 'deb http://nebc.nerc.ac.uk/bio-linux/ unstable bio-linux' >> /etc/apt/
     apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+############### Add all install scripts for further steps
+ENV INST_SCRIPTS $HOME/install
+ADD .config/install/ $INST_SCRIPTS/
+RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+
+############### Installation of essential packages and dependencies
+RUN $INST_SCRIPTS/tools.sh
+
+############### Install Install Java 8 and Icedtea Plugin 8
+RUN $INST_SCRIPTS/java.sh
+
+############### Install Mega Sync and MegaCMD
+RUN $INST_SCRIPTS/mega.sh
+
+############### Install Basemount, a FUSE driver that allows a BaseSpace
+RUN $INST_SCRIPTS/basemount.sh
+
+############### Install Linuxbrew
+RUN $INST_SCRIPTS/linuxbrew.sh
+
+############### Install Tini
+RUN $INST_SCRIPTS/tini.sh
+
+############### Download and install Miniconda2
+RUN $INST_SCRIPTS/conda2.sh
+
+############### Download and install Miniconda3
+RUN $INST_SCRIPTS/conda3.sh
+
+
+
+############### http://bugs.python.org/issue19846
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+ENV LANG C.UTF-8
