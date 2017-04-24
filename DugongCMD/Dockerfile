@@ -123,4 +123,3 @@ ENTRYPOINT ["/dockerstartup/startup.sh"]
 CMD ["--tail-log"]
 
 WORKDIR /data
-USER dugong
