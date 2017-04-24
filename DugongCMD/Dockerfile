@@ -81,15 +81,6 @@ RUN $INST_SCRIPTS/conda2.sh
 ############### Download and install Miniconda3
 RUN $INST_SCRIPTS/conda3.sh
 
-############### Download and install npm
-RUN $INST_SCRIPTS/npm.sh
-
-############### Download and install jotty
-RUN $INST_SCRIPTS/jotty.sh
-
-############### Download and install wetty
-RUN $INST_SCRIPTS/wetty.sh
-
 ###############  tty.js
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12
 RUN apt-get update
