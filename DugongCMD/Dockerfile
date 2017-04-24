@@ -155,14 +155,9 @@ USER root
 
 COPY config/startup.sh /usr/local/bin/
 RUN chmod +X /usr/local/bin/startup.sh
-VOLUME ["/data", "/config"]
-RUN chown dugong:dugong /data \
-    && chown dugong:dugong /config
 
 EXPOSE 22
 EXPOSE 3000
-
-WORKDIR /data
 
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
