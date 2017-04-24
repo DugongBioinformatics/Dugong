@@ -3,7 +3,8 @@
 set -e
 
 echo "Install tty.js"
-apt-get update 
-apt-get install -y --allow-unauthenticated nodejs npm
-apt-get clean -y
-npm install -g tty.js
+add-apt-repository -y ppa:chris-lea/node.js
+apt-get update
+apt-get install -y nodejs
+apt-get clean
+npm install tty.js
