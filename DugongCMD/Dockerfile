@@ -167,5 +167,3 @@ EXPOSE 3000
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
 CMD ["/usr/local/bin/startup.sh"]
-
-USER dugong
