@@ -84,6 +84,9 @@ RUN $INST_SCRIPTS/conda2.sh
 ############### Download and install Miniconda3
 RUN $INST_SCRIPTS/conda3.sh
 
+############### Add .bashrc
+ADD .config/scripts/.bashrc $HOME/.bashrc
+
 ############### Download and install tty.js
 RUN $INST_SCRIPTS/tty.sh
 
@@ -99,7 +102,6 @@ ENV LANG C.UTF-8
 ADD .config/scripts $STARTUPDIR
 RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/generate_container_user.sh
-ADD .config/scripts/.bashrc $HOME/.bashrc
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 ############### Clean apt-get
