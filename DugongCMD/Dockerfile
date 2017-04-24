@@ -84,12 +84,6 @@ RUN $INST_SCRIPTS/conda2.sh
 ############### Download and install Miniconda3
 RUN $INST_SCRIPTS/conda3.sh
 
-###############  tty.js
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12
-RUN apt-get update
-RUN apt-get install -y --force-yes nodejs
-RUN apt-get clean
-ADD tty.js /tty.js/
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
