@@ -63,6 +63,9 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 ############### Installation of essential packages and dependencies
 RUN $INST_SCRIPTS/tools.sh
 
+############### Install SSH
+RUN $INST_SCRIPTS/ssh.sh
+
 ############### Install Install Java 8 and Icedtea Plugin 8
 RUN $INST_SCRIPTS/java.sh
 
@@ -116,6 +119,6 @@ EXPOSE 3000
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/startup.sh"]
-CMD ["--tail-log"]
+CMD ["/usr/sbin/sshd", "-D"]
 
 WORKDIR /data
