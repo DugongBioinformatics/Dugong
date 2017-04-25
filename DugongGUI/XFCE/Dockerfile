@@ -58,10 +58,11 @@ ADD .config/GUI/xfce/ $HOME/
 
 ############### Configure startup Dugong
 ADD .config/scripts /dockerstartup
+ADD .config/scripts/.bashrc $HOME/.bashrc
 RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
     && /dockerstartup/generate_container_user.sh \
     && $HOME/install/set_user_permission.sh /dockerstartup $HOME
-ADD .config/scripts/.bashrc $HOME/.bashrc
+
 
 VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
