@@ -47,12 +47,12 @@ RUN find $HOME/install -name '*.sh' -exec chmod a+x {} + \
     && $HOME/install/conda3.sh \
     && $HOME/install/linuxbrew.sh \
     && $HOME/install/basemount.sh \
-    && $INST_SCRIPTS/mega.sh \
-    && $INST_SCRIPTS/tigervnc.sh \
-    && $INST_SCRIPTS/tini.sh \
-    && $INST_SCRIPTS/no_vnc.sh \
+    && $HOME/install/mega.sh \
+    && $HOME/install/tigervnc.sh \
+    && $HOME/install/tini.sh \
+    && $HOME/install/no_vnc.sh \
     && $HOME/install/others.sh \
-    && $INST_SCRIPTS/xfce_ui.sh
+    && $HOME/install/xfce_ui.sh
     
 ADD .config/GUI/xfce/ $HOME/
 
