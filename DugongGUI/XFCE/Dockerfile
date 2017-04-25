@@ -48,9 +48,10 @@ RUN find $HOME/install -name '*.sh' -exec chmod a+x {} + \
     && $HOME/install/linuxbrew.sh \
     && $HOME/install/basemount.sh \
     && $INST_SCRIPTS/mega.sh \
-    && $INST_SCRIPTS/tigervnc.sh
-    && $INST_SCRIPTS/no_vnc.sh
-    && $HOME/install/others.sh
+    && $INST_SCRIPTS/tigervnc.sh \
+    && $INST_SCRIPTS/tini.sh \
+    && $INST_SCRIPTS/no_vnc.sh \
+    && $HOME/install/others.sh \
     && $INST_SCRIPTS/xfce_ui.sh
     
 ADD .config/GUI/xfce/ $HOME/
