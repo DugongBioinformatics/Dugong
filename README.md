@@ -4,7 +4,7 @@
 
 # Dugong - Scientific Linux Container
 
-[Dugong](https://hub.docker.com/r/bigscience/dugongo/) is a powerful workstation platform especially designed for scientific computational analysis, mainly of bioinformatics and computational biology, that can be installed in any computational ecosystem, regardless of the operating system and hardware used. In general terms, it is a Linux operating system designed specifically for the development of the [Open Science](https://en.wikipedia.org/wiki/Open_science) concept, based on the reproducibility and replicability of the research.
+[Dugong](https://hub.docker.com/r/dugong/dugong) is a powerful workstation platform especially designed for scientific computational analysis, mainly of bioinformatics and computational biology, that can be installed in any computational ecosystem, regardless of the operating system and hardware used. In general terms, it is a Linux operating system designed specifically for the development of the [Open Science](https://en.wikipedia.org/wiki/Open_science) concept, based on the reproducibility and replicability of the research.
 
 It's an implementation built under the MIT license using the Docker platform, an open-source project that automates the implementation of applications within software containers, providing an additional layer of abstraction and automation of operating system-level virtualization on Linux. Docker uses the Linux kernel resource isolation features, such as cgroups and namespaces, as well as the file system AuFS (advanced multi layered unification filesystem) to allow independent "containers" to run In a single Linux instance, avoiding an overload of initialization and maintenance of virtual machines. The Dugong project enables efficient creation of reusable containers for bioinformatics data, making the analysis environment and all computational results reproducible by the scientific community.
 
@@ -104,8 +104,8 @@ To start a container, the user must have Docker installed on his operating syste
 Two steps are required to start a container containing Dugong. In the first step, the Dugong image is downloaded from the Docker Hub servers to the host, and in the second, a container is created on the host machine with the default Dugong installation. If the host machine is a Linux, the following commands must be performed in the terminal:
 
 ```
-docker pull bigscience/dugong
-docker run -d -p 5901:5901 -p 6901:6901 --name Dugong -h Dugong --privileged bigscience/dugong
+docker pull dugong/dugong
+docker run -d -p 5901:5901 -p 6901:6901 --name Dugong -h Dugong --privileged dugong/dugong
 ```
 
 At the end of the commands a Dugong instance will be available in the container named Dugong. Details about the container can be obtained through the command below:
@@ -118,19 +118,19 @@ The default installation version of Dugong is DugongGUI with Xfce4. To change th
 Install DugongGUI Xfce4:
 
 ```
-docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged bigscience/dugong:xfce
+docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged dugong/dugong:xfce
 ```
 
 Install DugongGUI iceWM:
 
 ```
-docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged bigscience/dugong:icewm
+docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI --privileged dugong/dugong:icewm
 ```
 
 Install DugongCMD:
 
 ```
-docker run -d -p 3000:3000 --name DugongCMD -h DugongCMD --privileged bigscience/dugong:cmd
+docker run -d -p 3000:3000 --name DugongCMD -h DugongCMD --privileged dugong/dugong:cmd
 ```
 
 Access to the Dugong container can be done in a variety of ways, with access through the simplest Docker console. This access will not be of great attraction to the user and should be used only in case of problems during the execution of Dugong and for the analysis of problems with the container. Through this access the user can restart Linux services, analyze system and application logs, among other functions.
