@@ -28,6 +28,8 @@ LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
 LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
 LABEL tags="Bioinformatics"
 
+ENV STARTUPDIR /dockerstartup
+
 ###############  Connection ports for controlling the UI:
 # VNC port:5901
 # noVNC webport, connect via http://IP:6901/?password=vncpassword
