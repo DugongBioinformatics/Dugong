@@ -24,37 +24,33 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="e.g. https://github.com/fabianomenegidio/dugong-bioinformatics/tree/master/DugongGUI/XFCE"
 
-LABEL base.image="ubuntu:latest"
-LABEL version="2017040"
-LABEL name="DugongGUI"
-LABEL flavour="Xfce4"
-LABEL description="Scientific Linux Container"
-LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
-LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
-LABEL license="MIT"
-LABEL tags="Bioinformatics"
+LABEL base.image="ubuntu:latest" \
+      version="2017040" \
+      name="DugongGUI" \
+      flavour="Xfce4" \
+      description="Scientific Linux Container" \
+      website="https://fabianomenegidio.github.io/dugong-bioinformatics/" \
+      repository="https://github.com/fabianomenegidio/dugong-bioinformatics" \
+      license="MIT" \
+      tags="Bioinformatics"
 
 ###############  Connection ports for controlling the UI:
 # VNC port:5901
 # noVNC webport, connect via http://IP:6901/?password=vncpassword
 ############### 
-ENV DISPLAY :1
-ENV VNC_PORT 5901
-ENV NO_VNC_PORT 6901
+ENV DISPLAY :1 \
+    VNC_PORT 5901 \
+    NO_VNC_PORT 6901 \
+    HOME /headless \
+    STARTUPDIR /dockerstartup \
+    DEBIAN_FRONTEND noninteractive \
+    NO_VNC_HOME $HOME/noVNC \
+    VNC_COL_DEPTH 24 \
+    VNC_PW vncpassword \
+    VNC_RESOLUTION 1366x768
+
 EXPOSE $VNC_PORT $NO_VNC_PORT
-
-ENV HOME /headless
-ENV STARTUPDIR /dockerstartup
 WORKDIR $HOME
-
-############### Environment config
-ENV DEBIAN_FRONTEND noninteractive
-ENV NO_VNC_HOME $HOME/noVNC
-ENV VNC_COL_DEPTH 24
-ENV VNC_PW vncpassword
-
-############### Resolution Chromebook (change to your default resolution)
-ENV VNC_RESOLUTION 1366x768
 
 ############### Add dependencies and update packages
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
@@ -87,10 +83,10 @@ ADD .config/GUI/xfce/ $HOME/
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
   
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8
-ENV LANG C.UTF-8
+ENV LANG en_US.UTF-8 \
+    LANGUAGE en_US:en \
+    LC_ALL en_US.UTF-8 \
+    LANG C.UTF-8
 
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
