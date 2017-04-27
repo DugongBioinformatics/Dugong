@@ -14,21 +14,18 @@
 #
 ###########################################################################
 
-FROM menegidio/biobuntu
+FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
-LABEL base.image="menegidio/biobuntu"
-LABEL version="1.0"
-LABEL name="Dugong"
-LABEL flavour="Xfce4"
-LABEL description="Scientific Linux Container"
-LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
-LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
-LABEL license="https://github.com/fabianomenegidio/dugong-bioinformatics/blob/master/LICENSE"
+LABEL base.image="ubuntu:wily"
+LABEL version="2017040"
+LABEL name="BioBuntu"
+LABEL description="Image Linux Linux"
+LABEL website=""
+LABEL repository=""
+LABEL license=""
 LABEL tags="Bioinformatics"
-
-ENV STARTUPDIR /dockerstartup
 
 ###############  Connection ports for controlling the UI:
 # VNC port:5901
@@ -37,34 +34,63 @@ ENV STARTUPDIR /dockerstartup
 ENV DISPLAY :1
 ENV VNC_PORT 5901
 ENV NO_VNC_PORT 6901
+EXPOSE $VNC_PORT $NO_VNC_PORT
+
+ENV HOME /headless
+ENV STARTUPDIR /dockerstartup
+WORKDIR $HOME
+
+############### Environment config
+ENV DEBIAN_FRONTEND noninteractive
 ENV NO_VNC_HOME $HOME/noVNC
 ENV VNC_COL_DEPTH 24
 ENV VNC_PW vncpassword
-ENV VNC_RESOLUTION 1366x768
-EXPOSE $VNC_PORT $NO_VNC_PORT
 
-############### Install essentials
-ADD .config/install/ $HOME/install
-RUN find $HOME/install -name '*.sh' -exec chmod a+x {} + \
-    && $HOME/install/conda3.sh \
-    && $HOME/install/linuxbrew.sh \
-    && $HOME/install/basemount.sh \
-    && $HOME/install/mega.sh \
-    && $HOME/install/tigervnc.sh \
-    && $HOME/install/tini.sh \
-    && $HOME/install/no_vnc.sh \
-    && $HOME/install/others.sh \
-    && $HOME/install/icewm_ui.sh
-    
+############### Resolution Chromebook (change to your default resolution)
+ENV VNC_RESOLUTION 1366x768
+
+############### Add dependencies and update packages
+RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 \
+    && echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list \
+    && echo 'deb http://nebc.nerc.ac.uk/bio-linux/ unstable bio-linux' >> /etc/apt/sources.list.d/biolinux.list \
+    && echo 'deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list \
+    && echo 'deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list \
+    && echo 'deb http://cran.r-project.org/bin/linux/ubuntu precise/' >> /etc/apt/sources.list.d/biolinux.list \
+    && apt-get update \
+    && apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+############### Add all install scripts for further steps
+ENV INST_SCRIPTS $HOME/install
+ADD .config/install/ $INST_SCRIPTS/
+RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+
+############### Installation of essential packages and dependencies
+RUN $INST_SCRIPTS/essentials.sh \
+    && $INST_SCRIPTS/vnc.sh \
+    && $INST_SCRIPTS/bioinformatics.sh \
+    && $INST_SCRIPTS/tools.sh \
+    && $INST_SCRIPTS/browsers.sh \
+    && $INST_SCRIPTS/xfce_ui.sh \
+    && locale-gen en_US.UTF-8
+
 ADD .config/GUI/xfce/ $HOME/
 
-############### Configure startup Dugong
-ADD .config/scripts /dockerstartup
-ADD .config/scripts/.bashrc $HOME/.bashrc
-RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
-    && /dockerstartup/generate_container_user.sh \
-    && $HOME/install/set_user_permission.sh /dockerstartup $HOME
+############### http://bugs.python.org/issue19846
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+ENV LANG C.UTF-8
 
+############### Configure startup Dugong
+ADD .config/scripts $STARTUPDIR
+RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
+    && /dockerstartup/generate_container_user.sh
+ADD .config/scripts/.bashrc $HOME/.bashrc
+RUN $INST_SCRIPTS/set_user_permission.sh /dockerstartup $HOME
 
 VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
