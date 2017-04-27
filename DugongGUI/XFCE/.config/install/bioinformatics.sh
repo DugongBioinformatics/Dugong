@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 ### every exit != 0 fails the script
 set -e
-
 echo "Install some bioinformatics tools: Linuxbrew, Basemount and Bioconda"
 git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew && \
 bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" && \
