@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+### every exit != 0 fails the script
+set -e
 echo "Install VNC server"
 wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-1.7.0.x86_64.tar.gz | tar xz --strip 1 -C / && \
 mkdir -p $NO_VNC_HOME/utils/websockify && \
