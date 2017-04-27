@@ -71,6 +71,7 @@ RUN $INST_SCRIPTS/essentials.sh \
     && $INST_SCRIPTS/vnc.sh \
     && $INST_SCRIPTS/bioinformatics.sh \
     && $INST_SCRIPTS/tools.sh \
+    && $INST_SCRIPTS/browsers.sh \
     && $INST_SCRIPTS/xfce_ui.sh \
     && locale-gen en_US.UTF-8
 
