@@ -18,13 +18,19 @@ FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
-LABEL base.image="ubuntu:wily"
+
+ARG VCS_REF
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="e.g. https://github.com/fabianomenegidio/dugong-bioinformatics/tree/master/DugongGUI/XFCE"
+
+LABEL base.image="ubuntu:latest"
 LABEL version="2017040"
-LABEL name="BioBuntu"
-LABEL description="Image Linux Linux"
-LABEL website=""
-LABEL repository=""
-LABEL license=""
+LABEL name="DugongGUI"
+LABEL flavour="Xfce4"
+LABEL description="Scientific Linux Container"
+LABEL website="https://fabianomenegidio.github.io/dugong-bioinformatics/"
+LABEL repository="https://github.com/fabianomenegidio/dugong-bioinformatics"
+LABEL license="MIT"
 LABEL tags="Bioinformatics"
 
 ###############  Connection ports for controlling the UI:
