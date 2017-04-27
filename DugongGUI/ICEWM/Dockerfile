@@ -18,9 +18,10 @@ FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
-
+ARG BUILD_DATE
 ARG VCS_REF
-LABEL org.label-schema.vcs-ref=$VCS_REF \
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="e.g. https://github.com/fabianomenegidio/dugong-bioinformatics/tree/master/DugongGUI/ICEWM"
 
 LABEL base.image="ubuntu:latest"
