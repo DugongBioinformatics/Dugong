@@ -68,8 +68,7 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 
 ############### Installation of essential packages and dependencies
 RUN $INST_SCRIPTS/essentials.sh \
-    && $INST_SCRIPTS/tigervnc.sh \
-    && $INST_SCRIPTS/no_vnc.sh \
+    && $INST_SCRIPTS/vnc.sh \
     && $INST_SCRIPTS/xfce_ui.sh \
     && locale-gen en_US.UTF-8
 
