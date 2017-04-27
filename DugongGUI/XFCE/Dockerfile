@@ -82,15 +82,15 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-VOLUME ["/data", "/config"]
-
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
 RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
     && /dockerstartup/generate_container_user.sh
 ADD .config/scripts/.bashrc $HOME/.bashrc
-RUN $INST_SCRIPTS/set_user_permission.sh /dockerstartup $HOME \
-    chown -R dugong:dugong /data && \
+RUN $INST_SCRIPTS/set_user_permission.sh /dockerstartup $HOME
+
+VOLUME ["/data", "/config"]
+RUN chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
 
 ENTRYPOINT ["tini", "--"]
