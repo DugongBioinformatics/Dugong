@@ -72,10 +72,10 @@ RUN $INST_SCRIPTS/essentials.sh \
     && $INST_SCRIPTS/bioinformatics.sh \
     && $INST_SCRIPTS/tools.sh \
     && $INST_SCRIPTS/browsers.sh \
-    && $INST_SCRIPTS/xfce_ui.sh \
+    && $INST_SCRIPTS/icewm_ui.sh \
     && locale-gen en_US.UTF-8
 
-ADD .config/GUI/xfce/ $HOME/
+ADD .config/GUI/icewm/ $HOME/
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
