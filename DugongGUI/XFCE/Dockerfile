@@ -53,7 +53,6 @@ ENV VNC_RESOLUTION 1366x768
 RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 \
     && echo "deb http://packages.linuxmint.com sarah main upstream import backport" >> /etc/apt/sources.list.d/mint.list \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && echo 'deb http://nebc.nerc.ac.uk/bio-linux/ unstable bio-linux' >> /etc/apt/sources.list.d/biolinux.list \
     && echo 'deb http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list \
     && echo 'deb-src http://ppa.launchpad.net/nebc/bio-linux/ubuntu precise main' >> /etc/apt/sources.list.d/biolinux.list \
@@ -68,42 +67,31 @@ ADD .config/install/ $INST_SCRIPTS/
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 
 ############### Installation of essential packages and dependencies
-RUN $INST_SCRIPTS/tools.sh \
+RUN $INST_SCRIPTS/essentials.sh \
     && $INST_SCRIPTS/tigervnc.sh \
     && $INST_SCRIPTS/no_vnc.sh \
-    && $INST_SCRIPTS/firefox.sh \
-    && $INST_SCRIPTS/chrome.sh \
-    && $INST_SCRIPTS/java.sh \
-    && $INST_SCRIPTS/mega.sh \
-    && $INST_SCRIPTS/basemount.sh \
-    && $INST_SCRIPTS/linuxbrew.sh \
-    && $INST_SCRIPTS/tini.sh \
-    && $INST_SCRIPTS/conda2.sh \
-    && $INST_SCRIPTS/conda3.sh \
-    && $INST_SCRIPTS/xfce_ui.sh
+    && $INST_SCRIPTS/xfce_ui.sh \
+    && locale-gen en_US.UTF-8
 
 ADD .config/GUI/xfce/ $HOME/
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
-RUN locale-gen en_US.UTF-8  
+  
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
+VOLUME ["/data", "/config"]
+
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
-RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} + \
-    && $STARTUPDIR/generate_container_user.sh
+RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
+    && /dockerstartup/generate_container_user.sh
 ADD .config/scripts/.bashrc $HOME/.bashrc
-RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
-
-############### Clean apt-get
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-VOLUME ["/data", "/config"]
-RUN chown -R dugong:dugong /data && \
+RUN $INST_SCRIPTS/set_user_permission.sh /dockerstartup $HOME \
+    chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
 
 ENTRYPOINT ["tini", "--"]
