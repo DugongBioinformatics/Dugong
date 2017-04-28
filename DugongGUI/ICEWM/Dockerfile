@@ -75,11 +75,11 @@ RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 
 ############### Installation of essential packages and dependencies
 RUN $INST_SCRIPTS/essentials.sh \
+    && $INST_SCRIPTS/icewm.sh \  
     && $INST_SCRIPTS/vnc.sh \
     && $INST_SCRIPTS/bioinformatics.sh \
     && $INST_SCRIPTS/tools.sh \
     && $INST_SCRIPTS/browsers.sh \
-    && $INST_SCRIPTS/icewm_ui.sh \
     && locale-gen en_US.UTF-8
 
 ADD .config/GUI/icewm/ $HOME/
