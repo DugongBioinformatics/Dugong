@@ -94,11 +94,11 @@ ENV LANG C.UTF-8
 
 ############### Configure startup Dugong
 ADD .config/scripts $STARTUPDIR
-RUN find /dockerstartup -name '*.sh' -exec chmod a+x {} + \
-    && /dockerstartup/generate_container_user.sh
 ADD .config/scripts/.bashrc $HOME/.bashrc
-RUN $INST_SCRIPTS/set_user_permission.sh /dockerstartup $HOME
-
+RUN chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
+    && /dockerstartup/generate_container_user.sh \
+    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
+    
 VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
