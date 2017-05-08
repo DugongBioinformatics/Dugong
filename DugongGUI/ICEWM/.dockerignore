@@ -3,8 +3,8 @@
 ../../.misc
 ../../LICENSE
 ../../README.md
-../../events
-../../VMs
 ../../DugongCMD
 ../../Containers
 ../../.specs
+../../.git
+../../.gitignore
