@@ -1,5 +1,5 @@
 ###########################################################################
-# Dugong - Scientific Linux Containers for Bioinformatic
+# Dugong - Scientific Linux Containers for Bioinformatics
 # ======================================================
 #
 # Current development is led by Fabiano Menegidio.
