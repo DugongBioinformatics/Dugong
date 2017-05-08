@@ -38,14 +38,6 @@ Access as graphical interfaces available in DugongGUI can be performed through t
 
 ***DugongGUI*** allows a simple, quick and easy distribution of any bioinformatics application that can be installed on an Ubuntu operating system.  It also allows the generated containers to be used for a wide range of purposes, such as training, data analysis, tool implementation, devops, etc.
 
-Dugong - VNC access:
-
-![Dugong](http://i.imgur.com/r9LdKlx.png)
-
-Dugong - Web VNC access (noVNC) and Linuxbrew:
-
-![Dugong](http://i.imgur.com/r6X6Lxa.png)
-
 ### DugongCMD
 
 ***DugongCMD*** is a version of the Dugong image that works exclusively in the command line environment, without a graphical interface.
@@ -94,6 +86,84 @@ There are currently 2707 bioinformatics packages available in the Bioconda repos
 The installation of bioinformatics packages in Dugong is not restricted to the methods presented. An example is BaseMount, the tool for mounting your BaseSpace Sequence Hub data as a Linux file system. With it, you can navigate projects, samples, runs, and application results and interact directly with associated files, just like any other local file system.
 
 Sources such as GitHub, for example, can be used to install new tools simply and quickly.
+
+## Install Docker
+
+### Ubuntu:
+
+1. Set up the repository
+
+Set up the Docker CE repository on Ubuntu. The lsb_release -cs sub-command prints the name of your Ubuntu version, like xenial or trusty.
+
+    $ sudo apt-get -y install \
+        apt-transport-https \
+        ca-certificates \
+        curl
+
+    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    $ sudo add-apt-repository \
+        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) \
+        stable"
+
+    $ sudo apt-get update
+
+2. Get Docker CE
+
+Install the latest version of Docker CE on Ubuntu:
+
+    $ sudo apt-get -y install docker-ce
+
+3. Test your Docker CE installation
+
+Test your installation:
+
+    $ sudo docker run hello-world
+
+
+### Fedora
+
+1. Set up the repository
+
+Set up the Docker CE repository on Fedora:
+
+    $ sudo dnf -y install dnf-plugins-core
+
+    $ sudo dnf config-manager \
+        --add-repo \
+        https://download.docker.com/linux/fedora/docker-ce.repo
+
+    $ sudo dnf makecache fast
+    
+2. Get Docker CE
+
+Install the latest version of Docker CE on Fedora:
+
+    $ sudo dnf -y install docker-ce
+
+Start Docker:
+
+    $ sudo systemctl start docker
+
+or
+
+    $ sudo service docker start
+
+3. Test your Docker CE installation
+
+Test your installation:
+
+    $ sudo docker run hello-world
+
+### Windows:
+
+Access: https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+### MacOS:
+
+Access: https://store.docker.com/editions/community/docker-ce-desktop-mac
+
 
 ## Deploy and access Dugong
 
