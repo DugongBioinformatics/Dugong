@@ -234,6 +234,10 @@ For access to DugongCMD the user can use an SSH client of his choice. We also pr
 http://<IP or Host>:3000
 ```
 
+## Install in video
+
+[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-08%20at%2021.49.05.png)](http://showterm.io/2920acd0725f9fe78d3e5)
+
 ## Extending or adapting the Dugong image
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
