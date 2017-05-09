@@ -234,7 +234,7 @@ For access to DugongCMD the user can use an SSH client of his choice. We also pr
 http://<IP or Host>:3000
 ```
 
-## Install in video
+## Video installation:
 
 - Click to watch the installation of ***DugongGUI*** on ***Linux Ubuntu Server*** in video:
 
