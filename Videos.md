@@ -10,6 +10,10 @@
 
 ## Dugong working
 
+- Installing the bioinformatics tools: BWA and TOPHAT in DugongCMD. Installation performed through BioConda and operating test:
+
+[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-09%20at%2001.33.06.png)](https://www.youtube.com/watch?v=FU944qartYE)
+
 - CircRNA analysis using a ***CirComPara*** tool on an ***Ubuntu Server*** with a ***DugongGUI*** container installed:
 
 [![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugongGUI-CirComPara/master/.misc/Screenshot%202017-05-09%20at%2000.57.47.png)](https://www.youtube.com/watch?v=8FlvmERIKJI)
