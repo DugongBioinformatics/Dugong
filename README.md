@@ -242,7 +242,7 @@ http://<IP or Host>:3000
 
 - Click to watch the installation of ***DugongCMD** on ***Linux Ubuntu Server*** in video:
 
-[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-08%20at%2021.49.05.png)](http://showterm.io/2920acd0725f9fe78d3e5)
+[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-08%20at%2021.49.05.png)](http://showterm.io/65f18305c3a1dc80d7a2a)
 
 ## Extending or adapting the Dugong image
 
