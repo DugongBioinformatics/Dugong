@@ -251,7 +251,7 @@ http://<IP or Host>:3000
 
 - Click to watch the installation of ***DugongCMD*** on ***Linux CentOS 7*** in the [CloudatCost](http://cloudatcost.com/) provider:
 
-[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-08%20at%2022.00.42.png)](http://showterm.io/65f18305c3a1dc80d7a2a)
+[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-10%20at%2006.45.18.png)](http://showterm.io/f06861ae4a22381c148e4)
 
 ## Extending or adapting the Dugong image
 
