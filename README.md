@@ -253,6 +253,25 @@ http://<IP or Host>:3000
 
 [![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-10%20at%2006.45.18.png)](http://showterm.io/f06861ae4a22381c148e4)
 
+## Dugong Virtual Box
+
+The Dugong Virtual Box gets around the difficulty of installation by providing a functioning Dugong full install inside an Ubuntu or Fedora Linux virtual machine. You can use the Dugong Virtual Box on Mac OS X, Windows, or Linux.
+
+It is strongly recommended that your system have 8 gigabytes or more of memory to use the QIIME Virtual Box.
+
+- Download and install the VirtualBox (VB) version for your machine.
+- Download the 64-bit Dugong Virtual Box, which is linked from the Dugong Resources page. This file is large so it may take between a few minutes and a few hours depending on your Internet connection speed. You will need to unzip this file, which you can typically do by double-clicking on it.
+- Create a new virtual machine:
+- Launch VirtualBox, and create a new machine (press the New button).
+- A new window will show up. Click ‘Next’.
+- In this screen type Dugong as the name for the virtual machine. Then select Linux as the Operating System, and Ubuntu (64 bit) or Fedora (64 bit) as the version. Click Next.
+- Select the amount of RAM (memory). You will need at least 3 GB, but the best option is based on your machine. After selecting the amount of RAM, click Next.
+- Select “Use existing hard drive”, and click the folder icon next to the selector (it has a green up arrow). In the new window click ‘Add’, and locate the virtual hard drive that was downloaded in step 2. Click Select and then click Next.
+- In the new window click Finish.
+- Double click on the new virtual machine created – it will be called Dugong – to boot it for the first time.
+- Review any messages that are shown, and select whatever options are best for you.
+- When your new virtual machine boots, you will see a folder on the Desktop called ‘Before_you_start’. Double click on that folder to open it, and then double click on the ‘Welcome’ file in that folder. This will get you started with using your Dugong virtual box.
+
 ## Extending or adapting the Dugong image
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
