@@ -14,11 +14,34 @@ For more details on the Ubuntu operating system: [http://www.ubuntu.com](http://
 
 Dugong requires a minimum of knowledge about Docker, Linux or computing for its implementation, being compatible with Linux, Windows and MacOS operating systems. It also enables the execution of a complete work environment in high performance computing environments (HPC), virtual private server (VPS), as well as private, public or hybrid cloud computing.
 
-## Dugong flavours
+## MENU <a name="menu" />
+
+- [Dugong flavours](#Dugong-flavours)
+  - [DugongGUI](#DugongGUI)
+  - [DugongCMD](#DugongCMD)  
+- [Bioinformatics Software](#Bioinformatics-Software)
+    - [Dugong installation tools](#Dugong-installation-tools)
+- [Install Docker](#Install-Docker)
+  - [Ubuntu](#Ubuntu)
+  - [Fedora](#Fedora) 
+  - [Windows](#Windows)
+  - [MacOS](#MacOS) 
+- [Deploy and access Dugong](#Deploy)
+- [Video installation](#Video-installation)
+- [Dugong Virtual Box](#Dugong-Virtual-Box)
+- [Extending or adapting the Dugong image](#Extending)
+- [Example of adapted tools in Dugong](#Example)
+  - [CirComPara](#CirComPara)
+- [Author](#Author)
+- [Contributing](#Contributing)
+- [MIT License](#MIT)
+- [Learn More](#Learn-More)
+
+## Dugong flavours <a name="Dugong-flavours" /> [[menu]](#menu)
 
 Today, the Dugong operating system is available in two versions: ***DugongGUI*** and ***DugongCMD***.
 
-### DugongGUI
+### DugongGUI <a name="DugongGUI" /> [[menu]](#menu)
 
 Our great differential for applications in bioinformatics and computational biology. Based on Ubuntu 16.04, the ***DugongGUI*** image has two graphical interface (GUI) options: ***Xfce4*** or ***IceWM***.
 
@@ -39,7 +62,7 @@ Access as graphical interfaces available in DugongGUI can be performed through t
 
 ***DugongGUI*** allows a simple, quick and easy distribution of any bioinformatics application that can be installed on an Ubuntu operating system.  It also allows the generated containers to be used for a wide range of purposes, such as training, data analysis, tool implementation, devops, etc.
 
-### DugongCMD
+### DugongCMD <a name="DugongCMD" /> [[menu]](#menu)
 
 ***DugongCMD*** is a version of the Dugong image that works exclusively in the command line environment, without a graphical interface.
 
@@ -52,7 +75,7 @@ SSH access to DugongCMD can be performed as follows:
 
 - [tty.js](https://github.com/chjj/tty.js/): a terminal in your browser using node.js and socket.io. Based on Fabrice Bellard's vt100 for jslinux.
 
-## Bioinformatics Software
+## Bioinformatics Software <a name="Bioinformatics-Software" /> [[menu]](#menu)
 
 Two open-source projects were integrated with ***Dugong***, [Linuxbrew](http://linuxbrew.sh/) and [Conda](http://conda.pydata.org/), for the simple distribution of bioinformatics packages. 
 
@@ -92,7 +115,7 @@ The installation of bioinformatics packages in Dugong is not restricted to the m
 
 Sources such as GitHub, for example, can be used to install new tools simply and quickly.
 
-### Dugong installation tools:
+### Dugong installation tools: <a name="Dugong-installation-tools" /> [[menu]](#menu)
 
 - Installing the bioinformatics tools: BWA and TOPHAT in DugongCMD. Installation performed through BioConda and operating test:
 
@@ -105,9 +128,9 @@ Sources such as GitHub, for example, can be used to install new tools simply and
 
 ![line](http://skstroi.ru/wp-content/uploads/2016/05/foot-line.png)
 
-## Install Docker
+## Install Docker <a name="Install-Docker" /> [[menu]](#menu)
 
-### Ubuntu:
+### Ubuntu: <a name="Ubuntu" /> [[menu]](#menu)
 
 1. Set up the repository
 
@@ -140,7 +163,7 @@ Test your installation:
     $ sudo docker run hello-world
 
 
-### Fedora
+### Fedora <a name="Fedora" /> [[menu]](#menu)
 
 1. Set up the repository
 
@@ -174,17 +197,17 @@ Test your installation:
 
     $ sudo docker run hello-world
 
-### Windows:
+### Windows: <a name="Windows" /> [[menu]](#menu)
 
 Access: https://store.docker.com/editions/community/docker-ce-desktop-windows
 
-### MacOS:
+### MacOS: <a name="MacOS" /> [[menu]](#menu)
 
 Access: https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 ![line](http://skstroi.ru/wp-content/uploads/2016/05/foot-line.png)
 
-## Deploy and access Dugong
+## Deploy and access Dugong <a name="Deploy" /> [[menu]](#menu)
 
 The Docker project provides a public cloud called the [Docker Hub](https://hub.docker.com) for sharing the developed containers. This cloud allows access to the application in a centralized and simple way, that is, it is possible to obtain a complete Dugong environment with command lines for its implementation.
 
@@ -250,7 +273,7 @@ For access to DugongCMD the user can use an SSH client of his choice. We also pr
 http://<IP or Host>:3000
 ```
 
-## Video installation:
+## Video installation: <a name="Video-installation" /> [[menu]](#menu)
 
 - Click to watch the installation of ***DugongGUI*** on ***Linux Ubuntu Server***:
 
@@ -269,7 +292,7 @@ http://<IP or Host>:3000
 
 [![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-10%20at%2006.45.18.png)](http://showterm.io/f06861ae4a22381c148e4)
 
-## Dugong Virtual Box
+## Dugong Virtual Box <a name="Dugong-Virtual-Box" /> [[menu]](#menu)
 
 The Dugong Virtual Box gets around the difficulty of installation by providing a functioning Dugong full install inside an Ubuntu or Fedora Linux virtual machine. You can use the Dugong Virtual Box on Mac OS X, Windows, or Linux.
 
@@ -292,13 +315,13 @@ It is strongly recommended that your system have 8 gigabytes or more of memory t
         docker start DugongCMD
         docker start Dugong-CirComPara
 
-## Extending or adapting the Dugong image
+## Extending or adapting the Dugong image <a name="Extending" /> [[menu]](#menu)
 
 Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
 
-## Example of adapted tools in Dugong
+## Example of adapted tools in Dugong <a name="Example" /> [[menu]](#menu)
 
-### CirComPara
+### CirComPara <a name="CirComPara" /> [[menu]](#menu)
 
 ***CirComPara*** is a computational pipeline to detect, quantify, and correlate expression of linear and circular RNAs from RNA-seq data.
 
@@ -312,17 +335,17 @@ See more: [DugongGUI CirComPara](https://github.com/fabianomenegidio/dugongGUI-C
 
 ![Docker](https://static1.squarespace.com/static/513914cde4b0f86e34bbb954/t/58409793bebafb1c4cfe75e3/1480628120385/DockerBanner.png)
 
-## Author
+## Author <a name="Author" /> [[menu]](#menu)
 
 Current development is led by Fabiano Menegidio.
 
-## Contributing
+## Contributing <a name="Contributing" /> [[menu]](#menu)
 
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
 Before you start to code, we recommend discussing your plans through a GitHub issue, especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-## MIT License
+## MIT License <a name="MIT" /> [[menu]](#menu)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -331,7 +354,14 @@ The above copyright notice and this permission notice shall be included in all c
 ***The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.***
 
 
-## Learn More
+## Learn More <a name="Learn-More" /> [[menu]](#menu)
+
+To learn more about Docker, go to:
+
+http://docker.com
+https://docs.docker.com/
+
+
 
 ![QRCode](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/qrcode.png)
 
