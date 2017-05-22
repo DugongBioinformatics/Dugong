@@ -1,10 +1,15 @@
+
 #!/usr/bin/env bash
 ### every exit != 0 fails the script
 set -e
+
 echo "Install some common tools for further installation"
-apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip build-essential python \
-python-dev python-pip  bzip2 mercurial locales ca-certificates subversion vim gdebi-core bash-completion apt-utils openjdk-8-jre \
-openssh-server unzip curl ruby net-tools libglib2.0-0 libxext6 libsm6 libxrender1 aptitude icedtea-8-plugin synaptic zlib1g-dev \
-pkg-config libncurses5-dev libbz2-dev python-lzma liblzma-dev cython libcurl4-openssl-dev libxml2-dev libssl-dev libgtextutils-dev \
-libcairo2-dev pandoc python-setuptools gfortran libc-ares2 libcrypto++9v5 \
-&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini && \
+echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - && \
+mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini && \
+wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_amd64.deb && \
+wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megacmd-xUbuntu_16.04_amd64.deb && \
+gdebi -n megasync-xUbuntu_16.04_amd64.deb && \
+gdebi -n megacmd-xUbuntu_16.04_amd64.deb && \
+apt-get -f install && \
+rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb
