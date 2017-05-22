@@ -93,6 +93,10 @@ Sources such as GitHub, for example, can be used to install new tools simply and
 
 [![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-09%20at%2001.33.06.png)](https://www.youtube.com/watch?v=FU944qartYE)
 
+- Installing the bioinformatics tools: QIIME and MOTHUR in DugongGUI. Installation performed through BioConda and operating test:
+
+[![Watch the video](https://raw.githubusercontent.com/fabianomenegidio/dugong-bioinformatics/master/.misc/Screenshot%202017-05-09%20at%2001.33.06.png)](https://www.youtube.com/watch?v=FU944qartYE)
+
 
 ![line](http://skstroi.ru/wp-content/uploads/2016/05/foot-line.png)
 
