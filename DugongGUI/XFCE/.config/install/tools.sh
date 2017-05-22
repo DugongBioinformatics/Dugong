@@ -10,4 +10,5 @@ wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_a
 wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megacmd-xUbuntu_16.04_amd64.deb && \
 gdebi -n megasync-xUbuntu_16.04_amd64.deb && \
 gdebi -n megacmd-xUbuntu_16.04_amd64.deb && \
+apt-get -f install && \
 rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb
