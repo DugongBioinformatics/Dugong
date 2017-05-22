@@ -270,7 +270,11 @@ It is strongly recommended that your system have 8 gigabytes or more of memory t
 - In the new window click Finish.
 - Double click on the new virtual machine created – it will be called Dugong – to boot it for the first time.
 - Review any messages that are shown, and select whatever options are best for you.
-- When your new virtual machine boots, you will see a folder on the Desktop called ‘Before_you_start’. Double click on that folder to open it, and then double click on the ‘Welcome’ file in that folder. This will get you started with using your Dugong virtual box.
+- After the start of your virtual machine, execute the command below:
+
+        docker start Dugong
+        docker start DugongCMD
+        docker start Dugong-CirComPara
 
 ## Extending or adapting the Dugong image
 
