@@ -291,7 +291,7 @@ http://<IP or Host>:3000
 
 The Dugong Virtual Box gets around the difficulty of installation by providing a functioning Dugong full install inside an Ubuntu or Fedora Linux virtual machine. You can use the Dugong Virtual Box on Mac OS X, Windows, or Linux.
 
-It is strongly recommended that your system have 8 gigabytes or more of memory to use the QIIME Virtual Box.
+It is strongly recommended that your system have 8 gigabytes or more of memory to use the Dugong Virtual Box.
 
 - Download and install the VirtualBox (VB) version for your machine.
 - Download the 64-bit Dugong Virtual Box, which is linked from the [Dugong Resources page](https://mega.nz/#F!cPhDUTTT!pXZy-CtLEvR4wx0uqpeqWQ). This file is large so it may take between a few minutes and a few hours depending on your Internet connection speed. You will need to unzip this file, which you can typically do by double-clicking on it.
