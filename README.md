@@ -295,15 +295,11 @@ It is strongly recommended that your system have 8 gigabytes or more of memory t
 
 - Download and install the VirtualBox (VB) version for your machine.
 - Download the 64-bit Dugong Virtual Box, which is linked from the [Dugong Resources page](https://mega.nz/#F!cPhDUTTT!pXZy-CtLEvR4wx0uqpeqWQ). This file is large so it may take between a few minutes and a few hours depending on your Internet connection speed. You will need to unzip this file, which you can typically do by double-clicking on it.
-- Create a new virtual machine:
-- Launch VirtualBox, and create a new machine (press the New button).
-- A new window will show up. Click ‘Next’.
-- In this screen type Dugong as the name for the virtual machine. Then select Linux as the Operating System, and Ubuntu (64 bit) or Fedora (64 bit) as the version. Click Next.
-- Select the amount of RAM (memory). You will need at least 3 GB, but the best option is based on your machine. After selecting the amount of RAM, click Next.
-- Select “Use existing hard drive”, and click the folder icon next to the selector (it has a green up arrow). In the new window click ‘Add’, and locate the virtual hard drive that was downloaded in step 2. Click Select and then click Next.
-- In the new window click Finish.
-- Double click on the new virtual machine created – it will be called Dugong – to boot it for the first time.
-- Review any messages that are shown, and select whatever options are best for you.
+- In the File menu, select Import Appliance. The Appliance Import wizard is displayed in a new window.
+- Click Choose, browse to the location containing the *.ovf or *.ova file of the virtual machine of Dugong, and click Open.
+- Make any adjustments you want to the displayed settings (you can also change the settings later) and click Import. The Appliance Import Wizard is closed and after a few moments, the imported virtual machine is listed in Oracle VM VirtualBox Manager.
+- After the import, select the imported virtual machine and in the toolbar click the Settings button. Review the virtual machine settings to make sure that the virtual machine has the hardware it needs to operate. Make sure that the virtual machine has a CD/DVD drive.
+- Once you have reviewed the settings, select the imported virtual machine and in the toolbar click the Start button. Verify that the virtual machine works.
 - After the start of your virtual machine, execute the command below:
 
         docker start Dugong
