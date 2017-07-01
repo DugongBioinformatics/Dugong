@@ -5,6 +5,6 @@ echo "Install Chromium Browser" && \
 apt-get update && \
 apt-get install -y --allow-unauthenticated chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg && \
 apt-get autoremove -y && \
-apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 ln -s /usr/bin/chromium-browser /usr/bin/google-chrome && \
 echo "CHROMIUM_FLAGS='--no-sandbox --start-maximized --user-data-dir'" > $HOME/.chromium-browser.init
