@@ -99,7 +99,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     xfdesktop4 libxfce4ui-utils xfdesktop4-data xfwm4 xfwm4-themes xubuntu-icon-theme xfce4 supervisor xterm xfce4-terminal \
     && apt-get purge -y pm-utils xscreensaver* && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && locale-gen en_US.UTF-8
+    && locale-gen en_US.UTF-8 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
     && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
