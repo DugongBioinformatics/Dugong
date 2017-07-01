@@ -107,7 +107,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && rm Miniconda2-latest-Linux-x86_64.sh \
     && ~/.conda2/bin/conda config --add channels r \
     && ~/.conda2/bin/conda config --add channels bioconda \
-    && ~/.conda2/bin/conda clean -tipsy
+    && ~/.conda2/bin/conda clean -tipsy \
     && /dockerstartup/generate_container_user.sh \ 
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
