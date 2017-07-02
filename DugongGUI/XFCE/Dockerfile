@@ -98,7 +98,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     thunar-data thunar-volman xfce-keyboard-shortcuts xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfconf \
     xfdesktop4 libxfce4ui-utils xfdesktop4-data xfwm4 xfwm4-themes xubuntu-icon-theme xfce4 supervisor xterm xfce4-terminal \
     xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic \
-    && apt-get purge -y pm-utils xscreensaver* && apt-get autoremove -y && apt-get clean -y \
+    && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
