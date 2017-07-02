@@ -27,7 +27,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 LABEL base.image="ubuntu:latest" \
       version="2017040" \
       name="DugongGUI" \
-      flavour="Xfce4" \
+      flavour="iceWM" \
       base="Ubuntu latest" \
       description="Scientific Linux Container" \
       website="https://fabianomenegidio.github.io/dugong-bioinformatics/" \
@@ -93,13 +93,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && wget -qO- https://github.com/kanaka/websockify/archive/v0.8.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify \
     && chmod +x -v $NO_VNC_HOME/utils/*.sh && ln -s $NO_VNC_HOME/vnc_auto.html $NO_VNC_HOME/index.html \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
-    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends libstdc++5 libvncserver1 \
-    libaio-dev sysstat ksh expat libelf-dev desktop-base exo-utils gtk2-engines-xfce libexo-1-0 libexo-common libgarcon-1-0 \
-    libgarcon-common libthunarx-2-0 libxfce4ui-1-0 libxfce4util-bin libxfce4util-common libxfconf-0-2 orage thunar gnupg-agent \
-    thunar-data thunar-volman xfce-keyboard-shortcuts xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfconf \
-    xfdesktop4 libxfce4ui-utils xfdesktop4-data xfwm4 xfwm4-themes xubuntu-icon-theme xfce4 supervisor xterm xfce4-terminal \
-    xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic \
-    && apt-get purge --auto-remove xfce4-power-manager && apt-get autoremove -y && apt-get clean -y \
+    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends icewm xterm xfonts-base \
+    xauth xinit iceconf icepref iceme icewm-themes \
+    && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
@@ -113,7 +109,6 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
-    && mkdir -p /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
 ############### http://bugs.python.org/issue19846
