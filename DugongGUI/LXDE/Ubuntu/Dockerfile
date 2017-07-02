@@ -112,7 +112,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
-    && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup && chmod +x /usr/local/bin/start \
+    && chmod +x /usr/local/bin/start \
     && mkdir -p /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
