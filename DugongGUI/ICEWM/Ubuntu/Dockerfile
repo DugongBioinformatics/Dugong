@@ -94,7 +94,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && chmod +x -v $NO_VNC_HOME/utils/*.sh && ln -s $NO_VNC_HOME/vnc_auto.html $NO_VNC_HOME/index.html \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
     && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends icewm xterm xfonts-base \
-    xauth xinit iceconf icepref iceme icewm-themes \
+    xauth xinit icewm-themes \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
