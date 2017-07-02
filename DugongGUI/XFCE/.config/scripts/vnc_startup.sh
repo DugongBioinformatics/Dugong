@@ -47,3 +47,4 @@ else
     echo "Executing command: '$@'"
     exec "$@"
 fi
+echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1
