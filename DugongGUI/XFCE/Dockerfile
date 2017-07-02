@@ -137,6 +137,8 @@ ENV LANG C.UTF-8
 #    && /dockerstartup/generate_container_user.sh \
 #    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
+ADD .config/scripts/xstartup $HOME/.vnc/
+
 VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
