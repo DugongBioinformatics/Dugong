@@ -102,7 +102,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
-    && chmod +755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
+    && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
     && mkdir /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
