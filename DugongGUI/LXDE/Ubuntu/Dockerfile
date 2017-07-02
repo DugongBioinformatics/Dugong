@@ -96,7 +96,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
     && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends dbus-x11 x11-utils \
     x11-xserver-utils procps psmisc lxde xdg-utils xdg-user-dirs menu menu-xdg mime-support desktop-file-utils \
-    desktop-base libxv1 mesa-utils mesa-utils-extra libgl1-mesa-glx libglew2.0 libglu1-mesa libgl1-mesa-dri libdrm2 \
+    desktop-base libxv1 mesa-utils mesa-utils-extra libgl1-mesa-glx libglew-dev libglu1-mesa libgl1-mesa-dri libdrm2 \
     libgles2-mesa libegl1-mesa procps \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
