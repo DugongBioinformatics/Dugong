@@ -45,6 +45,7 @@ ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
 ADD .config/scripts/xstartup $HOME/.vnc/
+ADD tty.js /tty.js/
 
 WORKDIR $HOME
 
@@ -61,7 +62,8 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
     build-essential python python-dev python-numpy bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
-    openjdk-8-jre openssh-server unzip curl ruby net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network \
+    openjdk-8-jre openssh-server unzip curl ruby net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \\
+    ruby-dev rubygems ruby \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
@@ -73,6 +75,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && locale-gen en_US.UTF-8 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
+    && gem install showterm \
     && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
     && /bin/bash Miniconda2-latest-Linux-x86_64.sh -b -p ~/.conda2 \
     && rm Miniconda2-latest-Linux-x86_64.sh \
@@ -98,6 +101,9 @@ RUN chown -R dugong:dugong /data && \
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--tail-log"]
+
+EXPOSE 22
+EXPOSE 3000
 
 WORKDIR /data
 USER dugong
