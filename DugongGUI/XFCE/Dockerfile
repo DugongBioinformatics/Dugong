@@ -60,6 +60,7 @@ ADD .config/GUI/xfce/ $HOME/
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
+ADD .config/scripts/xstartup $HOME/.vnc/
 
 WORKDIR $HOME
 
@@ -136,8 +137,6 @@ ENV LANG C.UTF-8
 #RUN chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
 #    && /dockerstartup/generate_container_user.sh \
 #    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
-
-ADD .config/scripts/xstartup $HOME/.vnc/
 
 VOLUME ["/data", "/config"]
 RUN chown -R dugong:dugong /data && \
