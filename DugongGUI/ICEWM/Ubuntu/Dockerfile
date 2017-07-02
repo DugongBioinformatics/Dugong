@@ -56,7 +56,7 @@ ENV HOME /headless
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
 
-ADD .config/GUI/xfce/ $HOME/
+ADD .config/GUI/icewm/ $HOME/
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
