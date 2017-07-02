@@ -48,3 +48,4 @@ else
     exec "$@"
 fi
 chown -R root:root /tmp/
+echo "" > /tmp/.ICE-unix
