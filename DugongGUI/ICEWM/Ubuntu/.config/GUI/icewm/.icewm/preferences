@@ -2,3 +2,4 @@ WorkspaceNames=" 1 "
 TaskBarShowMailboxStatus = 0
 TaskBarShowWorkspaces = 0
 DesktopBackgroundImage="/headless/.icewm/dna-desktop-black-2880x1800.png"
+DesktopBackgroundScaled = 1
