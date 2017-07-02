@@ -111,10 +111,10 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda config --add channels bioconda \
     && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
-    && /dockerstartup/generate_container_user.sh \ 
-    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless \
+    && /dockerstartup/generate_container_user.sh \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
-    && mkdir /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1
+    && mkdir /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
+    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
