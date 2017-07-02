@@ -102,8 +102,6 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get purge --auto-remove xfce4-power-manager && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
-    && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
-    && mkdir /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
     && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
@@ -114,7 +112,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \ 
-    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
+    && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless \
+    && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
+    && mkdir /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
