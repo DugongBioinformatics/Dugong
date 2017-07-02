@@ -94,11 +94,11 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && wget -qO- https://github.com/kanaka/websockify/archive/v0.8.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify \
     && chmod +x -v $NO_VNC_HOME/utils/*.sh && ln -s $NO_VNC_HOME/vnc_auto.html $NO_VNC_HOME/index.html \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
-    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends galculator gpicview leafpad \
+    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends lxsession lxde \
     libfm-data libfm-extra4 libfm-gtk-data libfm-gtk4 libfm-modules libfm4 libid3tag0 libimlib2 libkeybinder0 \
     libmenu-cache-bin libmenu-cache3 libobrender32 libobt2 lxappearance lxappearance-obconf lxde-core lxde-icon-theme \
     lxinput lxmenu-data lxpanel lxpanel-data lxrandr lxsession-data lxsession-edit lxterminal pcmanfm xarchiver evince-gtk \
-    libfm-tools nautilus-actions libreoffice lxlauncher lxtask update-notifier lxsession menu \
+    libfm-tools nautilus-actions lxlauncher lxtask update-notifier menu \
     && apt-get purge --auto-remove xfce4-power-manager && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
