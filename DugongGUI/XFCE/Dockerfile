@@ -99,7 +99,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     thunar-data thunar-volman xfce-keyboard-shortcuts xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfconf \
     xfdesktop4 libxfce4ui-utils xfdesktop4-data xfwm4 xfwm4-themes xubuntu-icon-theme xfce4 supervisor xterm xfce4-terminal \
     xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic \
-    && apt-get autoremove -y && apt-get clean -y \
+    && apt-get purge --auto-remove xfce4-power-manager && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
