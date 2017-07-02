@@ -97,6 +97,8 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     libgarcon-common libthunarx-2-0 libxfce4ui-1-0 libxfce4util-bin libxfce4util-common libxfconf-0-2 orage thunar gnupg-agent \
     thunar-data thunar-volman xfce-keyboard-shortcuts xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfconf \
     xfdesktop4 libxfce4ui-utils xfdesktop4-data xfwm4 xfwm4-themes xubuntu-icon-theme xfce4 supervisor xterm xfce4-terminal \
+    xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-urw, xfonts-type1, xfonts-speedo, xfonts-truetype \
+    xfonts-misc \
     && apt-get purge -y pm-utils xscreensaver* && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
