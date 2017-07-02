@@ -47,5 +47,4 @@ else
     echo "Executing command: '$@'"
     exec "$@"
 fi
-chown -R root:root /tmp/
-echo "" > /tmp/.ICE-unix
+chown -R root:root /tmp/.ICE-unix
