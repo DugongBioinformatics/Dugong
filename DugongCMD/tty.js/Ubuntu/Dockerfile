@@ -44,7 +44,6 @@ ENV INST_SCRIPTS $HOME/install
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
-ADD .config/scripts/xstartup $HOME/.vnc/
 ADD tty.js /tty.js/
 
 WORKDIR $HOME
