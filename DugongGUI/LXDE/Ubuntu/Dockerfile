@@ -92,7 +92,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && wget -qO- https://github.com/kanaka/websockify/archive/v0.8.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify \
     && chmod +x -v $NO_VNC_HOME/utils/*.sh && ln -s $NO_VNC_HOME/vnc_auto.html $NO_VNC_HOME/index.html \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
-    && apt-get update && apt-get install -y --allow-unauthenticated lxde lxterminal x11vnc xvfb gtk2-engines-murrine \
+    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends lxde lxterminal x11vnc xvfb gtk2-engines-murrine \
     ttf-ubuntu-font-family mesa-utils libgl1-mesa-dri gnome-themes-standard gtk2-engines-pixbuf pinta \
     dbus-x11 x11-utils \
     && apt-get autoremove -y && apt-get clean -y \
