@@ -57,8 +57,6 @@ ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
 
 ADD .config/GUI/lxde/ $HOME/
-ADD .config/GUI/lxde/ /etc/skel/
-ADD .config/scripts/start.sh /usr/local/bin/start
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
@@ -94,10 +92,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && wget -qO- https://github.com/kanaka/websockify/archive/v0.8.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify \
     && chmod +x -v $NO_VNC_HOME/utils/*.sh && ln -s $NO_VNC_HOME/vnc_auto.html $NO_VNC_HOME/index.html \
     && apt-get -f install && rm megasync-xUbuntu_16.04_amd64.deb megacmd-xUbuntu_16.04_amd64.deb \
-    && apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends dbus-x11 x11-utils \
-    x11-xserver-utils procps psmisc lxde xdg-utils xdg-user-dirs menu menu-xdg mime-support desktop-file-utils \
-    desktop-base libxv1 mesa-utils mesa-utils-extra libgl1-mesa-glx libglew-dev libglu1-mesa libgl1-mesa-dri libdrm2 \
-    libgles2-mesa libegl1-mesa procps \
+    && apt-get update && apt-get install -y --allow-unauthenticated lxde lxterminal x11vnc xvfb gtk2-engines-murrine \
+    ttf-ubuntu-font-family mesa-utils libgl1-mesa-dri gnome-themes-standard gtk2-engines-pixbuf pinta arc-theme \
+    dbus-x11 x11-utils \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
@@ -111,7 +108,6 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
-    && chmod +x /usr/local/bin/start \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
 
 ############### http://bugs.python.org/issue19846
