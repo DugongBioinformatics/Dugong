@@ -14,7 +14,7 @@
 #
 ###########################################################################
 
-FROM ubuntu:wily
+FROM ubuntu:latest
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
