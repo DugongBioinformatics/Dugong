@@ -226,21 +226,21 @@ The default installation version of Dugong is DugongGUI with Xfce4. To change th
 Install DugongGUI Xfce4:
 
 ```
-docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI -v $HOME/dugong/:/data/ \
+docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI -v $HOME/dugongxfce/:/data/ \
 --privileged dugong/dugong:xfce
 ```
 
 Install DugongGUI iceWM:
 
 ```
-docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI -v $HOME/dugong/:/data/ \
+docker run -d -p 5901:5901 -p 6901:6901 --name DugongGUI -h DugongGUI -v $HOME/dugongicewm/:/data/ \
 --privileged dugong/dugong:icewm
 ```
 
 Install DugongCMD:
 
 ```
-docker run -d -p 3000:3000 --name DugongCMD -h DugongCMD -v $HOME/dugong/:/data/ \
+docker run -d -p 3000:3000 --name DugongCMD -h DugongCMD -v $HOME/dugongcmd/:/data/ \
 --privileged dugong/dugong:cmd
 ```
 
@@ -317,7 +317,7 @@ It is strongly recommended that your system have 8 gigabytes or more of memory t
 
 ## Extending or adapting the Dugong image <a name="Extending" /> [[menu]](#menu)
 
-Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://github.com/fabianomenegidio/dugong), including Dockerfile for building your image.
+Dugong can be expanded or adapted to the most diverse needs in a research or teaching environment. All Dugong environment configuration scripts are available in the Git Hub (https://dugongbioinformatics.github.io/), including Dockerfile for building your image.
 
 ## Example of adapted tools in Dugong <a name="Example" /> [[menu]](#menu)
 
