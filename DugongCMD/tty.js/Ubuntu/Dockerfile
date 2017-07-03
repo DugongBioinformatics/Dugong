@@ -98,7 +98,7 @@ RUN chown -R dugong:dugong /data && \
     chown -R dugong:dugong /config
 
 ENTRYPOINT ["tini", "--"]
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+ENTRYPOINT ["/dockerstartup/startup.sh"]
 CMD ["--tail-log"]
 
 EXPOSE 22
