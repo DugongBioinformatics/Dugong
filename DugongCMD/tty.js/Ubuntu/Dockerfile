@@ -68,7 +68,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
     && wget https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megacmd-xUbuntu_16.04_amd64.deb \
     && gdebi -n megacmd-xUbuntu_16.04_amd64.deb \
-    && apt-get -f install && megacmd-xUbuntu_16.04_amd64.deb \
+    && apt-get -f install && rm megacmd-xUbuntu_16.04_amd64.deb \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && locale-gen en_US.UTF-8 \
