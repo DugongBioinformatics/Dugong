@@ -62,7 +62,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
     build-essential python python-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
     openjdk-7-jre openssh-server unzip curl net-tools icedtea-7-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
-    ruby-dev rubygems ruby \
+    ruby-dev rubygems ruby screen mlocate nano \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
@@ -105,4 +105,3 @@ EXPOSE 22
 EXPOSE 3000
 
 WORKDIR /data
-USER dugong
