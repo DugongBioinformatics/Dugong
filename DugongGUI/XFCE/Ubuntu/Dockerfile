@@ -127,6 +127,8 @@ USER dugong
 RUN ~/.conda2/bin/conda update --all \
     && ~/.conda2/bin/conda install spyder anaconda-navigator jupyter \
     && ~/.conda2/bin/conda clean -tipsy
+    
+USER root
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
