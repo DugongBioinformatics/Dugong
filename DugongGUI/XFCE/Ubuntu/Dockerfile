@@ -55,6 +55,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /headless
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
+ENV USER dugong
+ENV NB_USER dugong
+ENV NB_UID 1000
 
 ADD .config/GUI/xfce/ $HOME/
 ADD .config/scripts $STARTUPDIR
@@ -118,6 +121,12 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
     && mkdir -p /headless/.cache/sessions/ && echo "" > /headless/.cache/sessions/xfce4-session-DugongGUI:1 \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
+    
+USER dugong
+
+RUN ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda install spyder anaconda-navigator jupyter \
+    && ~/.conda2/bin/conda clean -tipsy
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
