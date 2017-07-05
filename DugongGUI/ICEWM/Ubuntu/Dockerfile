@@ -102,6 +102,8 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
     && /bin/bash Miniconda2-latest-Linux-x86_64.sh -b -p ~/.conda2 \
     && rm Miniconda2-latest-Linux-x86_64.sh \
+    && ~/.conda2/bin/conda config --add channels defaults \
+    && ~/.conda2/bin/conda config --add channels conda-forge \
     && ~/.conda2/bin/conda config --add channels r \
     && ~/.conda2/bin/conda config --add channels bioconda \
     && ~/.conda2/bin/conda clean -tipsy \
