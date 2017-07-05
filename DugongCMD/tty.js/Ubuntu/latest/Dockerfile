@@ -46,6 +46,11 @@ ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
 ADD tty.js /tty.js/
 
+COPY config/start.sh /usr/local/bin/
+COPY config/start-notebook.sh /usr/local/bin/
+COPY config/start-singleuser.sh /usr/local/bin/
+COPY config/jupyter_notebook_config.py $HOME/.jupyter/
+
 WORKDIR $HOME
 
 ############### Add dependencies and update packages
@@ -62,7 +67,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
     build-essential python python-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
     openjdk-8-jre openssh-server unzip curl net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
-    ruby-dev rubygems ruby screen mlocate nano asciinema \
+    ruby-dev rubygems ruby screen mlocate nano \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
@@ -87,6 +92,14 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
+    
+USER dugong
+
+RUN ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda install jupyter \
+    && ~/.conda2/bin/conda clean -tipsy
+    
+USER root
 
 ############### http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
@@ -102,9 +115,10 @@ RUN chown -R dugong:dugong /data && \
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/startup.sh"]
-CMD ["--tail-log"]
+CMD ["start-notebook.sh"]
 
 EXPOSE 22
 EXPOSE 3000
+EXPOSE 8888
 
 WORKDIR /data
