@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spyder IDE
+Exec=/headless/.conda2/bin/spyder
+Terminal=false
+Path=/headless/.conda2/bin/
+Icon=/headless/.config/spyder.png

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Anaconda Navigator
+Exec=/headless/.conda2/bin/anaconda-navigator
+Terminal=false
+Path=/headless/.conda2/bin/
+Icon=/headless/.config/Anaconda_Logo.png

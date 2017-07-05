@@ -1,4 +1,5 @@
 prog xterm xterm xterm
 separator
-prog Firefox /usr/share/pixmaps/firefox.png firefox
 prog Chromium /usr/share/pixmaps/chromium-browser.png /usr/bin/chromium-browser
+prog "Anaconda Navigator" /headless/.icewm/Anaconda_Logo.png /headless/.conda2/bin/anaconda-navigator 
+prog "Spyder IDE" /headless/.icewm/spyder.png /headless/.conda2/bin/spyder
