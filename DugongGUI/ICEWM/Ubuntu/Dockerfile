@@ -65,6 +65,11 @@ ADD .config/scripts/.bashrc $HOME/.bashrc
 ADD .config/install/ $INST_SCRIPTS/
 ADD .config/scripts/xstartup $HOME/.vnc/
 
+COPY config/start.sh /usr/local/bin/
+COPY config/start-notebook.sh /usr/local/bin/
+COPY config/start-singleuser.sh /usr/local/bin/
+COPY config/jupyter_notebook_config.py $HOME/.jupyter/
+
 WORKDIR $HOME
 
 ############### Add dependencies and update packages
@@ -112,6 +117,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda update --all \
     && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
+    && chmod +x /usr/local/bin/start.sh \
+    && chmod +x /usr/local/bin/start-notebook.sh \
+    && chmod +x /usr/local/bin/start-singleuser.sh \
     && /dockerstartup/generate_container_user.sh \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
@@ -138,7 +146,7 @@ RUN chown -R dugong:dugong /data && \
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
-CMD ["--tail-log"]
+CMD ["start-notebook.sh"]
 
 RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp
 
