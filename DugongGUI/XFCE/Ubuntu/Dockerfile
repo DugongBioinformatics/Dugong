@@ -133,7 +133,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
 USER dugong
 
 RUN ~/.conda2/bin/conda update --all \
-    && ~/.conda2/bin/conda install spyder anaconda-navigator jupyter \
+    && ~/.conda2/bin/conda install spyder anaconda-navigator jupyter ipython \
     && ~/.conda2/bin/conda clean -tipsy
     
 USER root
