@@ -14,7 +14,7 @@
 #
 ###########################################################################
 
-FROM ubuntu:latest
+FROM ubuntu:wily
 MAINTAINER Fabiano Menegidio <fabiano.menegidio@biology.bio.br>
 
 ############### Metadata
@@ -40,6 +40,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /headless
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
+ENV NB_USER dugong
+ENV NB_UID 1000
 
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
@@ -66,7 +68,7 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
     build-essential python python-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
-    openjdk-8-jre openssh-server unzip curl net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
+    openjdk-7-jre openssh-server unzip curl net-tools icedtea-7-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
     ruby-dev rubygems ruby screen mlocate nano \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
@@ -89,6 +91,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda config --add channels bioconda \
     && ~/.conda2/bin/conda update --all \
     && ~/.conda2/bin/conda clean -tipsy \
+    && chmod +x /usr/local/bin/start.sh \
+    && chmod +x /usr/local/bin/start-notebook.sh \
+    && chmod +x /usr/local/bin/start-singleuser.sh \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
@@ -115,7 +120,6 @@ RUN chown -R dugong:dugong /data && \
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/startup.sh"]
-CMD ["start-notebook.sh"]
 
 EXPOSE 22
 EXPOSE 3000
