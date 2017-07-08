@@ -40,6 +40,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /headless
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
+ENV NB_USER dugong
+ENV NB_UID 1000
 
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
@@ -89,6 +91,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && ~/.conda2/bin/conda config --add channels bioconda \
     && ~/.conda2/bin/conda update --all \
     && ~/.conda2/bin/conda clean -tipsy \
+    && chmod +x /usr/local/bin/start.sh \
+    && chmod +x /usr/local/bin/start-notebook.sh \
+    && chmod +x /usr/local/bin/start-singleuser.sh \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && /bin/bash /headless/install/set_user_permission.sh /dockerstartup /headless
@@ -115,7 +120,6 @@ RUN chown -R dugong:dugong /data && \
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/startup.sh"]
-CMD ["start-notebook.sh"]
 
 EXPOSE 22
 EXPOSE 3000
