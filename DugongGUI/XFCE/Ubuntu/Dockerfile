@@ -112,15 +112,15 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && locale-gen en_US.UTF-8 \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
-    && wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && /bin/bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/.conda3 \
-    && rm Miniconda3-latest-Linux-x86_64.sh \
-    && ~/.conda3/bin/conda config --add channels defaults \
-    && ~/.conda3/bin/conda config --add channels conda-forge \
-    && ~/.conda3/bin/conda config --add channels r \
-    && ~/.conda3/bin/conda config --add channels bioconda \
-    && ~/.conda3/bin/conda update --all \
-    && ~/.conda3/bin/conda clean -tipsy \
+    && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
+    && /bin/bash Miniconda2-latest-Linux-x86_64.sh -b -p ~/.conda2 \
+    && rm Miniconda2-latest-Linux-x86_64.sh \
+    && ~/.conda2/bin/conda config --add channels defaults \
+    && ~/.conda2/bin/conda config --add channels conda-forge \
+    && ~/.conda2/bin/conda config --add channels r \
+    && ~/.conda2/bin/conda config --add channels bioconda \
+    && ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && chmod 755 $HOME/.vnc/xstartup && chown dugong:dugong $HOME/.vnc/xstartup \
@@ -132,9 +132,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     
 USER dugong
 
-RUN ~/.conda3/bin/conda update --all \
-    && ~/.conda3/bin/conda install spyder anaconda-navigator jupyter jupyterhub jupyterlab ipython \
-    && ~/.conda3/bin/conda clean -tipsy
+RUN ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda install spyder anaconda-navigator jupyter ipython \
+    && ~/.conda2/bin/conda clean -tipsy
     
 USER root
 
