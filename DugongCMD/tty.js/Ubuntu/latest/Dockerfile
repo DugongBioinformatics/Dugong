@@ -42,6 +42,7 @@ ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $HOME/install
 ENV NB_USER dugong
 ENV NB_UID 1000
+ENV CONDA_DIR $HOME/.conda2/
 
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
@@ -67,9 +68,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
-    build-essential python3 python3-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
+    build-essential python python-dev bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
     openjdk-7-jre openssh-server unzip curl net-tools icedtea-7-plugin zlib1g-dev libqt4-dbus libqt4-network nodejs \
-    ruby-dev rubygems ruby screen mlocate nano python3-pip python3-numpy \
+    ruby-dev rubygems ruby screen mlocate nano asciinema python-pip python-numpy \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
     && echo "1361527f39190a7338a0b434bd8c88ff7233ce7b9a4876f3315c22fce7eca1b0 *tini" | sha256sum -c - \
     && mv tini /usr/local/bin/tini && chmod +x /usr/local/bin/tini \
@@ -82,15 +83,15 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && git clone https://github.com/Linuxbrew/linuxbrew.git ~/.linuxbrew \
     && bash -c "$(curl -L https://basemount.basespace.illumina.com/install)" \
     && gem install showterm \
-    && wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && /bin/bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/.conda3 \
-    && rm Miniconda3-latest-Linux-x86_64.sh \
-    && ~/.conda3/bin/conda config --add channels defaults \
-    && ~/.conda3/bin/conda config --add channels conda-forge \
-    && ~/.conda3/bin/conda config --add channels r \
-    && ~/.conda3/bin/conda config --add channels bioconda \
-    && ~/.conda3/bin/conda update --all \
-    && ~/.conda3/bin/conda clean -tipsy \
+    && wget --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh \
+    && /bin/bash Miniconda2-latest-Linux-x86_64.sh -b -p ~/.conda2 \
+    && rm Miniconda2-latest-Linux-x86_64.sh \
+    && ~/.conda2/bin/conda config --add channels defaults \
+    && ~/.conda2/bin/conda config --add channels conda-forge \
+    && ~/.conda2/bin/conda config --add channels r \
+    && ~/.conda2/bin/conda config --add channels bioconda \
+    && ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda clean -tipsy \
     && chmod +X /dockerstartup/*.sh && chmod 755 /dockerstartup/*.sh \
     && /dockerstartup/generate_container_user.sh \
     && chmod +x /usr/local/bin/start.sh \
@@ -100,9 +101,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     
 USER dugong
 
-RUN ~/.conda3/bin/conda update --all \
-    && ~/.conda3/bin/conda install spyder anaconda-navigator jupyter jupyterhub jupyterlab ipython \
-    && ~/.conda3/bin/conda clean -tipsy
+RUN ~/.conda2/bin/conda update --all \
+    && ~/.conda2/bin/conda install jupyter ipython nb_conda \
+    && ~/.conda2/bin/conda clean -tipsy
     
 USER root
 
@@ -114,9 +115,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-VOLUME ["/data", "/config"]
-RUN chown -R dugong:dugong /data && \
-    chown -R dugong:dugong /config
+VOLUME ["$HOME/data"]
 
 ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/startup.sh"]
@@ -125,4 +124,7 @@ EXPOSE 22
 EXPOSE 3000
 EXPOSE 8888
 
-WORKDIR /data
+RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp \
+    && chown -R $USER:$USER $HOME/data
+
+WORKDIR $HOME/data
