@@ -71,6 +71,10 @@ COPY config/start-notebook.sh /usr/local/bin/
 COPY config/start-singleuser.sh /usr/local/bin/
 COPY config/jupyter_notebook_config.py $HOME/.jupyter/
 
+VOLUME ["/data", "/config"]
+RUN chown -R dugong:dugong /data && \
+    chown -R dugong:dugong /config
+
 WORKDIR $HOME
 
 ############### Add dependencies and update packages
@@ -146,10 +150,6 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
-
-VOLUME ["/data", "/config"]
-RUN chown -R dugong:dugong /data && \
-    chown -R dugong:dugong /config
 
 EXPOSE 8888
 
