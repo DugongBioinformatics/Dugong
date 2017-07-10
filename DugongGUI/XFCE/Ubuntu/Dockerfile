@@ -85,9 +85,9 @@ RUN apt-key adv --recv-key --keyserver keyserver.ubuntu.com "A6616109451BBBF2" \
     && apt-get install -y --allow-unauthenticated --force-yes bio-linux-keyring \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update && apt-get install -y --allow-unauthenticated make grep sed sudo dpkg git wget zip \
-    build-essential python3 python3-dev python3-numpy bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
+    build-essential python python-dev python-numpy bzip2 locales ca-certificates vim gdebi-core bash-completion apt-utils \
     openjdk-8-jre openssh-server unzip curl ruby net-tools icedtea-8-plugin zlib1g-dev libqt4-dbus libqt4-network \
-    chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg screen mlocate nano asciinema python3-pip \
+    chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg screen mlocate nano asciinema python-pip \
     && ln -s /usr/bin/chromium-browser /usr/bin/google-chrome \
     && echo "CHROMIUM_FLAGS='--no-sandbox --start-maximized --user-data-dir'" > $HOME/.chromium-browser.init \
     && wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini \
