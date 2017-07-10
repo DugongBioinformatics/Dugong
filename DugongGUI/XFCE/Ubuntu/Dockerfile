@@ -58,6 +58,7 @@ ENV INST_SCRIPTS $HOME/install
 ENV USER dugong
 ENV NB_USER dugong
 ENV NB_UID 1000
+ENV CONDA_DIR $HOME/.conda2/
 
 ADD .config/GUI/xfce/ $HOME/
 ADD .config/scripts $STARTUPDIR
