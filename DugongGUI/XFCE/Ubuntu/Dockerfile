@@ -147,8 +147,8 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-VOLUME ["/data"]
-RUN chown -R dugong:dugong /data
+VOLUME ["$HOME/data"]
+RUN chown -R dugong:dugong $HOME/data
 
 EXPOSE 8888
 
@@ -159,4 +159,4 @@ CMD ["start-notebook.sh"]
 RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp
 
 USER dugong
-WORKDIR /data
+WORKDIR $HOME/data
