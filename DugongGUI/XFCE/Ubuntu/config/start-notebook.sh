@@ -5,3 +5,4 @@
 set -e
 
 . /usr/local/bin/start.sh jupyter notebook $*
+chown -R $USER:$USER $HOME/data
