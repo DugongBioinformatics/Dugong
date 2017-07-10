@@ -46,6 +46,7 @@ ENV CONDA_DIR $HOME/.conda2/
 
 ADD .config/scripts $STARTUPDIR
 ADD .config/scripts/.bashrc $HOME/.bashrc
+ADD .config/scripts/.bash_profile $HOME/.bash_profile
 ADD .config/install/ $INST_SCRIPTS/
 ADD tty.js /tty.js/
 
