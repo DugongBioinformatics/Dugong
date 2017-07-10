@@ -140,7 +140,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LANG C.UTF-8
 
-VOLUME ["/data", "/config"]
+VOLUME ["$HOME/data"]
 
 EXPOSE 8888
 
@@ -148,7 +148,8 @@ ENTRYPOINT ["tini", "--"]
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["start-notebook.sh"]
 
-RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp
+RUN chmod 777 /var/tmp && chown -R root:root /var/tmp && chmod 777 /tmp && chown -R root:root /tmp \
+    && chown -R $USER:$USER $HOME/data
 
 USER dugong
-WORKDIR /data
+WORKDIR $HOME/data
