@@ -9,4 +9,3 @@ useradd -d $HOME --shell /bin/bash --user-group --groups adm,sudo $USER
 echo "$USER:$PASS" | chpasswd
 echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
 chown -R $USER:$USER $HOME
-chown -R $USER:$USER /data
