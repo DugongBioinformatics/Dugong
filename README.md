@@ -46,3 +46,5 @@ Test the Dugong on a machine with Ubuntu 16.04 by clicking the button:
 Learn more about Dply and other ways to test Dugong on other operating systems by [clicking here](https://github.com/DugongBioinformatics/Dply/blob/master/README.md).
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+For more information about Dugong, visit the [project page](https://dugongbioinformatics.github.io).
