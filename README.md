@@ -47,4 +47,10 @@ Learn more about Dply and other ways to test Dugong on other operating systems b
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## How to cite
+
+Menegidio, F.B. et al. (2018). Dugong: a Docker image, based on Ubuntu Linux, focused on reproducibility and replicability for bioinformatics analyses. Bioinformatics 34(3):514-515. doi: 10.1093/bioinformatics/btx554.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 For more information about Dugong, visit the [project page](https://dugongbioinformatics.github.io).
